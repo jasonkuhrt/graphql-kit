@@ -1,7 +1,7 @@
-import { Catalog } from '#catalog/$';
-import { Change } from '#change/$';
-import { Revision } from '#revision/$';
-import { Schema } from '#schema/$';
+import { Catalog } from '#catalog';
+import { Change } from '#change';
+import { Revision } from '#revision';
+import { Schema } from '#schema';
 import { Option } from 'effect';
 /**
  * A change entry tracking when a type or field was modified

@@ -2,7 +2,7 @@ import { Grafaid } from '#grafaid'
 import { Either } from 'effect'
 import { buildSchema } from 'graphql'
 import { describe, expect, test } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
+import { Test } from '../../tests/unit/helpers/test.js'
 import { GraphQLSchemaPath } from './$.js'
 
 describe('.parse', () => {

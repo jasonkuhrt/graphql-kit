@@ -1,8 +1,8 @@
-import { Catalog } from '#catalog/$'
-import { Change } from '#change/$'
-import { Revision } from '#revision/$'
-import { Schema } from '#schema/$'
-import { Version } from '#version/$'
+import { Catalog } from '#catalog'
+import { Change } from '#change'
+import { Revision } from '#revision'
+import { Schema } from '#schema'
+import { Version } from '#version'
 import { Match, Option } from 'effect'
 
 // ============================================================================

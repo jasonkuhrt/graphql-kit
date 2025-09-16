@@ -116,20 +116,20 @@ export declare const decodeResourceErrorSync: (u: unknown, overrideOptions?: imp
  */
 export declare const encodeResourceError: (a: FileNotFound | ReadError | WriteError | ParseError | EncodeError, overrideOptions?: import("effect/SchemaAST").ParseOptions) => Effect.Effect<{
     readonly _tag: "FileNotFound";
-    readonly path: string;
     readonly message: string;
+    readonly path: string;
 } | {
     readonly _tag: "ReadError";
-    readonly path: string;
     readonly message: string;
+    readonly path: string;
 } | {
     readonly _tag: "WriteError";
-    readonly path: string;
     readonly message: string;
+    readonly path: string;
 } | {
     readonly _tag: "ParseError";
-    readonly path: string;
     readonly message: string;
+    readonly path: string;
 } | {
     readonly _tag: "EncodeError";
     readonly message: string;

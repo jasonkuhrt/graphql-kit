@@ -3,7 +3,7 @@ import { EffectKit } from '#kit-temp'
 import { S } from '#kit-temp'
 import { Ts } from '@wollybeard/kit'
 import { expect } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
+import { Test } from '../../tests/unit/helpers/test.js'
 
 // Define test schemas
 const Added = S.TaggedStruct('LifecycleEventAdded', {

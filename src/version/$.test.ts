@@ -1,8 +1,8 @@
 import { Match } from 'effect'
 import { describe, expect, test } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
-import { DateOnly } from '../date-only/$.js'
-import { Semver } from '../semver/$.js'
+import { Test } from '../../tests/unit/helpers/test.js'
+import { DateOnly } from '#date-only'
+import { Semver } from '#semver'
 import { Version } from './$.js'
 
 describe('Version', () => {

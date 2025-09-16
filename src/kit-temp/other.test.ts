@@ -1,6 +1,6 @@
 import * as fc from 'fast-check'
 import { expect, test } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
+import { Test } from '../../tests/unit/helpers/test.js'
 import { objFilter, ObjOmit, ObjPick, objPolicyFilter, spreadShallow } from './other.js'
 
 // dprint-ignore

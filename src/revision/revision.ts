@@ -1,5 +1,5 @@
-import { Change } from '#change/$'
-import { DateOnly } from '#date-only/$'
+import { Change } from '#change'
+import { DateOnly } from '#date-only'
 import { S } from '#kit-temp'
 import { Order } from 'effect'
 

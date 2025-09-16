@@ -1,5 +1,5 @@
 import { expect } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
+import { Test } from '../../tests/unit/helpers/test.js'
 import * as SchemaDefinition from './schema-definition.js'
 
 interface SchemaTestCase {

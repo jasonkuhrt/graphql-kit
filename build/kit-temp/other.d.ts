@@ -68,7 +68,7 @@ export declare const createCache: <$T>() => {
     set: (key: string, value: $T) => Map<string, $T>;
     clear: () => void;
 };
-export declare const ResponseInternalServerError: () => any;
+export declare const ResponseInternalServerError: () => Response;
 /**
  * Execute an operation on multiple items, continuing even if some fail
  * Effect-based version with proper error handling and concurrency control

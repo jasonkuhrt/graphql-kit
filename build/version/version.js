@@ -1,7 +1,7 @@
 import { S } from '#kit-temp';
 import { Equivalence, Match, Order, ParseResult } from 'effect';
-import { DateOnly } from '../date-only/$.js';
-import { Semver as SemverLib } from '../semver/$.js';
+import { DateOnly } from '#date-only';
+import { Semver as SemverLib } from '#semver';
 import * as CustomVersion from './custom.js';
 import * as DateVersion from './date.js';
 import * as IntegerVersion from './integer.js';

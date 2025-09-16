@@ -1,6 +1,6 @@
 import { EffectKit } from '#kit-temp/$$'
 import { expect } from 'vitest'
-import { Test } from '../../../tests/unit/helpers/test.js'
+import { Test } from '../../tests/unit/helpers/test.js'
 
 const UnionAdt = EffectKit.Schema.UnionAdt
 

@@ -1,7 +1,7 @@
 import { S } from '#kit-temp';
-import { Schema } from '#schema/$';
+import { Schema } from '#schema';
 import { VersionCoverage } from '#version-coverage';
-import { Version } from '#version/$';
+import { Version } from '#version';
 import { Data, Either, HashMap, Match, Option } from 'effect';
 import * as Unversioned from './unversioned.js';
 import * as Versioned from './versioned.js';

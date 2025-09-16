@@ -212,7 +212,7 @@ export const createCache = <$T>() => {
   }
 }
 
-export const ResponseInternalServerError = () =>
+export const ResponseInternalServerError = (): Response =>
   new Response(null, {
     status: Http.Status.InternalServerError.code,
     statusText: Http.Status.InternalServerError.description,

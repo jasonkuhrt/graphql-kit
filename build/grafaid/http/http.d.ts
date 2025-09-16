@@ -7,7 +7,7 @@ export interface RequestConfig {
 export declare const parseExecutionResult: (result: unknown) => FormattedExecutionResult;
 export declare const getRequestEncodeSearchParameters: (request: RequestConfig) => Record<string, string>;
 export type getRequestEncodeSearchParameters = typeof getRequestEncodeSearchParameters;
-export declare const postRequestEncodeBody: (input: RequestConfig) => BodyInit;
+export declare const postRequestEncodeBody: (input: RequestConfig) => string;
 export type postRequestEncodeBody = typeof postRequestEncodeBody;
 export declare const isFormattedError: (error: unknown) => error is GraphQLFormattedError;
 //# sourceMappingURL=http.d.ts.map

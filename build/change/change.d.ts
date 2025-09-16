@@ -4,7 +4,7 @@ export declare const TypeAdded: S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -13,7 +13,7 @@ export declare const TypeRemoved: S.TaggedStruct<"TYPE_REMOVED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -24,7 +24,7 @@ export declare const TypeKindChanged: S.TaggedStruct<"TYPE_KIND_CHANGED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -35,7 +35,7 @@ export declare const TypeDescriptionChanged: S.TaggedStruct<"TYPE_DESCRIPTION_CH
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -45,7 +45,7 @@ export declare const TypeDescriptionAdded: S.TaggedStruct<"TYPE_DESCRIPTION_ADDE
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -54,7 +54,7 @@ export declare const TypeDescriptionRemoved: S.TaggedStruct<"TYPE_DESCRIPTION_RE
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -66,7 +66,7 @@ export declare const FieldAdded: S.TaggedStruct<"FIELD_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -76,7 +76,7 @@ export declare const FieldRemoved: S.TaggedStruct<"FIELD_REMOVED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -89,7 +89,7 @@ export declare const FieldTypeChanged: S.TaggedStruct<"FIELD_TYPE_CHANGED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -100,7 +100,7 @@ export declare const FieldDeprecationAdded: S.TaggedStruct<"FIELD_DEPRECATION_AD
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -110,7 +110,7 @@ export declare const FieldDeprecationRemoved: S.TaggedStruct<"FIELD_DEPRECATION_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -122,7 +122,7 @@ export declare const FieldDeprecationReasonChanged: S.TaggedStruct<"FIELD_DEPREC
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -133,7 +133,7 @@ export declare const FieldDeprecationReasonAdded: S.TaggedStruct<"FIELD_DEPRECAT
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -143,7 +143,7 @@ export declare const FieldDeprecationReasonRemoved: S.TaggedStruct<"FIELD_DEPREC
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -155,7 +155,7 @@ export declare const FieldDescriptionChanged: S.TaggedStruct<"FIELD_DESCRIPTION_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -166,7 +166,7 @@ export declare const FieldDescriptionAdded: S.TaggedStruct<"FIELD_DESCRIPTION_AD
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -176,7 +176,7 @@ export declare const FieldDescriptionRemoved: S.TaggedStruct<"FIELD_DESCRIPTION_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -189,7 +189,7 @@ export declare const FieldArgumentAdded: S.TaggedStruct<"FIELD_ARGUMENT_ADDED", 
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -200,7 +200,7 @@ export declare const FieldArgumentRemoved: S.TaggedStruct<"FIELD_ARGUMENT_REMOVE
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -213,7 +213,7 @@ export declare const FieldArgumentTypeChanged: S.TaggedStruct<"FIELD_ARGUMENT_TY
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -226,7 +226,7 @@ export declare const FieldArgumentDescriptionChanged: S.TaggedStruct<"FIELD_ARGU
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -239,7 +239,7 @@ export declare const FieldArgumentDefaultChanged: S.TaggedStruct<"FIELD_ARGUMENT
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -250,7 +250,7 @@ export declare const EnumValueAdded: S.TaggedStruct<"ENUM_VALUE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -260,7 +260,7 @@ export declare const EnumValueRemoved: S.TaggedStruct<"ENUM_VALUE_REMOVED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -272,7 +272,7 @@ export declare const EnumValueDescriptionChanged: S.TaggedStruct<"ENUM_VALUE_DES
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -283,7 +283,7 @@ export declare const EnumValueDeprecationAdded: S.TaggedStruct<"ENUM_VALUE_DEPRE
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -293,7 +293,7 @@ export declare const EnumValueDeprecationRemoved: S.TaggedStruct<"ENUM_VALUE_DEP
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -305,7 +305,7 @@ export declare const EnumValueDeprecationReasonChanged: S.TaggedStruct<"ENUM_VAL
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -316,7 +316,7 @@ export declare const EnumValueDeprecationReasonAdded: S.TaggedStruct<"ENUM_VALUE
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -326,7 +326,7 @@ export declare const EnumValueDeprecationReasonRemoved: S.TaggedStruct<"ENUM_VAL
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -337,7 +337,7 @@ export declare const InputFieldAdded: S.TaggedStruct<"INPUT_FIELD_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -347,7 +347,7 @@ export declare const InputFieldRemoved: S.TaggedStruct<"INPUT_FIELD_REMOVED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -359,7 +359,7 @@ export declare const InputFieldTypeChanged: S.TaggedStruct<"INPUT_FIELD_TYPE_CHA
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -370,7 +370,7 @@ export declare const InputFieldDescriptionAdded: S.TaggedStruct<"INPUT_FIELD_DES
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -380,7 +380,7 @@ export declare const InputFieldDescriptionRemoved: S.TaggedStruct<"INPUT_FIELD_D
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -392,7 +392,7 @@ export declare const InputFieldDescriptionChanged: S.TaggedStruct<"INPUT_FIELD_D
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -404,7 +404,7 @@ export declare const InputFieldDefaultValueChanged: S.TaggedStruct<"INPUT_FIELD_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -414,7 +414,7 @@ export declare const UnionMemberAdded: S.TaggedStruct<"UNION_MEMBER_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -424,7 +424,7 @@ export declare const UnionMemberRemoved: S.TaggedStruct<"UNION_MEMBER_REMOVED", 
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -434,7 +434,7 @@ export declare const ObjectTypeInterfaceAdded: S.TaggedStruct<"OBJECT_TYPE_INTER
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -444,7 +444,7 @@ export declare const ObjectTypeInterfaceRemoved: S.TaggedStruct<"OBJECT_TYPE_INT
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -454,7 +454,7 @@ export declare const DirectiveAdded: S.TaggedStruct<"DIRECTIVE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -463,7 +463,7 @@ export declare const DirectiveRemoved: S.TaggedStruct<"DIRECTIVE_REMOVED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -474,7 +474,7 @@ export declare const DirectiveDescriptionChanged: S.TaggedStruct<"DIRECTIVE_DESC
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -484,7 +484,7 @@ export declare const DirectiveLocationAdded: S.TaggedStruct<"DIRECTIVE_LOCATION_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -494,7 +494,7 @@ export declare const DirectiveLocationRemoved: S.TaggedStruct<"DIRECTIVE_LOCATIO
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -505,7 +505,7 @@ export declare const DirectiveArgumentAdded: S.TaggedStruct<"DIRECTIVE_ARGUMENT_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -515,7 +515,7 @@ export declare const DirectiveArgumentRemoved: S.TaggedStruct<"DIRECTIVE_ARGUMEN
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -527,7 +527,7 @@ export declare const DirectiveArgumentDescriptionChanged: S.TaggedStruct<"DIRECT
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -539,7 +539,7 @@ export declare const DirectiveArgumentDefaultValueChanged: S.TaggedStruct<"DIREC
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -551,7 +551,7 @@ export declare const DirectiveArgumentTypeChanged: S.TaggedStruct<"DIRECTIVE_ARG
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -561,7 +561,7 @@ export declare const SchemaQueryTypeChanged: S.TaggedStruct<"SCHEMA_QUERY_TYPE_C
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -571,7 +571,7 @@ export declare const SchemaMutationTypeChanged: S.TaggedStruct<"SCHEMA_MUTATION_
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -581,7 +581,7 @@ export declare const SchemaSubscriptionTypeChanged: S.TaggedStruct<"SCHEMA_SUBSC
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>;
@@ -590,7 +590,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"TYPE_REMOVED", {
@@ -598,7 +598,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"TYPE_KIND_CHANGED", {
@@ -608,7 +608,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"TYPE_DESCRIPTION_CHANGED", {
@@ -618,7 +618,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"TYPE_DESCRIPTION_ADDED", {
@@ -627,7 +627,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"TYPE_DESCRIPTION_REMOVED", {
@@ -635,7 +635,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ADDED", {
@@ -646,7 +646,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_REMOVED", {
@@ -655,7 +655,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_TYPE_CHANGED", {
@@ -667,7 +667,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DEPRECATION_ADDED", {
@@ -677,7 +677,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DEPRECATION_REMOVED", {
@@ -686,7 +686,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DEPRECATION_REASON_CHANGED", {
@@ -697,7 +697,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DEPRECATION_REASON_ADDED", {
@@ -707,7 +707,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DEPRECATION_REASON_REMOVED", {
@@ -716,7 +716,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DESCRIPTION_CHANGED", {
@@ -727,7 +727,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DESCRIPTION_ADDED", {
@@ -737,7 +737,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_DESCRIPTION_REMOVED", {
@@ -746,7 +746,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ARGUMENT_ADDED", {
@@ -758,7 +758,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ARGUMENT_REMOVED", {
@@ -768,7 +768,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ARGUMENT_TYPE_CHANGED", {
@@ -780,7 +780,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ARGUMENT_DESCRIPTION_CHANGED", {
@@ -792,7 +792,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"FIELD_ARGUMENT_DEFAULT_CHANGED", {
@@ -804,7 +804,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_ADDED", {
@@ -814,7 +814,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_REMOVED", {
@@ -823,7 +823,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DESCRIPTION_CHANGED", {
@@ -834,7 +834,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DEPRECATION_ADDED", {
@@ -844,7 +844,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DEPRECATION_REMOVED", {
@@ -853,7 +853,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DEPRECATION_REASON_CHANGED", {
@@ -864,7 +864,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DEPRECATION_REASON_ADDED", {
@@ -874,7 +874,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"ENUM_VALUE_DEPRECATION_REASON_REMOVED", {
@@ -883,7 +883,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_ADDED", {
@@ -893,7 +893,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_REMOVED", {
@@ -902,7 +902,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_TYPE_CHANGED", {
@@ -913,7 +913,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_DESCRIPTION_ADDED", {
@@ -923,7 +923,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_DESCRIPTION_REMOVED", {
@@ -932,7 +932,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_DESCRIPTION_CHANGED", {
@@ -943,7 +943,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"INPUT_FIELD_DEFAULT_VALUE_CHANGED", {
@@ -954,7 +954,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"UNION_MEMBER_ADDED", {
@@ -963,7 +963,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"UNION_MEMBER_REMOVED", {
@@ -972,7 +972,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"OBJECT_TYPE_INTERFACE_ADDED", {
@@ -981,7 +981,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"OBJECT_TYPE_INTERFACE_REMOVED", {
@@ -990,7 +990,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ADDED", {
@@ -999,7 +999,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_REMOVED", {
@@ -1007,7 +1007,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_DESCRIPTION_CHANGED", {
@@ -1017,7 +1017,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_LOCATION_ADDED", {
@@ -1026,7 +1026,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_LOCATION_REMOVED", {
@@ -1035,7 +1035,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ARGUMENT_ADDED", {
@@ -1045,7 +1045,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ARGUMENT_REMOVED", {
@@ -1054,7 +1054,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED", {
@@ -1065,7 +1065,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED", {
@@ -1076,7 +1076,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"DIRECTIVE_ARGUMENT_TYPE_CHANGED", {
@@ -1087,7 +1087,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"SCHEMA_QUERY_TYPE_CHANGED", {
@@ -1096,7 +1096,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"SCHEMA_MUTATION_TYPE_CHANGED", {
@@ -1105,7 +1105,7 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>, S.TaggedStruct<"SCHEMA_SUBSCRIPTION_TYPE_CHANGED", {
@@ -1114,73 +1114,100 @@ export declare const Change: S.Union<[S.TaggedStruct<"TYPE_ADDED", {
     message: typeof S.String;
     path: S.optional<typeof S.String>;
     criticality: S.Struct<{
-        level: any;
+        level: S.Literal<["BREAKING", "DANGEROUS", "NON_BREAKING"]>;
         reason: S.optional<typeof S.String>;
     }>;
 }>]>;
 export type Change = typeof Change.Type;
 export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isDeprecated: boolean;
     readonly isSafe: boolean;
 } | {
     readonly _tag: "FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isSafe: boolean;
@@ -1189,23 +1216,32 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
 } | {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldReason?: string | undefined;
@@ -1213,23 +1249,32 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -1237,23 +1282,32 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
 } | {
     readonly _tag: "FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -1261,17 +1315,23 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
     readonly defaultValue?: unknown;
 } | {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldType: string;
@@ -1279,9 +1339,12 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -1289,9 +1352,12 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -1299,87 +1365,120 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly isDeprecated: boolean;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldReason?: string | undefined;
     readonly newReason?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "INPUT_FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
     readonly isNullable: boolean;
 } | {
     readonly _tag: "INPUT_FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldType: string;
     readonly newType: string;
@@ -1387,182 +1486,254 @@ export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly inputName: string;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly locations: readonly string[];
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly type: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType: string;
     readonly newType: string;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 };
 export declare const isTypeAdded: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 };
 export declare const isTypeRemoved: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 };
 export declare const isFieldAdded: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly _tag: "FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isDeprecated: boolean;
@@ -1570,9 +1741,12 @@ export declare const isFieldAdded: (u: unknown, overrideOptions?: import("effect
 };
 export declare const isFieldRemoved: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly _tag: "FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 };
@@ -1581,62 +1755,69 @@ export declare const isDangerous: (change: Change) => boolean;
 export declare const isSafe: (change: Change) => boolean;
 export declare const decode: (i: {
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "FIELD_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1647,7 +1828,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1656,7 +1838,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1668,7 +1851,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1678,7 +1862,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1687,7 +1872,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1699,7 +1885,8 @@ export declare const decode: (i: {
     readonly reason: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1708,7 +1895,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1717,7 +1905,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1729,7 +1918,8 @@ export declare const decode: (i: {
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1738,7 +1928,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1747,7 +1938,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1759,7 +1951,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1769,7 +1962,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1781,7 +1975,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1793,7 +1988,8 @@ export declare const decode: (i: {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -1803,29 +1999,32 @@ export declare const decode: (i: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly isDeprecated: boolean;
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -1833,29 +2032,32 @@ export declare const decode: (i: {
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly reason?: string | undefined;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -1864,19 +2066,21 @@ export declare const decode: (i: {
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -1884,7 +2088,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1894,7 +2099,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1903,7 +2109,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly oldType: string;
@@ -1915,7 +2122,8 @@ export declare const decode: (i: {
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1924,7 +2132,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1933,7 +2142,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1944,7 +2154,8 @@ export declare const decode: (i: {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -1953,27 +2164,30 @@ export declare const decode: (i: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly unionName: string;
+    readonly memberName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly unionName: string;
+    readonly memberName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly objectName: string;
     readonly interfaceName: string;
@@ -1982,61 +2196,68 @@ export declare const decode: (i: {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly objectName: string;
     readonly interfaceName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly locations: readonly string[];
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly location: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly location: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly type: string;
@@ -2046,7 +2267,8 @@ export declare const decode: (i: {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -2055,7 +2277,8 @@ export declare const decode: (i: {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -2066,7 +2289,8 @@ export declare const decode: (i: {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -2077,7 +2301,8 @@ export declare const decode: (i: {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly oldType: string;
     readonly newType: string;
@@ -2088,7 +2313,8 @@ export declare const decode: (i: {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
@@ -2097,7 +2323,8 @@ export declare const decode: (i: {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
@@ -2106,73 +2333,101 @@ export declare const decode: (i: {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 }, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<{
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isDeprecated: boolean;
     readonly isSafe: boolean;
 } | {
     readonly _tag: "FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isSafe: boolean;
@@ -2181,23 +2436,32 @@ export declare const decode: (i: {
 } | {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldReason?: string | undefined;
@@ -2205,23 +2469,32 @@ export declare const decode: (i: {
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -2229,23 +2502,32 @@ export declare const decode: (i: {
 } | {
     readonly _tag: "FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -2253,17 +2535,23 @@ export declare const decode: (i: {
     readonly defaultValue?: unknown;
 } | {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldType: string;
@@ -2271,9 +2559,12 @@ export declare const decode: (i: {
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -2281,9 +2572,12 @@ export declare const decode: (i: {
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -2291,87 +2585,120 @@ export declare const decode: (i: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly isDeprecated: boolean;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldReason?: string | undefined;
     readonly newReason?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "INPUT_FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
     readonly isNullable: boolean;
 } | {
     readonly _tag: "INPUT_FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldType: string;
     readonly newType: string;
@@ -2379,225 +2706,315 @@ export declare const decode: (i: {
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly inputName: string;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly locations: readonly string[];
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly type: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType: string;
     readonly newType: string;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
-}, import("effect/ParseResult").ParseError, any>;
+}, import("effect/ParseResult").ParseError, never>;
 export declare const encode: (a: {
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isDeprecated: boolean;
     readonly isSafe: boolean;
 } | {
     readonly _tag: "FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isSafe: boolean;
@@ -2606,23 +3023,32 @@ export declare const encode: (a: {
 } | {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldReason?: string | undefined;
@@ -2630,23 +3056,32 @@ export declare const encode: (a: {
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -2654,23 +3089,32 @@ export declare const encode: (a: {
 } | {
     readonly _tag: "FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -2678,17 +3122,23 @@ export declare const encode: (a: {
     readonly defaultValue?: unknown;
 } | {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldType: string;
@@ -2696,9 +3146,12 @@ export declare const encode: (a: {
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -2706,9 +3159,12 @@ export declare const encode: (a: {
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -2716,87 +3172,120 @@ export declare const encode: (a: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly isDeprecated: boolean;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldReason?: string | undefined;
     readonly newReason?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "INPUT_FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
     readonly isNullable: boolean;
 } | {
     readonly _tag: "INPUT_FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldType: string;
     readonly newType: string;
@@ -2804,220 +3293,290 @@ export declare const encode: (a: {
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly inputName: string;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly locations: readonly string[];
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly type: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType: string;
     readonly newType: string;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 }, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<{
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "FIELD_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3028,7 +3587,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3037,7 +3597,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3049,7 +3610,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3059,7 +3621,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3068,7 +3631,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3080,7 +3644,8 @@ export declare const encode: (a: {
     readonly reason: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3089,7 +3654,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3098,7 +3664,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3110,7 +3677,8 @@ export declare const encode: (a: {
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3119,7 +3687,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3128,7 +3697,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3140,7 +3710,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3150,7 +3721,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3162,7 +3734,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3174,7 +3747,8 @@ export declare const encode: (a: {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly typeName: string;
     readonly fieldName: string;
@@ -3184,29 +3758,32 @@ export declare const encode: (a: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly isDeprecated: boolean;
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -3214,29 +3791,32 @@ export declare const encode: (a: {
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly reason?: string | undefined;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -3245,19 +3825,21 @@ export declare const encode: (a: {
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly message: string;
     readonly value: string;
+    readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly enumName: string;
     readonly path?: string | undefined;
@@ -3265,7 +3847,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3275,7 +3858,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3284,7 +3868,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly oldType: string;
@@ -3296,7 +3881,8 @@ export declare const encode: (a: {
     readonly description: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3305,7 +3891,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3314,7 +3901,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3325,7 +3913,8 @@ export declare const encode: (a: {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly fieldName: string;
     readonly inputName: string;
@@ -3334,27 +3923,30 @@ export declare const encode: (a: {
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly unionName: string;
+    readonly memberName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly unionName: string;
+    readonly memberName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly objectName: string;
     readonly interfaceName: string;
@@ -3363,61 +3955,68 @@ export declare const encode: (a: {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly objectName: string;
     readonly interfaceName: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly locations: readonly string[];
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly path?: string | undefined;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly location: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
+    readonly name: string;
     readonly location: string;
     readonly path?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly type: string;
@@ -3427,7 +4026,8 @@ export declare const encode: (a: {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -3436,7 +4036,8 @@ export declare const encode: (a: {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -3447,7 +4048,8 @@ export declare const encode: (a: {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly argumentName: string;
     readonly directiveName: string;
@@ -3458,7 +4060,8 @@ export declare const encode: (a: {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly oldType: string;
     readonly newType: string;
@@ -3469,7 +4072,8 @@ export declare const encode: (a: {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
@@ -3478,7 +4082,8 @@ export declare const encode: (a: {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
@@ -3487,12 +4092,13 @@ export declare const encode: (a: {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
     readonly message: string;
     readonly criticality: {
-        readonly [x: string]: any;
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
     };
     readonly path?: string | undefined;
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
-}, import("effect/ParseResult").ParseError, any>;
+}, import("effect/ParseResult").ParseError, never>;
 /**
  * Pattern match on all change types with a default handler
  */
@@ -3511,66 +4117,93 @@ export declare const match: <$A>(change: Change) => {
 export declare const getCategory: (change: Change) => "type" | "field" | "enum" | "input" | "union" | "interface" | "directive" | "schema";
 export declare const equivalence: import("effect/Equivalence").Equivalence<{
     readonly _tag: "TYPE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_KIND_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldKind: string;
     readonly newKind: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_ADDED";
-    readonly name: string;
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "TYPE_DESCRIPTION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isDeprecated: boolean;
     readonly isSafe: boolean;
 } | {
     readonly _tag: "FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly isSafe: boolean;
@@ -3579,23 +4212,32 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
 } | {
     readonly _tag: "FIELD_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldReason?: string | undefined;
@@ -3603,23 +4245,32 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -3627,23 +4278,32 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
 } | {
     readonly _tag: "FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -3651,17 +4311,23 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
     readonly defaultValue?: unknown;
 } | {
     readonly _tag: "FIELD_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly oldType: string;
@@ -3669,9 +4335,12 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly typeName: string;
@@ -3679,9 +4348,12 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
     readonly argumentName: string;
 } | {
     readonly _tag: "FIELD_ARGUMENT_DEFAULT_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly typeName: string;
     readonly fieldName: string;
     readonly argumentName: string;
@@ -3689,87 +4361,120 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
     readonly newDefault?: unknown;
 } | {
     readonly _tag: "ENUM_VALUE_ADDED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly isDeprecated: boolean;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_ADDED";
     readonly reason?: string | undefined;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_CHANGED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldReason?: string | undefined;
     readonly newReason?: string | undefined;
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_ADDED";
     readonly reason: string;
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "ENUM_VALUE_DEPRECATION_REASON_REMOVED";
-    readonly path?: string | undefined;
-    readonly message: string;
     readonly value: string;
-    readonly criticality: any;
+    readonly message: string;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly enumName: string;
 } | {
     readonly _tag: "INPUT_FIELD_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
     readonly isNullable: boolean;
 } | {
     readonly _tag: "INPUT_FIELD_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldType: string;
     readonly newType: string;
@@ -3777,160 +4482,223 @@ export declare const equivalence: import("effect/Equivalence").Equivalence<{
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_ADDED";
     readonly description: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly fieldName: string;
     readonly inputName: string;
 } | {
     readonly _tag: "INPUT_FIELD_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly fieldName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly inputName: string;
 } | {
     readonly _tag: "UNION_MEMBER_ADDED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "UNION_MEMBER_REMOVED";
-    readonly memberName: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly unionName: string;
+    readonly memberName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "OBJECT_TYPE_INTERFACE_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly objectName: string;
     readonly interfaceName: string;
 } | {
     readonly _tag: "DIRECTIVE_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly locations: readonly string[];
 } | {
     readonly _tag: "DIRECTIVE_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
 } | {
     readonly _tag: "DIRECTIVE_DESCRIPTION_CHANGED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_ADDED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_LOCATION_REMOVED";
-    readonly name: string;
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
+    readonly name: string;
     readonly location: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_ADDED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly type: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_REMOVED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldDescription?: string | undefined;
     readonly newDescription?: string | undefined;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly argumentName: string;
     readonly oldDefault?: unknown;
     readonly newDefault?: unknown;
     readonly directiveName: string;
 } | {
     readonly _tag: "DIRECTIVE_ARGUMENT_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType: string;
     readonly newType: string;
     readonly argumentName: string;
     readonly directiveName: string;
 } | {
     readonly _tag: "SCHEMA_QUERY_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_MUTATION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 } | {
     readonly _tag: "SCHEMA_SUBSCRIPTION_TYPE_CHANGED";
-    readonly path?: string | undefined;
     readonly message: string;
-    readonly criticality: any;
+    readonly path?: string | undefined;
+    readonly criticality: {
+        readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
+        readonly reason?: string | undefined;
+    };
     readonly oldType?: string | undefined;
     readonly newType?: string | undefined;
 }>;

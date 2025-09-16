@@ -1,5 +1,5 @@
 import { S } from '#kit-temp'
-import { Version } from '#version/$'
+import { Version } from '#version'
 import { Array, HashSet, pipe } from 'effect'
 
 // ============================================================================

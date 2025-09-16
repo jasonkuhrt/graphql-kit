@@ -52,7 +52,11 @@
       "#version-coverage": ["./src/version-coverage/$.ts"],
       "#version-coverage/*": ["./src/version-coverage/*"],
       "#kit-temp": ["./src/kit-temp/$.ts"],
+      "#kit-temp/$$": ["./src/kit-temp/$$.ts"],
       "#kit-temp/*": ["./src/kit-temp/*"],
+      "#catalog/$$": ["./src/catalog/$$.ts"],
+      "#semver": ["./src/semver/$.ts"],
+      "#semver/*": ["./src/semver/*"],
       "#grafaid-old": ["./src/grafaid-old/grafaid.ts"]
     },
 

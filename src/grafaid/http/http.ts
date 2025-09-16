@@ -78,7 +78,7 @@ export const getRequestEncodeSearchParameters = (
 }
 export type getRequestEncodeSearchParameters = typeof getRequestEncodeSearchParameters
 
-export const postRequestEncodeBody = (input: RequestConfig): BodyInit => {
+export const postRequestEncodeBody = (input: RequestConfig): string => {
   return JSON.stringify({
     query: input.query,
     variables: input.variables,

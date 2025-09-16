@@ -1,1 +1,1 @@
-export * as Catalog from './catalog.js'
+export * as Catalog from './$$.js'
