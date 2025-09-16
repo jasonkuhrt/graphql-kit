@@ -1,6 +1,6 @@
 {
   "name": "graphql-kit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "GraphQL toolkit with Effect-based utilities",
   "author": "Jason Kuhrt",
   "license": "MIT",
@@ -101,6 +101,8 @@
     "./grafaid": "./build/grafaid/$$.js",
     "./graphql-schema-path": "./build/graphql-schema-path/$$.js",
     "./catalog": "./build/catalog/$$.js",
+    "./catalog-statistics": "./build/catalog-statistics/$$.js",
+    "./document": "./build/document/$$.js",
     "./schema": "./build/schema/schema.js",
     "./lifecycles": "./build/lifecycles/$$.js",
     "./change": "./build/change/$$.js",

@@ -1,7 +1,9 @@
 // Namespace exports from root package
 export { Catalog } from '../catalog/$.js'
+export { CatalogStatistics } from '../catalog-statistics/$.js'
 export { Change } from '../change/$.js'
 export { DateOnly } from '../date-only/$.js'
+export { Document } from '../document/$.js'
 export { Grafaid } from '../grafaid/$.js'
 export { GrafaidOld } from '../grafaid-old/$.js'
 export { GraphQLError } from '../graphql-error/$.js'
@@ -13,4 +15,5 @@ export { Schema } from '../schema/$.js'
 export { SchemaDefinition } from '../schema-definition/$.js'
 export { Version } from '../version/$.js'
 export { VersionCoverage } from '../version-coverage/$.js'
-// kit-temp doesn't have a namespace, access via graphql-kit/kit-temp
+// kit-temp exports (barrel exports, no namespace)
+export * from '../kit-temp/$$.js'
