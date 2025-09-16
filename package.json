@@ -45,8 +45,8 @@
     }
   },
   "dependencies": {
-    "@effect/platform": "latest",
-    "@effect/platform-node": "latest",
+    "@effect/platform": "^0.90.7",
+    "@effect/platform-node": "^0.96.1",
     "@graphql-inspector/core": "^6.0.0",
     "@wollybeard/kit": "latest",
     "effect": "^3.0.0",
