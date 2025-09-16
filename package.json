@@ -117,7 +117,9 @@
     "./version/date": "./build/version/date.js",
     "./version/integer": "./build/version/integer.js",
     "./version/semver": "./build/version/semver.js",
-    "./graphql-schema-path/nodes/type": "./build/graphql-schema-path/nodes/type.js"
+    "./graphql-schema-path/nodes/type": "./build/graphql-schema-path/nodes/type.js",
+    "./schema-definition/graphql-ast": "./build/schema-definition/graphql-ast.js",
+    "./schema/versioned": "./build/schema/versioned.js"
   },
   "type": "module"
 }
