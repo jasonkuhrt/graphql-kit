@@ -52,8 +52,10 @@
     "effect": "^3.0.0",
     "fast-check": "^3.0.0",
     "graffle": "latest",
-    "graphql": "^16.0.0",
     "type-fest": "^4.0.0"
+  },
+  "peerDependencies": {
+    "graphql": "^16.0.0"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^22.0.1",
@@ -62,6 +64,7 @@
     "@vltpkg/semver": "0.0.0-29",
     "dprint": "^0.50.0",
     "dripip": "^0.10.0",
+    "graphql": "^16.0.0",
     "madge": "^8.0.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",

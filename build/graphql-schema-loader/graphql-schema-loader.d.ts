@@ -1,4 +1,4 @@
-import { Grafaid } from '#grafaid';
+import { Grafaid } from '../grafaid/$.js';
 import { FileSystem } from '@effect/platform/FileSystem';
 import { Effect } from 'effect';
 export type SchemaPointer = {

@@ -1,10 +1,11 @@
-import { Grafaid } from '#grafaid'
+import { Grafaid } from '../grafaid/$.js'
 import { FileSystem } from '@effect/platform/FileSystem'
 import { Fs } from '@wollybeard/kit'
 import { neverCase } from '@wollybeard/kit/language'
 import { Effect } from 'effect'
-import { Graffle } from 'graffle'
-import { Introspection } from 'graffle/extensions/introspection'
+// TODO: Fix graffle import - currently broken in graffle@0.0.0
+// import Graffle from 'graffle'
+// import { Introspection } from 'graffle/extensions/introspection'
 
 export type SchemaPointer = {
   type: `introspect`
@@ -22,24 +23,28 @@ export const load = (source: SchemaPointer): Effect.Effect<Grafaid.Schema.Schema
   Effect.gen(function*() {
     switch (source.type) {
       case `introspect`: {
-        const graffle = Graffle
-          .create()
-          .use(Introspection())
-          .transport({
-            url: source.url,
-            headers: source.headers || {},
-          })
+        // TODO: Re-enable when graffle is properly installed and working
+        return yield* Effect.fail(
+          new Error(`Schema introspection is temporarily disabled. Graffle dependency needs to be fixed.`)
+        )
+        // const graffle = Graffle
+        //   .create()
+        //   .use(Introspection())
+        //   .transport({
+        //     url: source.url,
+        //     headers: source.headers || {},
+        //   })
 
-        const introspectionResult = yield* Effect.tryPromise({
-          try: () => graffle.introspect(),
-          catch: (error) => new Error(`Failed to introspect schema: ${error}`),
-        })
+        // const introspectionResult = yield* Effect.tryPromise({
+        //   try: () => (graffle as any).introspect(),
+        //   catch: (error) => new Error(`Failed to introspect schema: ${error}`),
+        // })
 
-        if (!introspectionResult) {
-          return yield* Effect.fail(new Error(`Failed to introspect schema.`))
-        }
+        // if (!introspectionResult) {
+        //   return yield* Effect.fail(new Error(`Failed to introspect schema.`))
+        // }
 
-        return Grafaid.Schema.fromIntrospectionQuery(introspectionResult)
+        // return Grafaid.Schema.fromIntrospectionQuery(introspectionResult as any)
       }
       case `sdl`: {
         if (URL.canParse(source.pathOrUrl)) {
