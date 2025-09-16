@@ -26,23 +26,23 @@ export declare const single: (version: Version.Version) => VersionCoverage;
  * Create a version set coverage
  */
 export declare const set: (versions: Version.Version[]) => VersionCoverage;
-export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>;
+export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>;
 export declare const isUnversioned: (coverage: VersionCoverage) => coverage is VersionCoverageUnversioned;
 export declare const isSingle: (coverage: VersionCoverage) => coverage is Version.Version;
 export declare const isSet: (coverage: VersionCoverage) => coverage is HashSet.HashSet<Version.Version>;
 export declare const decode: (i: string | number | readonly (string | number)[] | {
     readonly _tag: "VersionCoverageUnversioned";
-}, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>, import("effect/ParseResult").ParseError, never>;
+}, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>, import("effect/ParseResult").ParseError, never>;
 export declare const decodeSync: (i: string | number | readonly (string | number)[] | {
     readonly _tag: "VersionCoverageUnversioned";
-}, overrideOptions?: import("effect/SchemaAST").ParseOptions) => Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>;
-export declare const encode: (a: Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<string | number | readonly (string | number)[] | {
+}, overrideOptions?: import("effect/SchemaAST").ParseOptions) => Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>;
+export declare const encode: (a: Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<string | number | readonly (string | number)[] | {
     readonly _tag: "VersionCoverageUnversioned";
 }, import("effect/ParseResult").ParseError, never>;
-export declare const encodeSync: (a: Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>, overrideOptions?: import("effect/SchemaAST").ParseOptions) => string | number | readonly (string | number)[] | {
+export declare const encodeSync: (a: Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>, overrideOptions?: import("effect/SchemaAST").ParseOptions) => string | number | readonly (string | number)[] | {
     readonly _tag: "VersionCoverageUnversioned";
 };
-export declare const equivalence: import("effect/Equivalence").Equivalence<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom | VersionCoverageUnversioned | HashSet.HashSet<Version.IntegerVersion.Integer | Version.SemverVersion.Semver | Version.DateVersion.Date | Version.CustomVersion.Custom>>;
+export declare const equivalence: import("effect/Equivalence").Equivalence<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver | VersionCoverageUnversioned | HashSet.HashSet<Version.CustomVersion.Custom | Version.DateVersion.Date | Version.IntegerVersion.Integer | Version.SemverVersion.Semver>>;
 /**
  * Check if a version is contained in a selection
  */

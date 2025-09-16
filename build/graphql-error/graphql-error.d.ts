@@ -57,11 +57,6 @@ export declare const makeLocation: (props: {
     readonly column: number;
 };
 export declare const makeValidationContext: (props: {
-    readonly version: string;
-    readonly example: {
-        readonly path: string;
-        readonly id: string;
-    };
     readonly errors: readonly {
         readonly message: string;
         readonly locations?: readonly {
@@ -69,12 +64,12 @@ export declare const makeValidationContext: (props: {
             readonly column: number;
         }[] | undefined;
     }[];
+    readonly version: string;
+    readonly example: {
+        readonly path: string;
+        readonly id: string;
+    };
 }, options?: S.MakeOptions) => {
-    readonly version: string;
-    readonly example: {
-        readonly path: string;
-        readonly id: string;
-    };
     readonly errors: readonly {
         readonly message: string;
         readonly locations?: readonly {
@@ -82,6 +77,11 @@ export declare const makeValidationContext: (props: {
             readonly column: number;
         }[] | undefined;
     }[];
+    readonly version: string;
+    readonly example: {
+        readonly path: string;
+        readonly id: string;
+    };
 };
 export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
     readonly message: string;
@@ -95,11 +95,6 @@ export declare const isLocation: (u: unknown, overrideOptions?: import("effect/S
     readonly column: number;
 };
 export declare const isValidationContext: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
-    readonly version: string;
-    readonly example: {
-        readonly path: string;
-        readonly id: string;
-    };
     readonly errors: readonly {
         readonly message: string;
         readonly locations?: readonly {
@@ -107,6 +102,11 @@ export declare const isValidationContext: (u: unknown, overrideOptions?: import(
             readonly column: number;
         }[] | undefined;
     }[];
+    readonly version: string;
+    readonly example: {
+        readonly path: string;
+        readonly id: string;
+    };
 };
 export declare const decode: (i: {
     readonly message: string;

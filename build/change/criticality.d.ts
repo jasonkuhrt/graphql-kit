@@ -7,15 +7,15 @@ export declare const Criticality: S.Struct<{
 export type Level = typeof Level.Type;
 export type Criticality = typeof Criticality.Type;
 export declare const make: (props: {
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 }, options?: S.MakeOptions) => {
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 };
 export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is {
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 };
 export declare const isBreaking: (criticality: Criticality) => boolean;
 export declare const isDangerous: (criticality: Criticality) => boolean;
@@ -24,18 +24,18 @@ export declare const decode: (i: {
     readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
 }, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<{
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 }, import("effect/ParseResult").ParseError, never>;
 export declare const encode: (a: {
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 }, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<{
     readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
 }, import("effect/ParseResult").ParseError, never>;
 export declare const equivalence: import("effect/Equivalence").Equivalence<{
-    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
     readonly reason?: string | undefined;
+    readonly level: "BREAKING" | "DANGEROUS" | "NON_BREAKING";
 }>;
 //# sourceMappingURL=criticality.d.ts.map

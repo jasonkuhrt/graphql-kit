@@ -111,7 +111,8 @@
     "./schema-definition": "./build/schema-definition/$.js",
     "./date-only": "./build/date-only/$.js",
     "./version-coverage": "./build/version-coverage/$.js",
-    "./kit-temp": "./build/kit-temp/$.js"
+    "./kit-temp": "./build/kit-temp/$.js",
+    "./grafaid-old": "./build/grafaid-old/$.js"
   },
   "type": "module"
 }

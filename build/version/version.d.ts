@@ -26,27 +26,27 @@ export type Version = typeof Version.Type;
  */
 export declare const order: Order.Order<Version>;
 export declare const min: {
-    (that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom) => IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
-    (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
+    (that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver) => CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
+    (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
 };
 export declare const max: {
-    (that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom) => IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
-    (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
+    (that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver) => CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
+    (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
 };
 export declare const lessThan: {
-    (that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom) => boolean;
-    (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): boolean;
+    (that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver) => boolean;
+    (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): boolean;
 };
 export declare const greaterThan: {
-    (that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom) => boolean;
-    (self: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, that: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom): boolean;
+    (that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver) => boolean;
+    (self: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, that: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver): boolean;
 };
 export declare const equivalence: Equivalence.Equivalence<Version>;
-export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
-export declare const decode: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, ParseResult.ParseError, never>;
-export declare const decodeSync: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
-export declare const encode: (a: IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<string | number, ParseResult.ParseError, never>;
-export declare const fromString: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => IntegerVersion.Integer | SemverVersion.Semver | DateVersion.Date | CustomVersion.Custom;
+export declare const is: (u: unknown, overrideOptions?: import("effect/SchemaAST").ParseOptions | number) => u is CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
+export declare const decode: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, ParseResult.ParseError, never>;
+export declare const decodeSync: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
+export declare const encode: (a: CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver, overrideOptions?: import("effect/SchemaAST").ParseOptions) => import("effect/Effect").Effect<string | number, ParseResult.ParseError, never>;
+export declare const fromString: (i: string | number, overrideOptions?: import("effect/SchemaAST").ParseOptions) => CustomVersion.Custom | DateVersion.Date | IntegerVersion.Integer | SemverVersion.Semver;
 /**
  * Create a semver version
  */
