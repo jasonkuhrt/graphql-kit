@@ -543,7 +543,7 @@ export declare const Unversioned: S.Struct<{
                 }>;
             }>]>>;
         }>>;
-        definition: S.transformOrFail<S.declare<import("../schema-definition/graphql-ast.ts").Ast, import("../schema-definition/graphql-ast.ts").Ast, readonly [], never>, S.instanceOf<import("graphql").GraphQLSchema>, never>;
+        definition: S.transformOrFail<S.declare<import("../schema-definition/graphql-ast.ts").Ast, import("../schema-definition/graphql-ast.ts").Ast, readonly [], never>, S.Schema<import("graphql").GraphQLSchema, import("graphql").GraphQLSchema, never>, never>;
         categories: S.optionalWith<S.Array$<S.Struct<{
             name: typeof S.String;
             types: S.Array$<typeof S.String>;

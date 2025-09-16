@@ -6,7 +6,16 @@ import { graphqlAst } from './graphql-ast.js';
 // ============================================================================
 // Schema
 // ============================================================================
-export const SchemaDefinition = S.transformOrFail(graphqlAst, S.instanceOf(GraphQLSchema), {
+// Create a schema that validates GraphQLSchema shape without instanceof check
+const GraphQLSchemaType = S.Any.pipe(S.filter((value) => {
+    // Check if it looks like a GraphQLSchema without using instanceof
+    return value != null &&
+        typeof value === 'object' &&
+        '_typeMap' in value &&
+        'getType' in value &&
+        typeof value.getType === 'function';
+}));
+export const SchemaDefinition = S.transformOrFail(graphqlAst, GraphQLSchemaType, {
     strict: true,
     decode: (ast, options, astSchema) => {
         try {

@@ -1,7 +1,7 @@
 import { S } from '#kit-temp';
 import { ParseResult } from 'effect';
 import { GraphQLSchema } from 'graphql';
-export declare const SchemaDefinition: S.transformOrFail<S.declare<import("./graphql-ast.js").Ast, import("./graphql-ast.js").Ast, readonly [], never>, S.instanceOf<GraphQLSchema>, never>;
+export declare const SchemaDefinition: S.transformOrFail<S.declare<import("./graphql-ast.js").Ast, import("./graphql-ast.js").Ast, readonly [], never>, S.Schema<GraphQLSchema, GraphQLSchema, never>, never>;
 export type SchemaDefinition = typeof SchemaDefinition.Type;
 export declare const sdl: {
     decode: (i: string, overrideOptions?: import("effect/SchemaAST").ParseOptions) => GraphQLSchema;
