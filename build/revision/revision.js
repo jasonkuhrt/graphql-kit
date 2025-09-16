@@ -1,0 +1,45 @@
+import { Change } from '#change/$';
+import { DateOnly } from '#date-only/$';
+import { S } from '#kit-temp';
+import { Order } from 'effect';
+// ============================================================================
+// Schema
+// ============================================================================
+export const Revision = S.TaggedStruct('Revision', {
+    date: DateOnly.DateOnly,
+    changes: S.Array(Change.Change),
+}).annotations({
+    identifier: 'Revision',
+    title: 'Revision',
+    description: 'A revision in the schema history',
+});
+// ============================================================================
+// Constructors
+// ============================================================================
+/**
+ * Create a Revision instance with validation
+ */
+export const make = Revision.make;
+// ============================================================================
+// Type Guard
+// ============================================================================
+export const is = S.is(Revision);
+// ============================================================================
+// Ordering
+// ============================================================================
+export const order = Order.reverse(Order.mapInput(DateOnly.order, (revision) => revision.date));
+export const min = Order.min(order);
+export const max = Order.max(order);
+export const lessThan = Order.lessThan(order);
+export const greaterThan = Order.greaterThan(order);
+// ============================================================================
+// Codec
+// ============================================================================
+export const decode = S.decode(Revision);
+export const decodeSync = S.decodeSync(Revision);
+export const encode = S.encode(Revision);
+// ============================================================================
+// Equivalence
+// ============================================================================
+export const equivalence = S.equivalence(Revision);
+//# sourceMappingURL=revision.js.map

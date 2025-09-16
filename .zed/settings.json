@@ -1,0 +1,18 @@
+{
+  "lsp": {
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": [
+                "package.json"
+              ],
+              "url": "./node_modules/libra/schema/package-json-libra.json"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

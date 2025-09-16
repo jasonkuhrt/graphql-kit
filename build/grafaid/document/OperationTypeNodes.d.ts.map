@@ -1,0 +1,1 @@
+{"version":3,"file":"OperationTypeNodes.d.ts","sourceRoot":"","sources":["../../../src/grafaid/document/OperationTypeNodes.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,OAAO,KAAK,EAAE,iBAAiB,IAAI,wBAAwB,EAAE,MAAM,SAAS,CAAA;AAE5E,eAAO,MAAM,KAAK,EAAc,wBAAwB,CAAC,KAAK,CAAA;AAC9D,eAAO,MAAM,QAAQ,EAAiB,wBAAwB,CAAC,QAAQ,CAAA;AACvE,eAAO,MAAM,YAAY,EAAqB,wBAAwB,CAAC,YAAY,CAAA"}

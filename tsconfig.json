@@ -1,0 +1,70 @@
+// @libra
+{
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node-lts/tsconfig.json"
+  ],
+  "compilerOptions": {
+    // Package
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    // Output
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true, // Run source with NodeJS
+
+    // DX
+    "moduleDetection": "force",
+    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
+    "noErrorTruncation": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": false, // Great for conditional middlewares
+    "paths": {
+      "#*": ["./src/*"],
+      "#grafaid": ["./src/grafaid/$.ts"],
+      "#grafaid/*": ["./src/grafaid/*"],
+      "#graphql-schema-path": ["./src/graphql-schema-path/$.ts"],
+      "#graphql-schema-path/*": ["./src/graphql-schema-path/*"],
+      "#catalog": ["./src/catalog/$.ts"],
+      "#catalog/*": ["./src/catalog/*"],
+      "#schema": ["./src/schema/$.ts"],
+      "#schema/*": ["./src/schema/*"],
+      "#lifecycles": ["./src/lifecycles/$.ts"],
+      "#lifecycles/*": ["./src/lifecycles/*"],
+      "#change": ["./src/change/$.ts"],
+      "#change/*": ["./src/change/*"],
+      "#revision": ["./src/revision/$.ts"],
+      "#revision/*": ["./src/revision/*"],
+      "#version": ["./src/version/$.ts"],
+      "#version/*": ["./src/version/*"],
+      "#graphql-error": ["./src/graphql-error/$.ts"],
+      "#graphql-error/*": ["./src/graphql-error/*"],
+      "#graphql-schema-loader": ["./src/graphql-schema-loader/$.ts"],
+      "#graphql-schema-loader/*": ["./src/graphql-schema-loader/*"],
+      "#schema-definition": ["./src/schema-definition/$.ts"],
+      "#schema-definition/*": ["./src/schema-definition/*"],
+      "#date-only": ["./src/date-only/$.ts"],
+      "#date-only/*": ["./src/date-only/*"],
+      "#version-coverage": ["./src/version-coverage/$.ts"],
+      "#version-coverage/*": ["./src/version-coverage/*"],
+      "#kit-temp": ["./src/kit-temp/$.ts"],
+      "#kit-temp/*": ["./src/kit-temp/*"],
+      "#grafaid-old": ["./src/grafaid-old/grafaid.ts"]
+    },
+
+    // DX covered by linter:
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    // DX for Downstream
+    "isolatedModules": true, // performance
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "exclude": ["build", "eslint.config.js"]
+}

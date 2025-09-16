@@ -1,0 +1,135 @@
+import { S } from '#kit-temp';
+import { Schema } from '#schema/$';
+import { VersionCoverage } from '#version-coverage';
+import { Version } from '#version/$';
+import { Data, Either, HashMap, Match, Option } from 'effect';
+import * as Unversioned from './unversioned.js';
+import * as Versioned from './versioned.js';
+export * as Unversioned from './unversioned.js';
+export * as Versioned from './versioned.js';
+// ============================================================================
+// Error Types
+// ============================================================================
+/**
+ * Error thrown when a version is not found in the catalog
+ */
+export class VersionNotFoundInCatalogError extends Data.TaggedError('VersionNotFoundInCatalogError') {
+}
+/**
+ * Error thrown when a catalog has no entries
+ */
+export class EmptyCatalogError extends Data.TaggedError('EmptyCatalogError') {
+}
+// ============================================================================
+// Schema
+// ============================================================================
+export const Catalog = S.Union(Versioned.Versioned, Unversioned.Unversioned).annotations({
+    identifier: 'Catalog',
+    title: 'Schema Catalog',
+    description: 'A catalog of GraphQL schemas and their revision history',
+});
+// ============================================================================
+// Type Guard
+// ============================================================================
+export const is = S.is(Catalog);
+// ============================================================================
+// Pattern Matching
+// ============================================================================
+export const fold = (onVersioned, onUnversioned) => (catalog) => catalog._tag === 'CatalogVersioned' ? onVersioned(catalog) : onUnversioned(catalog);
+// ============================================================================
+// Codec
+// ============================================================================
+export const decode = S.decode(Catalog);
+export const decodeSync = S.decodeSync(Catalog);
+export const encode = S.encode(Catalog);
+export const encodeSync = S.encodeSync(Catalog);
+// ============================================================================
+// Equivalence
+// ============================================================================
+export const equivalence = S.equivalence(Catalog);
+// ============================================================================
+// Helpers
+// ============================================================================
+/**
+ * Get the number of versions in a catalog.
+ * For versioned catalogs, this is the number of entries.
+ * For unversioned catalogs, this is always 1.
+ */
+export const getVersionCount = (catalog) => fold((versioned) => HashMap.size(versioned.entries), (_unversioned) => 1)(catalog);
+/**
+ * Get the version string from a schema.
+ * Returns the stringified version for versioned schemas, or '__UNVERSIONED__' for unversioned schemas.
+ */
+export const getSchemaVersionString = (schema) => {
+    const version = Schema.getVersion(schema);
+    return version ? Version.encodeSync(version) : '__UNVERSIONED__';
+};
+/**
+ * Get the version string from a schema.
+ * Returns the stringified version for versioned schemas, or '__UNVERSIONED__' for unversioned schemas.
+ */
+export const getLatest = (catalog) => Match.value(catalog).pipe(Match.tagsExhaustive({
+    CatalogVersioned: Versioned.getLatestOrThrow,
+    CatalogUnversioned: (unversioned) => unversioned.schema,
+}));
+/**
+ * Get the latest version identifier from a catalog.
+ * Returns the version for versioned catalogs, or none for unversioned catalogs.
+ */
+export const getLatestVersion = (catalog) => {
+    if (!catalog)
+        return Option.none();
+    return Match.value(catalog).pipe(Match.tagsExhaustive({
+        CatalogUnversioned: () => Option.none(),
+        CatalogVersioned: (cat) => {
+            const versions = Versioned.getVersions(cat);
+            return versions[0] ? Option.some(versions[0]) : Option.none();
+        },
+    }));
+};
+// ============================================================================
+// Resolution Functions
+// ============================================================================
+/**
+ * Resolve schema from catalog for a given version coverage.
+ *
+ * @param catalog - The schema catalog
+ * @param versionCoverage - The version coverage to use (optional, defaults to latest)
+ * @returns Either with the resolved schema or error
+ */
+export const resolveCatalogSchemaEither = (catalog, versionCoverage) => {
+    if (Unversioned.is(catalog)) {
+        return Either.right(catalog.schema);
+    }
+    // If no version coverage specified, use latest
+    if (!versionCoverage) {
+        return Versioned.getLatest(catalog);
+    }
+    // Get the latest version from the coverage
+    const version = VersionCoverage.getLatest(versionCoverage);
+    const schemaOption = HashMap.get(catalog.entries, version);
+    if (Option.isNone(schemaOption)) {
+        return Either.left(new VersionNotFoundInCatalogError({
+            version: Version.encodeSync(version),
+            reason: `Version ${Version.encodeSync(version)} not found in catalog`,
+        }));
+    }
+    return Either.right(Option.getOrThrow(schemaOption));
+};
+/**
+ * Resolve schema from catalog for a given version coverage.
+ *
+ * @param catalog - The schema catalog
+ * @param versionCoverage - The version coverage to use (optional, defaults to latest)
+ * @returns The resolved schema
+ * @throws {Error} If catalog is versioned but version is not found
+ * @deprecated Use resolveCatalogSchemaEither which returns Either
+ */
+export const resolveCatalogSchema = (catalog, versionCoverage) => {
+    const result = resolveCatalogSchemaEither(catalog, versionCoverage);
+    if (Either.isLeft(result)) {
+        throw new Error(result.left.reason);
+    }
+    return result.right;
+};
+//# sourceMappingURL=catalog.js.map

@@ -1,0 +1,89 @@
+{
+  "name": "graphql-kit",
+  "scripts": {
+    "check:package:circular": "madge --circular --no-spinner --extensions ts,tsx ./src",
+    "fixcheck": "pnpm run '/fix:.*/' && pnpm run '/check:.*/'",
+    "check": "pnpm run '/check:.*/'",
+    "fix": "pnpm run '/fix:.*/'",
+    "fix:format": "dprint fmt",
+    "check:format": "dprint check",
+    "release": "dripip stable",
+    "build": "tsc --build tsconfig.build.json",
+    "build:watch": "tsc --build tsconfig.build.json --watch",
+    "build:watch:emit": "pnpm build:watch --noCheck",
+    "build:emit": "pnpm build --noCheck",
+    "prebuild": "pnpm build:clean",
+    "build:clean": "pnpm tsc --build tsconfig.build.json --clean && rm -rf build",
+    "check:types": "tsc",
+    "prepack": "pnpm build"
+  },
+  "madge": {
+    "detectiveOptions": {
+      "ts": {
+        "skipTypeImports": true
+      },
+      "tsx": {
+        "skipTypeImports": true
+      }
+    }
+  },
+  "dependencies": {
+    "effect": "^3.0.0",
+    "graphql": "^16.0.0",
+    "@effect/platform": "latest",
+    "@wollybeard/kit": "latest",
+    "graffle": "latest",
+    "type-fest": "^4.0.0",
+    "@graphql-inspector/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^22.0.1",
+    "@tsconfig/strictest": "^2.0.5",
+    "typescript": "^5.8.3",
+    "tsx": "^4.19.3",
+    "dprint": "^0.50.0",
+    "dripip": "^0.10.0",
+    "vitest": "^3.1.3",
+    "madge": "^8.0.0"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "imports": {
+    "#*": {
+      "default": "./build/*"
+    },
+    "#grafaid": "./build/grafaid/$.js",
+    "#graphql-schema-path": "./build/graphql-schema-path/$.js",
+    "#catalog": "./build/catalog/$.js",
+    "#schema": "./build/schema/$.js",
+    "#lifecycles": "./build/lifecycles/$.js",
+    "#change": "./build/change/$.js",
+    "#revision": "./build/revision/$.js",
+    "#version": "./build/version/$.js",
+    "#graphql-error": "./build/graphql-error/$.js",
+    "#graphql-schema-loader": "./build/graphql-schema-loader/$.js",
+    "#schema-definition": "./build/schema-definition/$.js",
+    "#date-only": "./build/date-only/$.js",
+    "#version-coverage": "./build/version-coverage/$.js",
+    "#kit-temp": "./build/kit-temp/$.js",
+    "#grafaid-old": "./build/grafaid-old/grafaid.js"
+  },
+  "exports": {
+    ".": "./build/exports/index.js",
+    "./grafaid": "./build/grafaid/$.js",
+    "./graphql-schema-path": "./build/graphql-schema-path/$.js",
+    "./catalog": "./build/catalog/$.js",
+    "./schema": "./build/schema/$.js",
+    "./lifecycles": "./build/lifecycles/$.js",
+    "./change": "./build/change/$.js",
+    "./revision": "./build/revision/$.js",
+    "./version": "./build/version/$.js",
+    "./graphql-error": "./build/graphql-error/$.js",
+    "./graphql-schema-loader": "./build/graphql-schema-loader/$.js",
+    "./schema-definition": "./build/schema-definition/$.js",
+    "./date-only": "./build/date-only/$.js",
+    "./version-coverage": "./build/version-coverage/$.js",
+    "./kit-temp": "./build/kit-temp/$.js"
+  },
+  "version": "0.0.0-dripip",
+  "type": "module"
+}
