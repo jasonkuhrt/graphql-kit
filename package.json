@@ -112,7 +112,11 @@
     "./date-only": "./build/date-only/$.js",
     "./version-coverage": "./build/version-coverage/$.js",
     "./kit-temp": "./build/kit-temp/$.js",
-    "./grafaid-old": "./build/grafaid-old/$.js"
+    "./grafaid-old": "./build/grafaid-old/$.js",
+    "./version/custom": "./build/version/custom.js",
+    "./version/date": "./build/version/date.js",
+    "./version/integer": "./build/version/integer.js",
+    "./version/semver": "./build/version/semver.js"
   },
   "type": "module"
 }
