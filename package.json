@@ -50,7 +50,6 @@
   "dependencies": {
     "@graphql-inspector/core": "^6.0.0",
     "@wollybeard/kit": "latest",
-    "fast-check": "^3.0.0",
     "graffle": "8.0.0-next.168",
     "type-fest": "^4.0.0"
   },
@@ -70,6 +69,7 @@
     "dprint": "^0.50.0",
     "dripip": "^0.10.0",
     "effect": "^3.0.0",
+    "fast-check": "^3.0.0",
     "graphql": "^16.0.0",
     "madge": "^8.0.0",
     "tsx": "^4.19.3",
