@@ -12,12 +12,12 @@ import { graphqlAst } from './graphql-ast.js'
 const GraphQLSchemaType = S.Any.pipe(
   S.filter((value): value is GraphQLSchema => {
     // Check if it looks like a GraphQLSchema without using instanceof
-    return value != null &&
-      typeof value === 'object' &&
-      '_typeMap' in value &&
-      'getType' in value &&
-      typeof value.getType === 'function'
-  })
+    return value != null
+      && typeof value === 'object'
+      && '_typeMap' in value
+      && 'getType' in value
+      && typeof value.getType === 'function'
+  }),
 )
 
 export const SchemaDefinition = S.transformOrFail(

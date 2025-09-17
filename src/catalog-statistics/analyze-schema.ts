@@ -1,11 +1,3 @@
-import type { AnalyzeOptions } from './analyze-options.js'
-import type {
-  DeprecationMetrics,
-  DescriptionCoverage,
-  StabilityMetrics,
-  TypeKindBreakdown,
-  VersionStatistics,
-} from './data.js'
 import {
   type GraphQLSchema,
   isEnumType,
@@ -15,6 +7,14 @@ import {
   isScalarType,
   isUnionType,
 } from 'graphql'
+import type { AnalyzeOptions } from './analyze-options.js'
+import type {
+  DeprecationMetrics,
+  DescriptionCoverage,
+  StabilityMetrics,
+  TypeKindBreakdown,
+  VersionStatistics,
+} from './data.js'
 
 const BUILT_IN_SCALARS = new Set(['String', 'Int', 'Float', 'Boolean', 'ID'])
 

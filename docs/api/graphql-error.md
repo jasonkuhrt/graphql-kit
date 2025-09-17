@@ -20,8 +20,8 @@ const error = GraphQLError.create({
   message: 'Field not found',
   extensions: {
     code: 'FIELD_NOT_FOUND',
-    field: 'user.email'
-  }
+    field: 'user.email',
+  },
 })
 
 // Create from native Error

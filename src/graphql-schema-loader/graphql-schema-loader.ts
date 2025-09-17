@@ -1,8 +1,8 @@
-import { Grafaid } from '../grafaid/$.js'
 import { FileSystem } from '@effect/platform/FileSystem'
 import { Fs } from '@wollybeard/kit'
 import { neverCase } from '@wollybeard/kit/language'
 import { Effect } from 'effect'
+import { Grafaid } from '../grafaid/$.js'
 // TODO: Fix graffle import - currently broken in graffle@0.0.0
 // import Graffle from 'graffle'
 // import { Introspection } from 'graffle/extensions/introspection'
@@ -25,7 +25,7 @@ export const load = (source: SchemaPointer): Effect.Effect<Grafaid.Schema.Schema
       case `introspect`: {
         // TODO: Re-enable when graffle is properly installed and working
         return yield* Effect.fail(
-          new Error(`Schema introspection is temporarily disabled. Graffle dependency needs to be fixed.`)
+          new Error(`Schema introspection is temporarily disabled. Graffle dependency needs to be fixed.`),
         )
         // const graffle = Graffle
         //   .create()

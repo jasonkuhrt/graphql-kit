@@ -19,9 +19,9 @@ Note: `graphql` is a peer dependency and must be installed separately.
 ### Basic Usage
 
 ```typescript
+import { Effect } from 'effect'
 import { Grafaid } from 'graphql-kit/grafaid'
 import { Schema } from 'graphql-kit/schema'
-import { Effect } from 'effect'
 
 // Parse a GraphQL schema
 const schema = Grafaid.Schema.parse(`
@@ -62,8 +62,8 @@ import { Version } from 'graphql-kit/version'
 All APIs are fully typed with TypeScript, providing excellent IDE support and compile-time safety:
 
 ```typescript
-import { Schema } from 'graphql-kit/schema'
 import { pipe } from 'effect'
+import { Schema } from 'graphql-kit/schema'
 
 // Type-safe schema operations
 pipe(
@@ -72,7 +72,7 @@ pipe(
     // schema is fully typed here
     const types = schema.getTypeMap()
     return types
-  })
+  }),
 )
 ```
 

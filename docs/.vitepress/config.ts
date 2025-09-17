@@ -13,7 +13,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/getting-started' },
-      { text: 'API', link: '/api/grafaid' }
+      { text: 'API', link: '/api/grafaid' },
     ],
 
     sidebar: {
@@ -22,9 +22,9 @@ export default defineConfig({
           text: 'Guide',
           items: [
             { text: 'Getting Started', link: '/guide/getting-started' },
-            { text: 'Installation', link: '/guide/installation' }
-          ]
-        }
+            { text: 'Installation', link: '/guide/installation' },
+          ],
+        },
       ],
       '/api/': [
         {
@@ -35,8 +35,8 @@ export default defineConfig({
             { text: 'Catalog', link: '/api/catalog' },
             { text: 'Change', link: '/api/change' },
             { text: 'Version', link: '/api/version' },
-            { text: 'Revision', link: '/api/revision' }
-          ]
+            { text: 'Revision', link: '/api/revision' },
+          ],
         },
         {
           text: 'Utilities',
@@ -47,18 +47,18 @@ export default defineConfig({
             { text: 'Schema Definition', link: '/api/schema-definition' },
             { text: 'Date Only', link: '/api/date-only' },
             { text: 'Version Coverage', link: '/api/version-coverage' },
-            { text: 'Lifecycles', link: '/api/lifecycles' }
-          ]
-        }
-      ]
+            { text: 'Lifecycles', link: '/api/lifecycles' },
+          ],
+        },
+      ],
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/jasonkuhrt/graphql-kit' }
+      { icon: 'github', link: 'https://github.com/jasonkuhrt/graphql-kit' },
     ],
 
     search: {
-      provider: 'local'
-    }
-  }
+      provider: 'local',
+    },
+  },
 })

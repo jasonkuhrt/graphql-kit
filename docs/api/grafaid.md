@@ -127,7 +127,7 @@ pipe(
   Effect.catchTag('ParseError', error => {
     console.error('Failed to parse schema:', error)
     return Effect.fail(error)
-  })
+  }),
 )
 ```
 
@@ -147,7 +147,7 @@ const DateScalar = Grafaid.Schema.createScalar({
       return new Date(ast.value)
     }
     return null
-  }
+  },
 })
 ```
 

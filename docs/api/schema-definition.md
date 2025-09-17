@@ -21,8 +21,8 @@ const typeDef = SchemaDefinition.createType({
   fields: [
     { name: 'id', type: 'ID!' },
     { name: 'name', type: 'String!' },
-    { name: 'email', type: 'String!' }
-  ]
+    { name: 'email', type: 'String!' },
+  ],
 })
 ```
 

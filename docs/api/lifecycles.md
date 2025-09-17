@@ -20,7 +20,7 @@ const stages = Lifecycles.defineStages([
   'development',
   'staging',
   'production',
-  'deprecated'
+  'deprecated',
 ])
 
 // Track schema lifecycle
@@ -28,8 +28,8 @@ const lifecycle = Lifecycles.create({
   schema: graphqlSchema,
   stage: 'development',
   transitions: [
-    { from: 'development', to: 'staging', date: new Date() }
-  ]
+    { from: 'development', to: 'staging', date: new Date() },
+  ],
 })
 ```
 

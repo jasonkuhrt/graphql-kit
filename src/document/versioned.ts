@@ -1,7 +1,7 @@
+import { HashMap, Option } from 'effect'
 import { S } from '../kit-temp/effect.js'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
-import { HashMap, Option } from 'effect'
 
 // ============================================================================
 // Schema

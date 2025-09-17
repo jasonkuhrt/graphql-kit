@@ -27,7 +27,7 @@ const catalog = Catalog.Versioned.create()
 const updatedCatalog = Catalog.Versioned.add(
   catalog,
   schema,
-  Version.SemVer.create('1.0.0')
+  Version.SemVer.create('1.0.0'),
 )
 ```
 
@@ -71,7 +71,7 @@ const catalog = Catalog.Unversioned.create()
 const updated = Catalog.Unversioned.add(
   catalog,
   'production',
-  productionSchema
+  productionSchema,
 )
 ```
 
@@ -103,7 +103,7 @@ const mergedWithStrategy = Catalog.mergeWith(
   (existing, incoming) => {
     // Custom conflict resolution
     return incoming // Use incoming on conflict
-  }
+  },
 )
 ```
 
@@ -119,7 +119,7 @@ const filtered = Catalog.filter(catalog, schema => {
 // Filter by version (versioned catalog)
 const recent = Catalog.Versioned.filterByVersion(
   catalog,
-  version => version.major >= 2
+  version => version.major >= 2,
 )
 ```
 
@@ -142,14 +142,14 @@ const transformed = Catalog.map(catalog, schema => {
 const changes = Catalog.Versioned.compareVersions(
   catalog,
   '1.0.0',
-  '2.0.0'
+  '2.0.0',
 )
 
 // Find breaking changes
 const breaking = Catalog.Versioned.findBreakingChanges(
   catalog,
   '1.0.0',
-  '2.0.0'
+  '2.0.0',
 )
 ```
 
@@ -161,7 +161,7 @@ const stats = Catalog.getStatistics(catalog)
 console.log({
   totalSchemas: stats.count,
   totalTypes: stats.totalTypes,
-  averageFields: stats.averageFieldsPerType
+  averageFields: stats.averageFieldsPerType,
 })
 ```
 
@@ -175,7 +175,7 @@ const json = Catalog.toJSON(catalog)
 
 // Save to file
 await Effect.runPromise(
-  Catalog.saveToFile(catalog, './catalog.json')
+  Catalog.saveToFile(catalog, './catalog.json'),
 )
 ```
 
@@ -187,7 +187,7 @@ const catalog = Catalog.fromJSON(json)
 
 // Load from file
 const loadedCatalog = await Effect.runPromise(
-  Catalog.loadFromFile('./catalog.json')
+  Catalog.loadFromFile('./catalog.json'),
 )
 ```
 
@@ -204,16 +204,14 @@ pipe(
     Catalog.Versioned.addEffect(
       catalog,
       schemaSDL,
-      '1.0.0'
+      '1.0.0',
     )
   ),
-  Effect.flatMap(catalog =>
-    Catalog.Versioned.validateAll(catalog)
-  ),
+  Effect.flatMap(catalog => Catalog.Versioned.validateAll(catalog)),
   Effect.catchTag('CatalogError', error => {
     console.error('Catalog operation failed:', error)
     return Effect.fail(error)
-  })
+  }),
 )
 ```
 
@@ -238,9 +236,7 @@ import { Change } from 'graphql-kit/change'
 // Track changes between catalog versions
 const changes = pipe(
   Catalog.Versioned.getRange(catalog, '1.0.0', '2.0.0'),
-  Effect.map(schemas =>
-    Change.analyzeProgression(schemas)
-  )
+  Effect.map(schemas => Change.analyzeProgression(schemas)),
 )
 ```
 

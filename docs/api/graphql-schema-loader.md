@@ -17,12 +17,12 @@ The GraphQL Schema Loader provides utilities to load schemas from files, URLs, a
 ```typescript
 // Load from SDL file
 const schema = await Effect.runPromise(
-  SchemaLoader.fromFile('./schema.graphql')
+  SchemaLoader.fromFile('./schema.graphql'),
 )
 
 // Load from JSON introspection
 const fromJson = await Effect.runPromise(
-  SchemaLoader.fromJSON('./schema.json')
+  SchemaLoader.fromJSON('./schema.json'),
 )
 ```
 
@@ -31,16 +31,16 @@ const fromJson = await Effect.runPromise(
 ```typescript
 // Load from GraphQL endpoint
 const schema = await Effect.runPromise(
-  SchemaLoader.fromURL('https://api.example.com/graphql')
+  SchemaLoader.fromURL('https://api.example.com/graphql'),
 )
 
 // With authentication
 const authenticated = await Effect.runPromise(
   SchemaLoader.fromURL('https://api.example.com/graphql', {
     headers: {
-      Authorization: 'Bearer token'
-    }
-  })
+      Authorization: 'Bearer token',
+    },
+  }),
 )
 ```
 

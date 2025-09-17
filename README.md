@@ -1,9 +1,10 @@
 <div align="center">
   <img src="docs/.vitepress/public/logo.svg" alt="GraphQL Kit Logo" width="200" height="200" />
 
-  # graphql-kit
+# graphql-kit
 
-  GraphQL toolkit with Effect-based utilities.
+GraphQL toolkit with Effect-based utilities.
+
 </div>
 
 ## Installation
@@ -19,8 +20,8 @@ yarn add graphql-kit
 ## Usage
 
 ```typescript
-import { Grafaid } from 'graphql-kit/grafaid'
 import { Catalog } from 'graphql-kit/catalog'
+import { Grafaid } from 'graphql-kit/grafaid'
 import { Schema } from 'graphql-kit/schema'
 // ... and more modules
 ```

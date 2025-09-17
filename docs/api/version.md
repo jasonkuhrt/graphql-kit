@@ -8,10 +8,10 @@ Flexible version management with multiple strategies.
 import { Version } from 'graphql-kit/version'
 
 // Strategy-specific imports
-import { SemVer } from 'graphql-kit/version/semver'
+import { CustomVersion } from 'graphql-kit/version/custom'
 import { DateVersion } from 'graphql-kit/version/date'
 import { IntegerVersion } from 'graphql-kit/version/integer'
-import { CustomVersion } from 'graphql-kit/version/custom'
+import { SemVer } from 'graphql-kit/version/semver'
 ```
 
 ## Overview
@@ -35,7 +35,7 @@ const v3 = SemVer.from({
   minor: 2,
   patch: 3,
   prerelease: 'beta.1',
-  build: 'build.123'
+  build: 'build.123',
 })
 ```
 
@@ -144,9 +144,9 @@ const myStrategy = CustomVersion.define({
     const releaseNum = parseInt(version.release) || 0
     return {
       ...version,
-      release: String(releaseNum + 1)
+      release: String(releaseNum + 1),
     }
-  }
+  },
 })
 
 // Use custom strategy
@@ -195,7 +195,7 @@ const inRange = Version.inRange(v1, { min: v0, max: v2 })
 // Check multiple ranges
 const ranges = [
   { min: v1, max: v2 },
-  { min: v3, max: v4 }
+  { min: v3, max: v4 },
 ]
 const inAnyRange = Version.inAnyRange(version, ranges)
 ```
@@ -248,16 +248,12 @@ import { Effect, pipe } from 'effect'
 
 pipe(
   Version.parseEffect('1.2.3'),
-  Effect.flatMap(version =>
-    Version.validateEffect(version)
-  ),
-  Effect.map(version =>
-    Version.increment(version)
-  ),
+  Effect.flatMap(version => Version.validateEffect(version)),
+  Effect.map(version => Version.increment(version)),
   Effect.catchTag('VersionError', error => {
     console.error('Version operation failed:', error)
     return Effect.fail(error)
-  })
+  }),
 )
 ```
 

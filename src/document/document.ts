@@ -1,9 +1,9 @@
+import { Data, Either, Option } from 'effect'
 import { Catalog } from '../catalog/$.js'
 import { S } from '../kit-temp/effect.js'
 import { Schema } from '../schema/$.js'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
-import { Data, Either, Option } from 'effect'
 import { DocumentUnversioned } from './unversioned.js'
 import * as DocumentVersioned from './versioned.js'
 

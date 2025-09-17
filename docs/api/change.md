@@ -39,7 +39,7 @@ const safe = Change.getSafe(changes)
 console.log({
   breaking: breaking.length,
   dangerous: dangerous.length,
-  safe: safe.length
+  safe: safe.length,
 })
 ```
 
@@ -58,7 +58,7 @@ changes.forEach(change => {
     description: change.description,
     breaking: change.isBreaking,
     oldValue: change.oldValue,
-    newValue: change.newValue
+    newValue: change.newValue,
   })
 })
 ```
@@ -70,15 +70,15 @@ import { Criticality } from 'graphql-kit/change/criticality'
 
 // Check change criticality
 const critical = changes.filter(
-  change => change.criticality === Criticality.Breaking
+  change => change.criticality === Criticality.Breaking,
 )
 
 const dangerous = changes.filter(
-  change => change.criticality === Criticality.Dangerous
+  change => change.criticality === Criticality.Dangerous,
 )
 
 const safe = changes.filter(
-  change => change.criticality === Criticality.Safe
+  change => change.criticality === Criticality.Safe,
 )
 ```
 
@@ -131,7 +131,7 @@ const argTypeChanges = Change.getArgumentTypeChanges(changes)
 // Create a change set from multiple comparisons
 const changeSet = Change.createChangeSet([
   { from: v1Schema, to: v2Schema, version: '1.0.0 -> 2.0.0' },
-  { from: v2Schema, to: v3Schema, version: '2.0.0 -> 3.0.0' }
+  { from: v2Schema, to: v3Schema, version: '2.0.0 -> 3.0.0' },
 ])
 ```
 
@@ -147,7 +147,7 @@ console.log({
   dangerousChanges: summary.dangerous,
   safeChanges: summary.safe,
   affectedTypes: summary.affectedTypes,
-  affectedFields: summary.affectedFields
+  affectedFields: summary.affectedFields,
 })
 ```
 
@@ -164,7 +164,7 @@ guide.forEach(instruction => {
     action: instruction.action,
     target: instruction.target,
     description: instruction.description,
-    example: instruction.example
+    example: instruction.example,
   })
 })
 ```
@@ -191,12 +191,12 @@ const customRules = Change.createRules({
   fieldRemoval: 'breaking',
   fieldAddition: 'safe',
   typeRemoval: 'breaking',
-  deprecation: 'dangerous'
+  deprecation: 'dangerous',
 })
 
 // Apply custom rules
 const changes = Change.compare(oldSchema, newSchema, {
-  rules: customRules
+  rules: customRules,
 })
 ```
 
@@ -209,8 +209,8 @@ const changes = Change.compare(oldSchema, newSchema, {
     // Treat field additions as dangerous instead of safe
     fieldAddition: 'dangerous',
     // Ignore deprecations
-    deprecation: 'ignore'
-  }
+    deprecation: 'ignore',
+  },
 })
 ```
 
@@ -248,11 +248,9 @@ import { Effect, pipe } from 'effect'
 pipe(
   Effect.all([
     Schema.fromString(oldSDL),
-    Schema.fromString(newSDL)
+    Schema.fromString(newSDL),
   ]),
-  Effect.map(([oldSchema, newSchema]) =>
-    Change.compare(oldSchema, newSchema)
-  ),
+  Effect.map(([oldSchema, newSchema]) => Change.compare(oldSchema, newSchema)),
   Effect.flatMap(changes => {
     if (Change.hasBreaking(changes)) {
       return Effect.fail('Breaking changes detected')
@@ -262,7 +260,7 @@ pipe(
   Effect.catchTag('ChangeError', error => {
     console.error('Change analysis failed:', error)
     return Effect.fail(error)
-  })
+  }),
 )
 ```
 

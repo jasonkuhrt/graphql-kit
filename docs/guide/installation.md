@@ -69,21 +69,21 @@ GraphQL Kit provides multiple entry points for different functionality:
 
 ```typescript
 // Core modules
-import { Grafaid } from 'graphql-kit/grafaid'
 import { Catalog } from 'graphql-kit/catalog'
-import { Schema } from 'graphql-kit/schema'
 import { Change } from 'graphql-kit/change'
-import { Version } from 'graphql-kit/version'
+import { Grafaid } from 'graphql-kit/grafaid'
 import { Revision } from 'graphql-kit/revision'
+import { Schema } from 'graphql-kit/schema'
+import { Version } from 'graphql-kit/version'
 
 // Utility modules
+import { DateOnly } from 'graphql-kit/date-only'
 import { GraphQLError } from 'graphql-kit/graphql-error'
 import { SchemaLoader } from 'graphql-kit/graphql-schema-loader'
 import { SchemaPath } from 'graphql-kit/graphql-schema-path'
-import { SchemaDefinition } from 'graphql-kit/schema-definition'
-import { DateOnly } from 'graphql-kit/date-only'
-import { VersionCoverage } from 'graphql-kit/version-coverage'
 import { Lifecycles } from 'graphql-kit/lifecycles'
+import { SchemaDefinition } from 'graphql-kit/schema-definition'
+import { VersionCoverage } from 'graphql-kit/version-coverage'
 ```
 
 ## Version-specific Imports
@@ -92,10 +92,10 @@ Some modules provide version-specific sub-modules:
 
 ```typescript
 // Version strategies
-import { SemVer } from 'graphql-kit/version/semver'
+import { CustomVersion } from 'graphql-kit/version/custom'
 import { DateVersion } from 'graphql-kit/version/date'
 import { IntegerVersion } from 'graphql-kit/version/integer'
-import { CustomVersion } from 'graphql-kit/version/custom'
+import { SemVer } from 'graphql-kit/version/semver'
 ```
 
 ## Development Setup

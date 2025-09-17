@@ -60,7 +60,7 @@ import { Version } from 'graphql-kit/version'
 // Create a versioned schema
 const versionedSchema = Schema.Versioned.create({
   schema: graphqlSchema,
-  version: Version.SemVer.create('1.0.0')
+  version: Version.SemVer.create('1.0.0'),
 })
 
 // Access version information
@@ -81,7 +81,7 @@ const unversionedSchema = Schema.Unversioned.create(graphqlSchema)
 // Convert to versioned
 const versioned = Schema.Unversioned.toVersioned(
   unversionedSchema,
-  Version.SemVer.create('1.0.0')
+  Version.SemVer.create('1.0.0'),
 )
 ```
 
@@ -124,7 +124,7 @@ pipe(
   Schema.addType(newType),
   Effect.map(updatedSchema => {
     // Work with updated schema
-  })
+  }),
 )
 ```
 
@@ -135,11 +135,11 @@ pipe(
   schema,
   Schema.updateType('User', type => ({
     ...type,
-    description: 'Updated user type'
+    description: 'Updated user type',
   })),
   Effect.map(updatedSchema => {
     // Work with updated schema
-  })
+  }),
 )
 ```
 
@@ -151,7 +151,7 @@ pipe(
   Schema.removeType('DeprecatedType'),
   Effect.map(updatedSchema => {
     // Work with updated schema
-  })
+  }),
 )
 ```
 
@@ -192,7 +192,7 @@ const isDeprecated = Schema.hasDirective(
   schema,
   'User',
   'oldField',
-  'deprecated'
+  'deprecated',
 )
 ```
 
@@ -210,16 +210,16 @@ pipe(
   Effect.catchTag('ValidationError', error => {
     console.error('Schema validation failed:', error.message)
     return Effect.fail(error)
-  })
+  }),
 )
 ```
 
 ## Integration with Other Modules
 
 ```typescript
-import { Schema } from 'graphql-kit/schema'
-import { Change } from 'graphql-kit/change'
 import { Catalog } from 'graphql-kit/catalog'
+import { Change } from 'graphql-kit/change'
+import { Schema } from 'graphql-kit/schema'
 
 // Track changes between schemas
 const changes = Change.between(oldSchema, newSchema)

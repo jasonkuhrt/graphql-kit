@@ -23,7 +23,7 @@ const revision = Revision.create({
   version: '1.0.0',
   timestamp: new Date(),
   author: 'john.doe',
-  message: 'Initial schema revision'
+  message: 'Initial schema revision',
 })
 ```
 

@@ -1,6 +1,6 @@
-import { GraphqlInspector } from '../dep/graphql-inspector/index.js'
 import { Effect } from 'effect'
 import type { GraphQLSchema } from 'graphql'
+import { GraphqlInspector } from '../dep/graphql-inspector/index.js'
 import * as Change from './change.js'
 import * as Criticality from './criticality.js'
 

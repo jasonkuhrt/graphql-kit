@@ -1,5 +1,5 @@
-import { StabilityMetrics, VersionStatistics } from './data.js'
 import { S } from '../kit-temp/effect.js'
+import { StabilityMetrics, VersionStatistics } from './data.js'
 
 /**
  * Complete statistics report for a GraphQL catalog.
