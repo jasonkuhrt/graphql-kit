@@ -1,6 +1,10 @@
-# graphql-kit
+<div align="center">
+  <img src="docs/.vitepress/public/logo.svg" alt="GraphQL Kit Logo" width="200" height="200" />
 
-GraphQL toolkit with Effect-based utilities.
+  # graphql-kit
+
+  GraphQL toolkit with Effect-based utilities.
+</div>
 
 ## Installation
 
