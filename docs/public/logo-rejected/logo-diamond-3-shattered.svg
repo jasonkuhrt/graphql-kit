@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="514" height="514" viewBox="0 0 514 514" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @media (prefers-color-scheme: dark) { .theme-aware { filter: invert(1); } }
+        :root.dark .theme-aware { filter: invert(1); }
+    </style>
+    <g class="theme-aware">
+        <path id="border" fill="#333333" fill-rule="evenodd" stroke="none" d="M 7.3752 487.431061 C 1 476.047333 1 460.864868 1 430.5 L 0.999999 83.5 C 0.999999 53.135132 0.999999 37.952667 7.375199 26.568939 C 11.880833 18.52356 18.52355 11.880859 26.568937 7.375214 C 37.952675 1 53.135117 1 83.5 1 L 430.5 1 C 460.864868 1 476.047333 1 487.431061 7.375214 C 495.47644 11.880829 502.119141 18.52356 506.624786 26.568939 C 513 37.952667 513 53.135132 513 83.5 L 513 430.5 C 513 460.864868 513 476.047333 506.624786 487.431061 C 502.119171 495.47644 495.47644 502.119171 487.431061 506.624786 C 476.047333 513 460.864868 513 430.5 513 L 83.5 513 C 53.135117 513 37.952675 513 26.568937 506.624786 C 18.52355 502.119171 11.880834 495.47644 7.3752 487.431061 Z M 21 430.5 L 21 83.5 C 21 49.899178 21.706236 41.910526 24.825115 36.34137 C 27.52849 31.514153 31.514122 27.528524 36.341381 24.825123 C 41.910542 21.706238 49.899174 21 83.5 21 L 430.5 21 C 464.10083 21 472.089478 21.706238 477.6586 24.825121 C 482.48584 27.528492 486.471466 31.514124 489.174896 36.341393 C 492.293762 41.910534 493 49.899181 493 83.5 L 493 430.5 C 493 464.10083 492.293762 472.089478 489.174866 477.6586 C 486.471497 482.48587 482.48587 486.471497 477.658661 489.174866 C 472.089478 492.293762 464.10083 493 430.5 493 L 83.5 493 C 49.899174 493 41.910542 492.293762 36.341377 489.174866 C 31.514133 486.471497 27.528503 482.48587 24.825115 477.65863 C 21.706238 472.089478 21 464.10083 21 430.5 Z"/>
+        <path id="Body" fill="#333333" fill-rule="evenodd" stroke="none" d="M 45.825119 456.65863 C 42 449.8284 42 440.718933 42 422.5 L 42 91.5 C 42 73.281067 42 64.1716 45.825119 57.34137 C 48.5285 52.51413 52.51413 48.528503 57.341362 45.825134 C 64.171608 42 73.281067 42 91.5 42 L 422.5 42 C 440.718933 42 449.8284 42 456.65863 45.825134 C 461.48587 48.528503 465.471497 52.51413 468.174866 57.34137 C 472 64.1716 472 73.281067 472 91.5 L 472 422.5 C 472 440.718933 472 449.8284 468.174866 456.65863 C 465.471497 461.48587 461.48587 465.471497 456.65863 468.174866 C 449.8284 472 440.718933 472 422.5 472 L 91.5 472 C 73.281067 472 64.171608 472 57.341362 468.174866 C 52.51413 465.471497 48.5285 461.48587 45.825119 456.65863 Z"/>
+
+        <!-- Diamond 3: Shattered facets with separated pieces -->
+        <g id="diamond-shattered">
+            <!-- Top tip facet (slightly elevated) -->
+            <path d="M 250 135 L 264 135 L 257 150 Z" fill="white" transform="translate(0, -8)"/>
+
+            <!-- Upper left facet (rotated and shifted) -->
+            <path d="M 220 160 L 250 140 L 240 180 Z" fill="white" transform="translate(-12, -5) rotate(-3 235 160)"/>
+
+            <!-- Upper right facet (rotated and shifted) -->
+            <path d="M 264 140 L 294 160 L 274 180 Z" fill="white" transform="translate(12, -5) rotate(3 279 160)"/>
+
+            <!-- Left upper side facet -->
+            <path d="M 200 180 L 240 175 L 225 220 L 185 225 Z" fill="white" transform="translate(-15, -3) rotate(-5 212 200)"/>
+
+            <!-- Right upper side facet -->
+            <path d="M 274 175 L 314 180 L 329 225 L 289 220 Z" fill="white" transform="translate(15, -3) rotate(5 302 200)"/>
+
+            <!-- Central upper facet (elevated) -->
+            <path d="M 240 185 L 274 185 L 270 220 L 244 220 Z" fill="white" transform="translate(0, -10)"/>
+
+            <!-- Left side facet -->
+            <path d="M 180 230 L 225 225 L 215 270 L 170 275 Z" fill="white" transform="translate(-20, 0) rotate(-8 200 250)"/>
+
+            <!-- Right side facet -->
+            <path d="M 289 225 L 334 230 L 344 275 L 299 270 Z" fill="white" transform="translate(20, 0) rotate(8 314 250)"/>
+
+            <!-- Central facet (main body, slightly lowered) -->
+            <path d="M 244 225 L 270 225 L 275 270 L 239 270 Z" fill="white" transform="translate(0, 5)"/>
+
+            <!-- Left lower side facet -->
+            <path d="M 165 280 L 215 275 L 205 320 L 155 325 Z" fill="white" transform="translate(-18, 8) rotate(-10 185 300)"/>
+
+            <!-- Right lower side facet -->
+            <path d="M 299 275 L 349 280 L 359 325 L 309 320 Z" fill="white" transform="translate(18, 8) rotate(10 329 300)"/>
+
+            <!-- Central lower facet -->
+            <path d="M 239 275 L 275 275 L 267 315 L 247 315 Z" fill="white" transform="translate(0, 12)"/>
+
+            <!-- Lower left facet -->
+            <path d="M 200 330 L 247 320 L 237 360 Z" fill="white" transform="translate(-10, 15) rotate(-5 228 340)"/>
+
+            <!-- Lower right facet -->
+            <path d="M 267 320 L 314 330 L 277 360 Z" fill="white" transform="translate(10, 15) rotate(5 286 340)"/>
+
+            <!-- Bottom tip facet (most separated) -->
+            <path d="M 247 365 L 267 365 L 257 380 Z" fill="white" transform="translate(0, 20)"/>
+
+            <!-- Floating crystal fragments around the main diamond -->
+            <!-- Small fragments suggest explosion/shattering -->
+            <path d="M 140 140 L 150 140 L 145 150 Z" fill="white" transform="rotate(15 145 145)"/>
+            <path d="M 364 140 L 374 140 L 369 150 Z" fill="white" transform="rotate(-15 369 145)"/>
+
+            <path d="M 120 200 L 135 195 L 130 210 L 115 215 Z" fill="white" transform="rotate(20 125 205)"/>
+            <path d="M 379 195 L 394 200 L 399 215 L 384 210 Z" fill="white" transform="rotate(-20 389 205)"/>
+
+            <path d="M 110 280 L 125 275 L 120 290 L 105 295 Z" fill="white" transform="rotate(25 115 285)"/>
+            <path d="M 389 275 L 404 280 L 409 295 L 394 290 Z" fill="white" transform="rotate(-25 399 285)"/>
+
+            <path d="M 150 370 L 160 370 L 155 380 Z" fill="white" transform="rotate(10 155 375)"/>
+            <path d="M 354 370 L 364 370 L 359 380 Z" fill="white" transform="rotate(-10 359 375)"/>
+
+            <!-- Tiny crystal dust particles -->
+            <circle cx="180" cy="120" r="2" fill="white"/>
+            <circle cx="334" cy="120" r="2" fill="white"/>
+            <circle cx="95" cy="160" r="1.5" fill="white"/>
+            <circle cx="419" cy="160" r="1.5" fill="white"/>
+            <circle cx="85" cy="240" r="2" fill="white"/>
+            <circle cx="429" cy="240" r="2" fill="white"/>
+            <circle cx="90" cy="320" r="1.5" fill="white"/>
+            <circle cx="424" cy="320" r="1.5" fill="white"/>
+            <circle cx="190" cy="400" r="2" fill="white"/>
+            <circle cx="324" cy="400" r="2" fill="white"/>
+
+            <!-- Energy lines/cracks suggesting the shatter -->
+            <path d="M 257 140 L 255 400" stroke="white" stroke-width="0.5" fill="none" opacity="0.3"/>
+            <path d="M 180 180 L 334 334" stroke="white" stroke-width="0.3" fill="none" opacity="0.2"/>
+            <path d="M 334 180 L 180 334" stroke="white" stroke-width="0.3" fill="none" opacity="0.2"/>
+        </g>
+    </g>
+</svg>

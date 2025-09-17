@@ -6,6 +6,9 @@ hero:
   name: "GraphQL Kit"
   text: "Effect-based GraphQL Toolkit"
   tagline: Powerful utilities for GraphQL schema management, versioning, and change tracking
+  image:
+    src: /logo.svg
+    alt: GraphQL Kit
   actions:
     - theme: brand
       text: Get Started
