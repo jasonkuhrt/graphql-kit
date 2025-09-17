@@ -1,1 +1,0 @@
-{"version":3,"file":"_.d.ts","sourceRoot":"","sources":["../../../../src/grafaid/schema/OperationType/_.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,kBAAkB,UAAU,CAAA;AACzC,MAAM,MAAM,kBAAkB,GAAG,OAAO,kBAAkB,CAAA;AAE1D,eAAO,MAAM,qBAAqB,aAAa,CAAA;AAC/C,MAAM,MAAM,qBAAqB,GAAG,OAAO,qBAAqB,CAAA;AAEhE,eAAO,MAAM,yBAAyB,iBAAiB,CAAA;AACvD,MAAM,MAAM,yBAAyB,GAAG,OAAO,yBAAyB,CAAA"}

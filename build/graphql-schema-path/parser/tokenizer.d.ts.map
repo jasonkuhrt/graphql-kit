@@ -1,1 +1,0 @@
-{"version":3,"file":"tokenizer.d.ts","sourceRoot":"","sources":["../../../src/graphql-schema-path/parser/tokenizer.ts"],"names":[],"mappings":"AACA,OAAO,EAAqE,KAAK,EAAgB,MAAM,aAAa,CAAA;AAEpH;;;;;;GAMG;AACH,wBAAgB,QAAQ,CAAC,KAAK,EAAE,MAAM,GAAG,KAAK,EAAE,CAoE/C;AAED;;GAEG;AACH,qBAAa,cAAe,SAAQ,KAAK;aAGrB,QAAQ,EAAE,MAAM;gBADhC,OAAO,EAAE,MAAM,EACC,QAAQ,EAAE,MAAM;CAKnC"}

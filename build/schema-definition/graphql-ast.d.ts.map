@@ -1,1 +1,0 @@
-{"version":3,"file":"graphql-ast.d.ts","sourceRoot":"","sources":["../../src/schema-definition/graphql-ast.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,CAAC,EAAE,MAAM,WAAW,CAAA;AAC7B,OAAO,EAAE,KAAK,YAAY,EAAE,MAAM,SAAS,CAAA;AAE3C,MAAM,WAAW,GAAI,SAAQ,YAAY;IACvC,UAAU,CAAC,EAAE;QACX,IAAI,EAAE,MAAM,CAAA;QACZ,KAAK,EAAE,MAAM,EAAE,CAAA;KAChB,EAAE,CAAA;CACJ;AAQD,eAAO,MAAM,UAAU,yCAIrB,CAAA"}
