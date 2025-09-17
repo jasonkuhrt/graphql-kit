@@ -1,7 +1,5 @@
 import { FileSystem } from '@effect/platform/FileSystem'
-import { Fs } from '@wollybeard/kit'
-import { neverCase } from '@wollybeard/kit/language'
-import { Effect } from 'effect'
+import { Effect, Match } from 'effect'
 import { Grafaid } from '../grafaid/$.js'
 // TODO: Fix graffle import - currently broken in graffle@0.0.0
 // import Graffle from 'graffle'
@@ -85,10 +83,10 @@ export const load = (source: SchemaPointer): Effect.Effect<Grafaid.Schema.Schema
             return yield* load({ type: `introspect`, url: `https://api.graphql-hive.com/graphql` })
           }
           default:
-            return neverCase(source.name)
+            return Match.value(source.name).pipe(Match.exhaustive) as never
         }
       }
       default:
-        return neverCase(source)
+        return Match.value(source).pipe(Match.exhaustive) as never
     }
   })

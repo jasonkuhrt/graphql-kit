@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@graphql-inspector/core": "^6.2.1",
-    "@wollybeard/kit": "latest",
+    "@wollybeard/kit": "link:../kit",
     "graffle": "8.0.0-next.168",
     "type-fest": "^5.0.0"
   },

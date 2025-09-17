@@ -3,7 +3,7 @@
  * This module provides type-safe helper functions for working with GraphQL types.
  */
 
-import { Arr } from '@wollybeard/kit'
+import { Array } from 'effect'
 import type {
   GraphQLEnumType,
   GraphQLField as GraphQLField_graphql,
@@ -168,7 +168,7 @@ export const getKindMap = (schema: GraphQLSchema): KindMap => {
         kindMap.index.Interface[type.name] = type
         break
       case isObjectType(type):
-        if (!Arr.includesUnknown(rootTypeNames, type.name)) {
+        if (!Array.contains(type.name)(rootTypeNames)) {
           kindMap.list.OutputObject.push(type)
           kindMap.index.OutputObject[type.name] = type
         }

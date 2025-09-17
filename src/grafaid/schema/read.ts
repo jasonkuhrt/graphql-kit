@@ -1,11 +1,15 @@
 import { FileSystem } from '@effect/platform/FileSystem'
-import { Fs } from '@wollybeard/kit'
 import { Effect } from 'effect'
 import { type GraphQLSchema } from 'graphql'
 import * as Parse from '../parse.js'
 import { fromAST } from './schema.js'
 
-export const read = (sdlFilePath: string): Effect.Effect<null | Fs.File<GraphQLSchema>, Error, FileSystem> =>
+interface File<T> {
+  path: string
+  content: T
+}
+
+export const read = (sdlFilePath: string): Effect.Effect<null | File<GraphQLSchema>, Error, FileSystem> =>
   Effect.gen(function*() {
     const fs = yield* FileSystem
 

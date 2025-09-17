@@ -38,8 +38,8 @@
       "#schema-definition": ["./src/schema-definition/$.ts"],
       "#date-only": ["./src/date-only/$.ts"],
       "#version-coverage": ["./src/version-coverage/$.ts"],
-      "#kit": ["./srcsrc/kit/$$.ts"],
-      "#kit/*": ["./srcsrc/kit/*"],
+      "#kit": ["./src/kit/$$.ts"],
+      "#kit/*": ["./src/kit/*"],
       "#semver": ["./src/semver/$.ts"],
       "#grafaid-old": ["./src/grafaid-old/grafaid.ts"]
     },

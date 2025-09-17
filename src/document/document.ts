@@ -1,6 +1,5 @@
-import { Data, Either, Option } from 'effect'
+import { Data, Either, Option, Schema as S } from 'effect'
 import { Catalog } from '../catalog/$.js'
-import { S } from '../kit/effect.js'
 import { Schema } from '../schema/$.js'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'

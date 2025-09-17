@@ -1,6 +1,6 @@
 import type { FormattedExecutionResult, GraphQLFormattedError } from 'graphql'
 // import { CONTENT_TYPE_GQL, CONTENT_TYPE_JSON } from '../../http.js'
-import { Rec } from '@wollybeard/kit'
+import { Predicate } from 'effect'
 
 export interface RequestConfig {
   query: string
@@ -18,7 +18,7 @@ export const parseExecutionResult = (result: unknown): FormattedExecutionResult 
       !Array.isArray(result.errors)
       || result.errors.some(
         error =>
-          !(Rec.is(error) && `message` in error
+          !(Predicate.isRecord(error) && `message` in error
             && typeof error[`message`] === `string`),
       )
     ) {
@@ -33,13 +33,13 @@ export const parseExecutionResult = (result: unknown): FormattedExecutionResult 
 
   // todo add test coverage for case of null. @see https://github.com/graffle-js/graffle/issues/739
   if (`data` in result) {
-    if (!Rec.is(result.data) && result.data !== null) {
+    if (!Predicate.isRecord(result.data) && result.data !== null) {
       throw new Error(`Invalid execution result: data is not plain object`) // prettier-ignore
     }
   }
 
   if (`extensions` in result) {
-    if (!Rec.is(result.extensions)) {
+    if (!Predicate.isRecord(result.extensions)) {
       throw new Error(`Invalid execution result: extensions is not plain object`) // prettier-ignore
     }
   }
@@ -90,5 +90,5 @@ export type postRequestEncodeBody = typeof postRequestEncodeBody
 
 // todo make this more robust
 export const isFormattedError = (error: unknown): error is GraphQLFormattedError => {
-  return Rec.is(error) && `message` in error && typeof error[`message`] === `string`
+  return Predicate.isRecord(error) && `message` in error && typeof error[`message`] === `string`
 }

@@ -1,4 +1,4 @@
-import { S } from '../kit/effect.js'
+import { Schema as S } from 'effect'
 
 // ============================================================================
 // Schema - Options

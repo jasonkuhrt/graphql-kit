@@ -1,5 +1,4 @@
-import { HashMap, Option } from 'effect'
-import { S } from '../kit/effect.js'
+import { HashMap, Option, Schema as S } from 'effect'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
 

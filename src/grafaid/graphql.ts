@@ -1,4 +1,4 @@
-import { neverCase } from '@wollybeard/kit/language'
+import { Match } from 'effect'
 import type { GraphQLNamedType, GraphQLScalarType } from 'graphql'
 import { isEnumType, isInputObjectType, isInterfaceType, isObjectType, isScalarType, isUnionType } from 'graphql'
 import type { KindMap } from './schema/schema.js'
@@ -72,7 +72,7 @@ export const getTypeAndKind = (
   } else if (isEnumType(node)) {
     kindName = `Enum`
   } else {
-    return neverCase(node)
+    return Match.value(node).pipe(Match.exhaustive) as never
   }
   return { typeName, kindName }
 }
