@@ -1,6 +1,6 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { Range as VltRange, Version as VltVersion } from '@vltpkg/semver'
-import { Effect, Equivalence, Order, ParseResult } from 'effect'
+import { Equivalence, Order, ParseResult } from 'effect'
 import * as OfficialRelease from './official-release.js'
 import * as PreRelease from './pre-release.js'
 

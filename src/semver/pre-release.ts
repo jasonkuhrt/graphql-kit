@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { Version as VltVersion } from '@vltpkg/semver'
 
 // ============================================================================

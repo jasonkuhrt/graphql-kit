@@ -1,4 +1,4 @@
-import type { S } from '#kit-temp'
+import type { S } from '#kit'
 import * as Groups from './$groups.js'
 import * as Argument from './argument.js'
 import * as Field from './field.js'

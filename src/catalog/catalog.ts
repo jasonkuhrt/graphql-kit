@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { Schema } from '#schema'
 import { Version } from '#version'
 import { VersionCoverage } from '#version-coverage'

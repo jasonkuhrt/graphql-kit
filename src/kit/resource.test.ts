@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { NodeFileSystem } from '@effect/platform-node'
 import { Effect } from 'effect'
 import * as NodeFs from 'node:fs/promises'

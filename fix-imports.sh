@@ -19,7 +19,7 @@ find src -name "*.ts" -type f -exec sed -i '' \
   -e 's/#lib\/schema-definition/#schema-definition/g' \
   -e 's/#lib\/date-only/#date-only/g' \
   -e 's/#lib\/version-coverage/#version-coverage/g' \
-  -e 's/#lib\/kit-temp/#kit-temp/g' \
+  -e 's/#lib\/kit/#kit/g' \
   {} \;
 
 echo "Import paths fixed!"

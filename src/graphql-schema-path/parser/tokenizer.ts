@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit-temp'
+import { EffectKit } from '#kit'
 import { ColonToken, DollarToken, DotToken, EOFToken, HashToken, NameToken, Token, VersionToken } from './tokens.js'
 
 /**

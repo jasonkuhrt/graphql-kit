@@ -1,5 +1,5 @@
-import { S } from '#kit-temp'
-import { Array, Either, HashMap, Iterable, Order, pipe } from 'effect'
+import { S } from '#kit'
+import { Array, Either, HashMap, Order, pipe } from 'effect'
 import { Schema } from '../schema/$.js'
 import { Version } from '../version/$.js'
 import { EmptyCatalogError } from './catalog.js'

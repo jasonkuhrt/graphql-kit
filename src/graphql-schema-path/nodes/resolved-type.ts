@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 
 /**
  * GraphQL resolved type segment in a schema path.

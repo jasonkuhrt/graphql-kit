@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { Order } from 'effect'
 import { Revision } from '../revision/$.js'
 import { SchemaDefinition } from '../schema-definition/$.js'

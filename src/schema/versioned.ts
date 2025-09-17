@@ -1,5 +1,5 @@
-import { S } from '#kit-temp'
-import type { ObjReplace } from '#kit-temp/other'
+import { S } from '#kit'
+import type { ObjReplace } from '#kit/other'
 import { Order } from 'effect'
 import { Revision } from '../revision/$.js'
 import { SchemaDefinition } from '../schema-definition/$.js'

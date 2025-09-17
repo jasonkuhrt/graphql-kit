@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit-temp'
+import { EffectKit } from '#kit'
 import { Either } from 'effect'
 import type { Simplify } from 'type-fest'
 import { Nodes } from '../nodes/$.js'

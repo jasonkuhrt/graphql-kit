@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import { type DocumentNode } from 'graphql'
 
 export interface Ast extends DocumentNode {

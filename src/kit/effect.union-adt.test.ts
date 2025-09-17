@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit-temp/$$'
+import { EffectKit } from '#kit'
 import { expect } from 'vitest'
 import { Test } from '../../tests/unit/helpers/test.js'
 

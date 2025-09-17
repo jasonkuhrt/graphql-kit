@@ -1,4 +1,4 @@
-import type { Case } from '#kit-temp'
+import type { Case } from '#kit'
 import { Ts } from '@wollybeard/kit'
 import { type GetStepperInputTargetNode } from './define.js'
 

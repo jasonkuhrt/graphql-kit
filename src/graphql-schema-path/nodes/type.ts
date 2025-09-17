@@ -1,5 +1,5 @@
 import { Grafaid } from '#grafaid'
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import * as GraphQLName from '../graphql-name.js'
 import * as Field from './field.js'
 

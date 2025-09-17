@@ -1,4 +1,4 @@
-import type { S } from '#kit-temp'
+import type { S } from '#kit'
 import type { ModuleIndex } from './$types.js'
 
 import * as Argument from './argument.js'

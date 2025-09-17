@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import * as Field from './field.js'
 import * as Type from './type.js'
 

@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit-temp'
+import { EffectKit } from '#kit'
 import { Match } from 'effect'
 import { Nodes } from './nodes/$.js'
 import { Parser } from './parser/$.js'

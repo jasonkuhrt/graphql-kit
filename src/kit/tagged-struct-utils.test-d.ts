@@ -1,7 +1,6 @@
-import type { Case } from '#kit-temp'
+import type { Case } from '#kit'
 import { Ts } from '@wollybeard/kit'
-import { describe, expect, test } from 'vitest'
-import { EffectKit } from './$.js'
+import { EffectKit } from './$$.js'
 import { S } from './effect.js'
 
 const A = S.TaggedStruct('A', { a: S.String })

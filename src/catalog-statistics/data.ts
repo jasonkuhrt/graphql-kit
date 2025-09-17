@@ -1,4 +1,4 @@
-import { S } from '../kit-temp/effect.js'
+import { S } from '../kit/effect.js'
 
 // ============================================================================
 // Schema - Options

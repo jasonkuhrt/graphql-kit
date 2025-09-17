@@ -1,4 +1,4 @@
-import type { ReplaceProperty } from '#kit-temp/ob'
+import type { ReplaceProperty } from '#kit/ob'
 import { Schema as S } from 'effect'
 import type * as E from 'effect'
 import type * as EAST from 'effect/SchemaAST'

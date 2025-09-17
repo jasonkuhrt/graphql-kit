@@ -1,4 +1,4 @@
-import { S } from '#kit-temp'
+import { S } from '#kit'
 import * as Criticality from './criticality.js'
 
 // ============================================================================
