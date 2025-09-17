@@ -94,13 +94,8 @@
     "#date-only": "./build/date-only/$.js",
     "#version-coverage": "./build/version-coverage/$.js",
     "#kit-temp": "./build/kit-temp/$.js",
-    "#kit-temp/$$": "./build/kit-temp/$$.js",
     "#kit-temp/*": "./build/kit-temp/*.js",
-    "#change/*": "./build/change/*.js",
-    "#catalog/$$": "./build/catalog/$$.js",
-    "#catalog/*": "./build/catalog/*.js",
     "#semver": "./build/semver/$.js",
-    "#semver/*": "./build/semver/*.js",
     "#grafaid-old": "./build/grafaid-old/grafaid.js"
   },
   "exports": {

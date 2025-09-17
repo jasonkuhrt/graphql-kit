@@ -1,5 +1,5 @@
-import { Level } from '#change/level'
 import { S } from '#kit-temp'
+import { Level } from './level.js'
 
 // ============================================================================
 // Schema
