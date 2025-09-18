@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Version } from '#version'
 import { Array, HashSet, pipe } from 'effect'
 

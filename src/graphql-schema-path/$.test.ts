@@ -1,13 +1,12 @@
 import { Grafaid } from '#grafaid'
-import { Either } from 'effect'
+import { Test } from '@wollybeard/kit/test'
 import { buildSchema } from 'graphql'
 import { describe, expect, test } from 'vitest'
-import { Test } from '../../tests/unit/helpers/test.js'
 import { GraphQLSchemaPath } from './$.js'
 
 describe('.parse', () => {
   // dprint-ignore
-  Test.suite<{ input: string }>('valid paths', [
+  Test.Table.suite<{ input: string }>('valid paths', [
     // Simple types
     { name: 'User type',           input: 'User' },
     { name: 'String scalar',       input: 'String' },
@@ -41,7 +40,7 @@ describe('.parse', () => {
   })
 
   // dprint-ignore
-  Test.suite<{ input: string }>('invalid paths', [
+  Test.Table.suite<{ input: string }>('invalid paths', [
     { name: 'trailing dot',        input: 'User.' },
     { name: 'double dot',          input: 'User..name' },
     { name: 'invalid prefix',      input: 'User$' },
@@ -64,7 +63,7 @@ describe('.parse', () => {
 
 describe('.print', () => {
   // dprint-ignore
-  Test.suite<{ input: string }>('round-trip paths', [
+  Test.Table.suite<{ input: string }>('round-trip paths', [
     { name: 'simple type',         input: 'User' },
     { name: 'field access',        input: 'User.name' },
     { name: 'nested field',        input: 'User.posts.title' },
@@ -154,7 +153,7 @@ describe('resolver: graphql-schema', () => {
   const getTypeOrThrow = (name: string) => Grafaid.Schema.Helpers.getTypeOrThrow(schema, name)
   const getFieldedTypeOrThrow = (name: string) => Grafaid.Schema.Helpers.getFieldedTypeOrThrow(schema, name)
 
-  Test.suite<{
+  Test.Table.suite<{
     path: string
     expected: { left?: RegExp } | { right?: Grafaid.Schema.TypesLike.Any }
   }>(

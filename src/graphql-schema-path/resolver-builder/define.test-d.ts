@@ -1,4 +1,3 @@
-import type { Case } from '#kit'
 import { Ts } from '@wollybeard/kit'
 import { type GetStepperInputTargetNode } from './define.js'
 
@@ -20,40 +19,29 @@ type MockTargetMapping = {
 // InferTargetParentNode Tests
 // ============================================================================
 
-type _GetStepperInputTargetNode = [
+type _ = Ts.Cases<
   // Type's parent is Root, which is not in the mapping
   // So targetParentNode should be never
-  Case<
-    Ts.AssertExact<
-      GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentType'>,
-      never
-    >
+  Ts.AssertExact<
+    GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentType'>,
+    never
   >,
-
   // Argument's parents are Field and Directive, both are mapped
   // So targetParentNode should be { b: 2 } | { c: 3 }
-  Case<
-    Ts.AssertExact<
-      GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentArgument'>,
-      { b: 2 }
-    >
+  Ts.AssertExact<
+    GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentArgument'>,
+    { b: 2 }
   >,
-
   // Field's parents are Type, Field, and Argument
   // All are mapped, so targetParentNode should be their union
-  Case<
-    Ts.AssertExact<
-      GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentField'>,
-      { d: 4 } | { b: 2 } | { a: 1 }
-    >
+  Ts.AssertExact<
+    GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentField'>,
+    { d: 4 } | { b: 2 } | { a: 1 }
   >,
-
   // ResolvedType's parents are Field and Argument
   // Both are mapped
-  Case<
-    Ts.AssertExact<
-      GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentResolvedType'>,
-      { b: 2 } | { a: 1 }
-    >
-  >,
-]
+  Ts.AssertExact<
+    GetStepperInputTargetNode<MockTargetMapping, 'GraphQLPathSegmentResolvedType'>,
+    { b: 2 } | { a: 1 }
+  >
+>

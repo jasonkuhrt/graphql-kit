@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import * as Field from './field.js'
 import * as Type from './type.js'
 

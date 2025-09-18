@@ -1,5 +1,5 @@
 import { DateOnly } from '#date-only'
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Semver as SemverLib } from '#semver'
 import { Equivalence, Order, ParseResult } from 'effect'
 import * as CustomVersion from './custom.js'

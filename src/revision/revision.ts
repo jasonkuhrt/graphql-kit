@@ -1,6 +1,6 @@
 import { Change } from '#change'
 import { DateOnly } from '#date-only'
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Order } from 'effect'
 
 // ============================================================================

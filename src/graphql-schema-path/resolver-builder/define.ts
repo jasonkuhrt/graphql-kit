@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit'
+import { Sch } from '@wollybeard/kit'
 import { Either } from 'effect'
 import type { Simplify } from 'type-fest'
 import { Nodes } from '../nodes/$.js'
@@ -211,7 +211,7 @@ export const define = <$TargetSpec extends TargetSpec>(
     //
 
     const nodeTags = Nodes.$Groups.All
-      .map(_ => EffectKit.Schema.TaggedStruct.getTagOrThrow(_.Schema))
+      .map(_ => Sch.Tagged.getTagOrThrow(_.Schema))
       .filter(_ => _ !== 'GraphQLPathRoot')
 
     for (const tag of nodeTags) {

@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@wollybeard/kit': link:../kit
+  '@wollybeard/kit': link:../../../Library/pnpm/global/5/node_modules/@wollybeard/kit
 
 importers:
 
@@ -15,8 +15,8 @@ importers:
         specifier: ^6.2.1
         version: 6.2.1(graphql@16.11.0)
       '@wollybeard/kit':
-        specifier: link:../kit
-        version: link:../kit
+        specifier: ^0.43.0
+        version: 0.43.0(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
       graffle:
         specifier: 8.0.0-next.168
         version: 8.0.0-next.168(graphql@16.11.0)
@@ -25,11 +25,11 @@ importers:
         version: 5.0.0
     devDependencies:
       '@effect/platform':
-        specifier: ^0.90.9
-        version: 0.90.9(effect@3.17.13)
+        specifier: ^0.90.10
+        version: 0.90.10(effect@3.17.13)
       '@effect/platform-node':
         specifier: ^0.96.1
-        version: 0.96.1(@effect/cluster@0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
+        version: 0.96.1(@effect/cluster@0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
       '@tsconfig/node-lts':
         specifier: ^22.0.2
         version: 22.0.2
@@ -291,8 +291,8 @@ packages:
       '@effect/sql': ^0.44.2
       effect: ^3.17.10
 
-  '@effect/platform@0.90.9':
-    resolution: {integrity: sha512-ZLyGMenOXGERsaJ7urioWwugkluWjhrcQgr0/vfgxqe/TCumL3CK93YZKSlJtohDrFSfWjaXCbXyhqz3iypFUg==}
+  '@effect/platform@0.90.10':
+    resolution: {integrity: sha512-QhDPgCaLfIMQKOCoCPQvRUS+Y34iYJ07jdZ/CBAvYFvg/iUBebsmFuHL63RCD/YZH9BuK/kqqLYAA3M0fmUEgg==}
     peerDependencies:
       effect: ^3.17.13
 
@@ -626,6 +626,14 @@ packages:
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+
+  '@isaacs/balanced-match@4.0.1':
+    resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
+    engines: {node: 20 || >=22}
+
+  '@isaacs/brace-expansion@5.0.0':
+    resolution: {integrity: sha512-ZT55BDLV0yv0RBm2czMiZ+SqCGO7AvmOM3G/w2xhVPH+te0aKgFjmBvGlL1dH+ql2tgGO3MVrbb3jCKyvpgnxA==}
+    engines: {node: 20 || >=22}
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
@@ -1005,6 +1013,9 @@ packages:
     resolution: {integrity: sha512-w071DSzP94YfN6XiWhOxnLpYT3uqtxJBDYdh6Jdjzt+Ce6DNspJsPQgpC7rbts/B8tEkq0LHoYuIF/O5Jh5rPg==}
     engines: {node: '>=18'}
 
+  '@ts-morph/common@0.28.0':
+    resolution: {integrity: sha512-4w6X/oFmvXcwux6y6ExfM/xSqMHw20cYwFJH+BlYrtGa6nwY9qGq8GXnUs1sVYeF2o/KT3S8hAH6sKBI3VOkBg==}
+
   '@tsconfig/node-lts@22.0.2':
     resolution: {integrity: sha512-Kgq5yXTvnUnvlhob0xJpOH4na9PWtuFhHSf94MpDwnENWgiFeJKDNANQV2MT1WpXZYkK2WSWfVYKhVkR7bc8TA==}
 
@@ -1043,6 +1054,9 @@ packages:
 
   '@types/node@24.5.1':
     resolution: {integrity: sha512-/SQdmUP2xa+1rdx7VwB9yPq8PaKej8TD5cQ+XfKDPWWC+VDJU4rvVVagXqKUzhKjtFoNA8rXDJAkCxQPAe00+Q==}
+
+  '@types/node@24.5.2':
+    resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
 
   '@types/parse-git-config@3.0.4':
     resolution: {integrity: sha512-jz5eGdk9lBgAd4rMbXTP7MRG7AsGQ8DrXsRumDcXDLClHcpKluislylPVMP/qp90J/LlIrrPZRZIQUflHfrDnQ==}
@@ -1225,6 +1239,25 @@ packages:
   '@vueuse/shared@12.8.2':
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
+  '@wollybeard/kit@0.43.0':
+    resolution: {integrity: sha512-SbfK6RIA7v/C6K/AZafp0dMh1M08FGzH4rf+AHXC0RxYUQCcQnD5Plre+yTNJsMtuWJyU/pWAhTLCdL966QYHg==}
+    hasBin: true
+    peerDependencies:
+      '@effect/platform': ^0.90.10
+      effect: ^3.17.13
+
+  '@xterm/xterm@5.5.0':
+    resolution: {integrity: sha512-hqJHYaQb5OptNunnyAnkHyM8aCjZ1MEIDTQu1iIbbTD/xops91NB5yq1ZK/dC2JDbVWtF23zUtl9JE2NqwT87A==}
+
+  '@zenfs/core@2.4.0':
+    resolution: {integrity: sha512-Ik1qM9xkP6lisNwR0zWaTXXuvM4Ef9yQRvYjJGqKGJv7fLsdwXS3tclbHkfvd9YkqlpxC6ac6am9oe7AWgepEA==}
+    engines: {node: '>= 18'}
+    hasBin: true
+
+  abort-controller@3.0.0:
+    resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
+    engines: {node: '>=6.5'}
+
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
@@ -1246,6 +1279,10 @@ packages:
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
+
+  ansis@4.1.0:
+    resolution: {integrity: sha512-BGcItUBWSMRgOCe+SVZJ+S7yTRG0eGt9cXAHev72yuGcY23hnLA7Bky5L/xLyPINoSN95geovfBkqoTlNZYa7w==}
+    engines: {node: '>=14'}
 
   any-promise@1.3.0:
     resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
@@ -1319,6 +1356,9 @@ packages:
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
+  buffer@6.0.3:
+    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
+
   cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
@@ -1382,6 +1422,9 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
 
+  code-block-writer@13.0.3:
+    resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
+
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -1413,6 +1456,10 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  consola@3.4.2:
+    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
+    engines: {node: ^14.18.0 || >=16.10.0}
 
   copy-anything@3.0.5:
     resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
@@ -1634,6 +1681,17 @@ packages:
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+
+  event-target-shim@5.0.1:
+    resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
+    engines: {node: '>=6'}
+
+  eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
+  events@3.3.0:
+    resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
+    engines: {node: '>=0.8.x'}
 
   expect-type@1.2.2:
     resolution: {integrity: sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==}
@@ -1966,12 +2024,18 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
+
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
   jsprim@1.4.2:
     resolution: {integrity: sha512-P2bSOMAc/ciLz6DzgjVlGJP9+BrJWu5UDGK70C2iweC5QBIeFf0ZXRvGjEj2uYgrY2MkAAhsSWHDWlFtEroZWw==}
     engines: {node: '>=0.6.0'}
+
+  kerium@1.3.6:
+    resolution: {integrity: sha512-TEMYweNOPW79LOGV9G26biypM2q96s4iJYxcWMg3IxUzRUIFGFfWIxS7Yx2eREKfhLINcNNXGUa0OR6ONS9Dgg==}
 
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
@@ -2014,6 +2078,9 @@ packages:
 
   mdast-util-to-hast@13.2.0:
     resolution: {integrity: sha512-QGYKEuUsYT9ykKBCMOEDLsU5JRObWQusAolFMeko/tYPufNkRffBAQjIE+99jbA87xv6FgmjLtwjh9wBWajwAA==}
+
+  memium@0.3.9:
+    resolution: {integrity: sha512-lncKR1v+dNhpNG1ILX3UrLu/6llNSPKZiWBxn7T5cNt2vWicq5gx7L070Dt7GZjp+Eunw9GXudrG0xmHJQVilA==}
 
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -2058,6 +2125,10 @@ packages:
   mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
+
+  minimatch@10.0.3:
+    resolution: {integrity: sha512-IPZ167aShDZZUMdRk66cyQAW3qr0WzbHkPdMYa8bzZhlHhO3jALbKdxcaak7W9FfT2rZNpQuUu4Od7ILEpXSaw==}
+    engines: {node: 20 || >=22}
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
@@ -2235,6 +2306,10 @@ packages:
     resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
     engines: {node: '>=10'}
 
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
@@ -2268,6 +2343,10 @@ packages:
   readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
+
+  readable-stream@4.7.0:
+    resolution: {integrity: sha512-oIGGmcpTLwPga8Bn6/Z75SVaH1z5dUut2ibSyAMVhmUggWpmDn2dapB0n7f8nwaSiRtepAsfJyfXIO5DCVAODg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   readline-sync@1.4.10:
     resolution: {integrity: sha512-gNva8/6UAe8QYepIQH/jQ2qn91Qj0B9sYjMBBs3QOB8F2CXcKgLxQaJRP76sWVRQt+QU+8fAkCbCvjjMFu7Ycw==}
@@ -2529,6 +2608,9 @@ packages:
     resolution: {integrity: sha512-XyLVuhBVvdJTJr2FJJV2L1pc4MwSjMhcunRVgDE9k4wbb2ee7ORYnPewxMWUav12vxyfUM686MSGsqnVRIInuw==}
     engines: {node: '>=18'}
 
+  ts-morph@27.0.0:
+    resolution: {integrity: sha512-xcqelpTR5PCuZMs54qp9DE3t7tPgA2v/P1/qdW4ke5b3Y5liTGTYj6a/twT35EQW/H5okRqp1UOqwNlgg0K0eQ==}
+
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
 
@@ -2614,6 +2696,11 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  utilium@2.5.4:
+    resolution: {integrity: sha512-JeuMqv+yc2AGo0A3vVIiEwrYQcE/8SXftnvUq0HK0wnAmHtPCMZ/vln7nmNF9G63Qw9egijnTx3TxzdWZKYBmA==}
+    engines: {node: '>=22.0.0'}
+    hasBin: true
 
   uuid@11.1.0:
     resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
@@ -3008,26 +3095,26 @@ snapshots:
   '@dprint/win32-x64@0.50.2':
     optional: true
 
-  '@effect/cluster@0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
+  '@effect/cluster@0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/platform': 0.90.9(effect@3.17.13)
-      '@effect/rpc': 0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
-      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
-      '@effect/workflow': 0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
+      '@effect/rpc': 0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
+      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
+      '@effect/workflow': 0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
       effect: 3.17.13
 
-  '@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)':
+  '@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/platform': 0.90.9(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
       effect: 3.17.13
       uuid: 11.1.0
 
-  '@effect/platform-node-shared@0.49.1(@effect/cluster@0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
+  '@effect/platform-node-shared@0.49.1(@effect/cluster@0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/cluster': 0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
-      '@effect/platform': 0.90.9(effect@3.17.13)
-      '@effect/rpc': 0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
-      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
+      '@effect/cluster': 0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
+      '@effect/rpc': 0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
+      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
       '@parcel/watcher': 2.5.1
       effect: 3.17.13
       multipasta: 0.2.7
@@ -3036,13 +3123,13 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@0.96.1(@effect/cluster@0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
+  '@effect/platform-node@0.96.1(@effect/cluster@0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/cluster': 0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
-      '@effect/platform': 0.90.9(effect@3.17.13)
-      '@effect/platform-node-shared': 0.49.1(@effect/cluster@0.48.7(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
-      '@effect/rpc': 0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
-      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
+      '@effect/cluster': 0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
+      '@effect/platform-node-shared': 0.49.1(@effect/cluster@0.48.7(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)
+      '@effect/rpc': 0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
+      '@effect/sql': 0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
       effect: 3.17.13
       mime: 3.0.0
       undici: 7.16.0
@@ -3051,29 +3138,29 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform@0.90.9(effect@3.17.13)':
+  '@effect/platform@0.90.10(effect@3.17.13)':
     dependencies:
       effect: 3.17.13
       find-my-way-ts: 0.1.6
       msgpackr: 1.11.5
       multipasta: 0.2.7
 
-  '@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)':
+  '@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/platform': 0.90.9(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
       effect: 3.17.13
 
-  '@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)':
+  '@effect/sql@0.44.2(@effect/experimental@0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/experimental': 0.54.6(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
-      '@effect/platform': 0.90.9(effect@3.17.13)
+      '@effect/experimental': 0.54.6(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
       effect: 3.17.13
       uuid: 11.1.0
 
-  '@effect/workflow@0.9.5(@effect/platform@0.90.9(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
+  '@effect/workflow@0.9.5(@effect/platform@0.90.10(effect@3.17.13))(@effect/rpc@0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13))(effect@3.17.13)':
     dependencies:
-      '@effect/platform': 0.90.9(effect@3.17.13)
-      '@effect/rpc': 0.69.2(@effect/platform@0.90.9(effect@3.17.13))(effect@3.17.13)
+      '@effect/platform': 0.90.10(effect@3.17.13)
+      '@effect/rpc': 0.69.2(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)
       effect: 3.17.13
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -3239,6 +3326,12 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
+
+  '@isaacs/balanced-match@4.0.1': {}
+
+  '@isaacs/brace-expansion@5.0.0':
+    dependencies:
+      '@isaacs/balanced-match': 4.0.1
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
@@ -3665,6 +3758,12 @@ snapshots:
       '@ts-graphviz/ast': 2.0.7
       '@ts-graphviz/common': 2.1.5
 
+  '@ts-morph/common@0.28.0':
+    dependencies:
+      minimatch: 10.0.3
+      path-browserify: 1.0.1
+      tinyglobby: 0.2.15
+
   '@tsconfig/node-lts@22.0.2': {}
 
   '@tsconfig/strictest@2.0.5': {}
@@ -3701,6 +3800,10 @@ snapshots:
   '@types/ms@2.1.0': {}
 
   '@types/node@24.5.1':
+    dependencies:
+      undici-types: 7.12.0
+
+  '@types/node@24.5.2':
     dependencies:
       undici-types: 7.12.0
 
@@ -3913,6 +4016,39 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@wollybeard/kit@0.43.0(@effect/platform@0.90.10(effect@3.17.13))(effect@3.17.13)':
+    dependencies:
+      '@effect/platform': 0.90.10(effect@3.17.13)
+      '@types/node': 24.5.2
+      '@zenfs/core': 2.4.0
+      ansis: 4.1.0
+      consola: 3.4.2
+      effect: 3.17.13
+      es-toolkit: 1.39.10
+      fast-check: 4.3.0
+      jsonc-parser: 3.3.1
+      pathe: 2.0.3
+      ts-morph: 27.0.0
+      type-fest: 5.0.0
+      typescript: 5.9.2
+
+  '@xterm/xterm@5.5.0':
+    optional: true
+
+  '@zenfs/core@2.4.0':
+    dependencies:
+      '@types/node': 24.5.2
+      buffer: 6.0.3
+      eventemitter3: 5.0.1
+      kerium: 1.3.6
+      memium: 0.3.9
+      readable-stream: 4.7.0
+      utilium: 2.5.4
+
+  abort-controller@3.0.0:
+    dependencies:
+      event-target-shim: 5.0.1
+
   ajv@6.12.6:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -3951,6 +4087,8 @@ snapshots:
   ansi-styles@4.3.0:
     dependencies:
       color-convert: 2.0.1
+
+  ansis@4.1.0: {}
 
   any-promise@1.3.0: {}
 
@@ -4016,6 +4154,11 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
+  buffer@6.0.3:
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
+
   cac@6.7.14: {}
 
   call-bind-apply-helpers@1.0.2:
@@ -4074,6 +4217,8 @@ snapshots:
 
   clone@1.0.4: {}
 
+  code-block-writer@13.0.3: {}
+
   color-convert@2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -4095,6 +4240,8 @@ snapshots:
   commondir@1.0.1: {}
 
   concat-map@0.0.1: {}
+
+  consola@3.4.2: {}
 
   copy-anything@3.0.5:
     dependencies:
@@ -4372,6 +4519,12 @@ snapshots:
       '@types/estree': 1.0.8
 
   esutils@2.0.3: {}
+
+  event-target-shim@5.0.1: {}
+
+  eventemitter3@5.0.1: {}
+
+  events@3.3.0: {}
 
   expect-type@1.2.2: {}
 
@@ -4683,6 +4836,8 @@ snapshots:
 
   json5@2.2.3: {}
 
+  jsonc-parser@3.3.1: {}
+
   jsonfile@4.0.0:
     optionalDependencies:
       graceful-fs: 4.2.11
@@ -4693,6 +4848,10 @@ snapshots:
       extsprintf: 1.3.0
       json-schema: 0.4.0
       verror: 1.10.0
+
+  kerium@1.3.6:
+    dependencies:
+      utilium: 2.5.4
 
   lodash.camelcase@4.3.0: {}
 
@@ -4748,6 +4907,11 @@ snapshots:
       unist-util-visit: 5.0.0
       vfile: 6.0.3
 
+  memium@0.3.9:
+    dependencies:
+      kerium: 1.3.6
+      utilium: 2.5.4
+
   merge2@1.4.1: {}
 
   micromark-util-character@2.1.1:
@@ -4783,6 +4947,10 @@ snapshots:
   mimic-fn@2.1.0: {}
 
   mimic-response@3.1.0: {}
+
+  minimatch@10.0.3:
+    dependencies:
+      '@isaacs/brace-expansion': 5.0.0
 
   minimatch@3.1.2:
     dependencies:
@@ -4959,6 +5127,8 @@ snapshots:
     dependencies:
       parse-ms: 2.1.0
 
+  process@0.11.10: {}
+
   property-information@7.1.0: {}
 
   psl@1.15.0:
@@ -4989,6 +5159,14 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+
+  readable-stream@4.7.0:
+    dependencies:
+      abort-controller: 3.0.0
+      buffer: 6.0.3
+      events: 3.3.0
+      process: 0.11.10
+      string_decoder: 1.3.0
 
   readline-sync@1.4.10: {}
 
@@ -5284,6 +5462,11 @@ snapshots:
       '@ts-graphviz/common': 2.1.5
       '@ts-graphviz/core': 2.0.7
 
+  ts-morph@27.0.0:
+    dependencies:
+      '@ts-morph/common': 0.28.0
+      code-block-writer: 13.0.3
+
   ts-toolbelt@9.6.0: {}
 
   tsconfck@3.1.6(typescript@5.9.2):
@@ -5363,6 +5546,12 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
+
+  utilium@2.5.4:
+    dependencies:
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      '@xterm/xterm': 5.5.0
 
   uuid@11.1.0: {}
 

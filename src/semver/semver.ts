@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Range as VltRange, Version as VltVersion } from '@vltpkg/semver'
 import { Equivalence, Order, ParseResult } from 'effect'
 import * as OfficialRelease from './official-release.js'

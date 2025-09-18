@@ -1,5 +1,5 @@
+import { S } from '#dep/effect'
 import { Grafaid } from '#grafaid'
-import { S } from '#kit'
 import * as GraphQLName from '../graphql-name.js'
 import * as Argument from './argument.js'
 import * as ResolvedType from './resolved-type.js'

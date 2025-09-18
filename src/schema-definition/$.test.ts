@@ -1,5 +1,5 @@
+import { Test } from '@wollybeard/kit/test'
 import { expect } from 'vitest'
-import { Test } from '../../tests/unit/helpers/test.js'
 import * as SchemaDefinition from './schema-definition.js'
 
 interface SchemaTestCase {
@@ -23,13 +23,13 @@ const sdl2 = `
 `
 
 // dprint-ignore
-Test.suite<SchemaTestCase>('SchemaDefinition', [
+Test.Table.suite<SchemaTestCase>('SchemaDefinition', [
   { name: 'sdl.decode creates schema from SDL string',  sdl: sdl1,          operation: 'decode',  expected: 'type Query' },
   { name: 'isEmpty detects empty schemas',              sdl: `type Query`,  operation: 'isEmpty', expected: true },
   { name: 'isEmpty returns false for non-empty',        sdl: sdl1,          operation: 'isEmpty', expected: false },
 ], ({ sdl, operation, expected }) => {
   const schema = SchemaDefinition.sdl.decode(sdl)
-  
+
   switch (operation) {
     case 'decode':
       expect(SchemaDefinition.is(schema)).toBe(true)
@@ -48,7 +48,7 @@ interface EquivalenceTestCase {
 }
 
 // dprint-ignore
-Test.suite<EquivalenceTestCase>('equivalence', [
+Test.Table.suite<EquivalenceTestCase>('equivalence', [
   { name: 'different field order means different SDL',  sdl1: sdl1, sdl2: sdl2, shouldBeEqual: false },
   { name: 'same SDL produces equivalent schemas',       sdl1: sdl1, sdl2: sdl1, shouldBeEqual: true },
 ], ({ sdl1, sdl2, shouldBeEqual }) => {

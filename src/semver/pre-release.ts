@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Version as VltVersion } from '@vltpkg/semver'
 
 // ============================================================================

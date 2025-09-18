@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { ParseResult } from 'effect'
 import { GraphQLSchema } from 'graphql'
 import { buildASTSchema, parse, printSchema } from 'graphql'

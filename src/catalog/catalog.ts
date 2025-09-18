@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Schema } from '#schema'
 import { Version } from '#version'
 import { VersionCoverage } from '#version-coverage'

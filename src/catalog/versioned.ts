@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Array, Either, HashMap, Order, pipe } from 'effect'
 import { Schema } from '../schema/$.js'
 import { Version } from '../version/$.js'

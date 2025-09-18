@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit'
+import { Sch } from '@wollybeard/kit'
 import { ColonToken, DollarToken, DotToken, EOFToken, HashToken, NameToken, Token, VersionToken } from './tokens.js'
 
 /**
@@ -50,19 +50,19 @@ export function tokenize(input: string): Token[] {
 
     // Single character tokens
     switch (char) {
-      case EffectKit.Schema.Literal.getValueAtField(DotToken, 'display'):
+      case Sch.Struct.getValueAtField(DotToken, 'display'):
         tokens.push(DotToken.make({ pos }))
         pos++
         continue
-      case EffectKit.Schema.Literal.getValueAtField(DollarToken, 'display'):
+      case Sch.Struct.getValueAtField(DollarToken, 'display'):
         tokens.push(DollarToken.make({ pos }))
         pos++
         continue
-      case EffectKit.Schema.Literal.getValueAtField(HashToken, 'display'):
+      case Sch.Struct.getValueAtField(HashToken, 'display'):
         tokens.push(HashToken.make({ pos }))
         pos++
         continue
-      case EffectKit.Schema.Literal.getValueAtField(ColonToken, 'display'):
+      case Sch.Struct.getValueAtField(ColonToken, 'display'):
         tokens.push(ColonToken.make({ pos }))
         pos++
         continue

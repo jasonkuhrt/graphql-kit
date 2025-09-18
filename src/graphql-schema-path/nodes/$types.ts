@@ -1,4 +1,4 @@
-import type { S } from '#kit'
+import type { S } from '#dep/effect'
 import * as Groups from './$groups.js'
 import * as Argument from './argument.js'
 import * as Field from './field.js'

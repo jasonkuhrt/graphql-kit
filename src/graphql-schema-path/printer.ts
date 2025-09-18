@@ -1,4 +1,4 @@
-import { EffectKit } from '#kit'
+import { Sch } from '@wollybeard/kit'
 import { Match } from 'effect'
 import { Nodes } from './nodes/$.js'
 import { Parser } from './parser/$.js'
@@ -10,9 +10,9 @@ import { Parser } from './parser/$.js'
 const NodeSeperators = {
   GraphQLPathRoot: '',
   GraphQLPathSegmentType: '', // Type nodes have no separator (they're the root)
-  GraphQLPathSegmentField: EffectKit.Schema.Literal.getValueAtField(Parser.Tokens.DotToken, 'display'),
-  GraphQLPathSegmentArgument: EffectKit.Schema.Literal.getValueAtField(Parser.Tokens.DollarToken, 'display'),
-  GraphQLPathSegmentResolvedType: EffectKit.Schema.Literal.getValueAtField(Parser.Tokens.HashToken, 'display'),
+  GraphQLPathSegmentField: Sch.Struct.getValueAtField(Parser.Tokens.DotToken, 'display'),
+  GraphQLPathSegmentArgument: Sch.Struct.getValueAtField(Parser.Tokens.DollarToken, 'display'),
+  GraphQLPathSegmentResolvedType: Sch.Struct.getValueAtField(Parser.Tokens.HashToken, 'display'),
 } as const
 
 /**

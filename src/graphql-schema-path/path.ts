@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Effect, ParseResult } from 'effect'
 import { Nodes } from './nodes/$.js'
 import { parse as parseTokens } from './parser/parser.js'

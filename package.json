@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@graphql-inspector/core": "^6.2.1",
-    "@wollybeard/kit": "link:../kit",
+    "@wollybeard/kit": "^0.43.0",
     "graffle": "8.0.0-next.168",
     "type-fest": "^5.0.0"
   },
@@ -60,7 +60,7 @@
     "graphql": "^16.0.0"
   },
   "devDependencies": {
-    "@effect/platform": "^0.90.9",
+    "@effect/platform": "^0.90.10",
     "@effect/platform-node": "^0.96.1",
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/strictest": "^2.0.5",
@@ -80,9 +80,6 @@
   },
   "packageManager": "pnpm@10.17.0",
   "imports": {
-    "#*": {
-      "default": "./build/*"
-    },
     "#grafaid": "./build/grafaid/$.js",
     "#graphql-schema-path": "./build/graphql-schema-path/$.js",
     "#catalog": "./build/catalog/$.js",
@@ -99,7 +96,11 @@
     "#kit": "./build/kit/$$.js",
     "#kit/*": "./build/kit/*.js",
     "#semver": "./build/semver/$.js",
-    "#grafaid-old": "./build/grafaid-old/grafaid.js"
+    "#grafaid-old": "./build/grafaid-old/grafaid.js",
+    "#dep/effect": "./build/dep/effect/$$.js",
+    "#*": {
+      "default": "./build/*"
+    }
   },
   "exports": {
     ".": "./build/exports/index.js",

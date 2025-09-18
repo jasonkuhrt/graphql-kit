@@ -24,7 +24,6 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": false, // Great for conditional middlewares
     "paths": {
-      "#*": ["./src/*"],
       "#grafaid": ["./src/grafaid/$.ts"],
       "#graphql-schema-path": ["./src/graphql-schema-path/$.ts"],
       "#catalog": ["./src/catalog/$.ts"],
@@ -41,7 +40,9 @@
       "#kit": ["./src/kit/$$.ts"],
       "#kit/*": ["./src/kit/*"],
       "#semver": ["./src/semver/$.ts"],
-      "#grafaid-old": ["./src/grafaid-old/grafaid.ts"]
+      "#grafaid-old": ["./src/grafaid-old/grafaid.ts"],
+      "#dep/effect": ["./src/dep/effect/$$.ts"],
+      "#*": ["./src/*"]
     },
 
     // DX covered by linter:

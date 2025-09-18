@@ -1,4 +1,4 @@
-import { S } from '#kit'
+import { S } from '#dep/effect'
 import { Match } from 'effect'
 import * as Unversioned from './unversioned.js'
 import * as Versioned from './versioned.js'

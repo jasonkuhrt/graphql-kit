@@ -1,4 +1,4 @@
-import type { S } from '#kit'
+import type { S } from '#dep/effect'
 import type { ModuleIndex } from './$types.js'
 
 import * as Argument from './argument.js'

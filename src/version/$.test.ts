@@ -1,13 +1,12 @@
 import { DateOnly } from '#date-only'
 import { Semver } from '#semver'
+import { Test } from '@wollybeard/kit/test'
 import { Match } from 'effect'
-import { describe, expect, test } from 'vitest'
-import { Test } from '../../tests/unit/helpers/test.js'
+import { expect } from 'vitest'
 import { Version } from './$.js'
 
-describe('Version', () => {
-  // dprint-ignore
-  Test.suite<{ input: string; expectedTag: string; expectedString: string }>('decoding', [
+// dprint-ignore
+Test.Table.suite<{ input: string; expectedTag: string; expectedString: string }>('decoding', [
     { name: 'decodes semver strings as SemverVersion',                                                  input: '1.2.3',                                                                                    expectedTag: 'VersionSemver',  expectedString: '1.2.3' },
     { name: 'decodes date strings as DateVersion',                                                      input: '2024-01-15',                                                                               expectedTag: 'VersionDate',    expectedString: '2024-01-15' },
     { name: 'decodes other strings as CustomVersion',                                                   input: 'v1.0-beta',                                                                                expectedTag: 'VersionCustom',  expectedString: 'v1.0-beta' },
@@ -18,8 +17,8 @@ describe('Version', () => {
     expect(Version.encodeSync(version)).toBe(expectedString)
   })
 
-  // dprint-ignore
-  Test.suite<{ v1: string; v2: string; expectedComparison: 'less' | 'greater' }>('ordering', [
+// dprint-ignore
+Test.Table.suite<{ v1: string; v2: string; expectedComparison: 'less' | 'greater' }>('ordering', [
     { name: 'orders by type precedence: Semver > Date',                                                 v1: '1.0.0',                                                                                       v2: '2024-01-15',     expectedComparison: 'less' },
     { name: 'orders by type precedence: Date > Custom',                                                 v1: '2024-01-15',                                                                                  v2: 'custom',         expectedComparison: 'less' },
     { name: 'orders by type precedence: Semver > Custom',                                               v1: '1.0.0',                                                                                       v2: 'custom',         expectedComparison: 'less' },
@@ -33,7 +32,7 @@ describe('Version', () => {
     const version1 = Version.decodeSync(v1)
     const version2 = Version.decodeSync(v2)
     const result = Version.order(version1, version2)
-    
+
     if (expectedComparison === 'less') {
       expect(result).toBeLessThan(0)
     } else {
@@ -41,8 +40,8 @@ describe('Version', () => {
     }
   })
 
-  // dprint-ignore
-  Test.suite<{ v1: string; v2: string; expected: boolean }>('equivalence', [
+// dprint-ignore
+Test.Table.suite<{ v1: string; v2: string; expected: boolean }>('equivalence', [
     { name: 'considers same versions equal',                                                            v1: '1.0.0',                                                                                       v2: '1.0.0',          expected: true },
     { name: 'considers different types unequal',                                                        v1: '1.0.0',                                                                                       v2: '2024-01-15',     expected: false },
     { name: 'considers different values of same type unequal',                                          v1: '1.0.0',                                                                                       v2: '2.0.0',          expected: false },
@@ -52,8 +51,8 @@ describe('Version', () => {
     expect(Version.equivalence(version1, version2)).toBe(expected)
   })
 
-  // dprint-ignore
-  Test.suite<{ input: string; expected: string }>('pattern matching', [
+// dprint-ignore
+Test.Table.suite<{ input: string; expected: string }>('pattern matching', [
     { name: 'matches on integer version',                                                               input: '123',                                                                                       expected: 'Integer: 123' },
     { name: 'matches on semver version',                                                                input: '1.2.3',                                                                                    expected: 'Semver: 1.2.3' },
     { name: 'matches on date version',                                                                  input: '2024-01-15',                                                                               expected: 'Date: 2024-01-15' },
@@ -70,14 +69,14 @@ describe('Version', () => {
     expect(result).toBe(expected)
   })
 
-  // dprint-ignore
-  Test.suite<{ type: 'semver' | 'date' | 'custom'; input: string; expectedTag: string; expectedString: string }>('importers', [
+// dprint-ignore
+Test.Table.suite<{ type: 'semver' | 'date' | 'custom'; input: string; expectedTag: string; expectedString: string }>('importers', [
     { name: 'creates from semver',         type: 'semver',  input: '1.2.3',        expectedTag: 'VersionSemver',  expectedString: '1.2.3' },
     { name: 'creates from date',           type: 'date',    input: '2024-01-15',   expectedTag: 'VersionDate',    expectedString: '2024-01-15' },
     { name: 'creates from custom string',  type: 'custom',  input: 'v1.0-beta',    expectedTag: 'VersionCustom',  expectedString: 'v1.0-beta' },
   ], ({ type, input, expectedTag, expectedString }) => {
     let version: Version.Version
-    
+
     switch (type) {
       case 'semver': {
         const semver = Semver.decodeSync(input)
@@ -94,8 +93,7 @@ describe('Version', () => {
         break
       }
     }
-    
+
     expect(version._tag).toBe(expectedTag)
     expect(Version.encodeSync(version)).toBe(expectedString)
   })
-})

@@ -1,5 +1,5 @@
-import { S } from '#kit'
-import type { ObjReplace } from '#kit/other'
+import { S } from '#dep/effect'
+import type { Obj } from '@wollybeard/kit'
 import { Order } from 'effect'
 import { Revision } from '../revision/$.js'
 import { SchemaDefinition } from '../schema-definition/$.js'
@@ -29,7 +29,7 @@ export interface Versioned {
 }
 
 export interface VersionedEncoded extends
-  ObjReplace<Versioned, {
+  Obj.Replace<Versioned, {
     readonly version: S.Schema.Encoded<typeof Version.Version>
     readonly branchPoint: BranchPointEncoded | null
     readonly revisions: ReadonlyArray<S.Schema.Encoded<typeof Revision.Revision>>
