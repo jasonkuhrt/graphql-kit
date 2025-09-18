@@ -1,6 +1,6 @@
 {
   "name": "graphql-kit",
-  "version": "0.1.0",
+  "version": "0.0.0-dripip",
   "description": "GraphQL toolkit with Effect-based utilities",
   "author": "Jason Kuhrt",
   "license": "MIT",
@@ -79,6 +79,10 @@
     "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.17.0",
+  "files": [
+    "build",
+    "src"
+  ],
   "imports": {
     "#grafaid": "./build/grafaid/$.js",
     "#graphql-schema-path": "./build/graphql-schema-path/$.js",
