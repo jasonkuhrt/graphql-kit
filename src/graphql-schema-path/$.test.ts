@@ -6,56 +6,56 @@ import { GraphQLSchemaPath } from './$.js'
 
 describe('.parse', () => {
   // dprint-ignore
-  Test.Table.suite<{ input: string }>('valid paths', [
+  Test.Table.suite<string, void>('valid paths', [
     // Simple types
-    { name: 'User type',           input: 'User' },
-    { name: 'String scalar',       input: 'String' },
-    { name: 'input type',          input: 'CreateUserInput' },
+    { name: 'User type',           i: 'User', o: undefined },
+    { name: 'String scalar',       i: 'String', o: undefined },
+    { name: 'input type',          i: 'CreateUserInput', o: undefined },
 
     // Field access
-    { name: 'simple field',        input: 'User.name' },
-    { name: 'nested field',        input: 'User.posts.title' },
+    { name: 'simple field',        i: 'User.name', o: undefined },
+    { name: 'nested field',        i: 'User.posts.title', o: undefined },
 
     // Argument access
-    { name: 'field argument',      input: 'User.posts$limit' },
+    { name: 'field argument',      i: 'User.posts$limit', o: undefined },
 
     // Resolved types
-    { name: 'field resolved type', input: 'User.posts#' },
-    { name: 'arg resolved type',   input: 'User.posts$limit#' },
+    { name: 'field resolved type', i: 'User.posts#', o: undefined },
+    { name: 'arg resolved type',   i: 'User.posts$limit#', o: undefined },
 
     // Input types
-    { name: 'input field',         input: 'CreateUserInput.email' },
-    { name: 'nested input',        input: 'CreateUserInput.address.street' },
+    { name: 'input field',         i: 'CreateUserInput.email', o: undefined },
+    { name: 'nested input',        i: 'CreateUserInput.address.street', o: undefined },
 
     // With version
-    { name: 'with version',        input: 'v1.0:User' },
-    { name: 'multi version',       input: 'v1.0,2.0:User.posts' },
-    { name: 'version range',       input: 'v1.0-3.0:Query.users' },
-  ], ({ input }) => {
-    const result = GraphQLSchemaPath.parse(input)
+    { name: 'with version',        i: 'v1.0:User', o: undefined },
+    { name: 'multi version',       i: 'v1.0,2.0:User.posts', o: undefined },
+    { name: 'version range',       i: 'v1.0-3.0:Query.users', o: undefined },
+  ], ({ i }) => {
+    const result = GraphQLSchemaPath.parse(i)
     expect({
-      input,
+      input: i,
       result,
     }).toMatchSnapshot()
   })
 
   // dprint-ignore
-  Test.Table.suite<{ input: string }>('invalid paths', [
-    { name: 'trailing dot',        input: 'User.' },
-    { name: 'double dot',          input: 'User..name' },
-    { name: 'invalid prefix',      input: 'User$' },
-    { name: 'number start',        input: '123User' },
-    { name: 'invalid char',        input: 'User!' },
-    { name: 'empty string',        input: '' },
-  ], ({ input }) => {
+  Test.Table.suite<string, void>('invalid paths', [
+    { name: 'trailing dot',        i: 'User.', o: undefined },
+    { name: 'double dot',          i: 'User..name', o: undefined },
+    { name: 'invalid prefix',      i: 'User$', o: undefined },
+    { name: 'number start',        i: '123User', o: undefined },
+    { name: 'invalid char',        i: 'User!', o: undefined },
+    { name: 'empty string',        i: '', o: undefined },
+  ], ({ i }) => {
     let error: any
     try {
-      GraphQLSchemaPath.parse(input)
+      GraphQLSchemaPath.parse(i)
     } catch (e) {
       error = e
     }
     expect({
-      input,
+      input: i,
       error: error?.message || error,
     }).toMatchSnapshot()
   })
@@ -63,26 +63,26 @@ describe('.parse', () => {
 
 describe('.print', () => {
   // dprint-ignore
-  Test.Table.suite<{ input: string }>('round-trip paths', [
-    { name: 'simple type',         input: 'User' },
-    { name: 'field access',        input: 'User.name' },
-    { name: 'nested field',        input: 'User.posts.title' },
-    { name: 'with argument',       input: 'User.posts$limit' },
-    { name: 'resolved type',       input: 'User.posts#' },
-    { name: 'arg resolved',        input: 'User.posts$limit#' },
-    { name: 'input field',         input: 'CreateUserInput.email' },
-    { name: 'nested input',        input: 'CreateUserInput.address.street' },
-    { name: 'with version',        input: 'v1.0:User' },
-    { name: 'multi version',       input: 'v1.0,2.0:User.posts' },
-    { name: 'version range',       input: 'v1.0-3.0:Query.users' },
-  ], ({ input }) => {
-    const parsed = GraphQLSchemaPath.parse(input)
+  Test.Table.suite<string, void>('round-trip paths', [
+    { name: 'simple type',         i: 'User', o: undefined },
+    { name: 'field access',        i: 'User.name', o: undefined },
+    { name: 'nested field',        i: 'User.posts.title', o: undefined },
+    { name: 'with argument',       i: 'User.posts$limit', o: undefined },
+    { name: 'resolved type',       i: 'User.posts#', o: undefined },
+    { name: 'arg resolved',        i: 'User.posts$limit#', o: undefined },
+    { name: 'input field',         i: 'CreateUserInput.email', o: undefined },
+    { name: 'nested input',        i: 'CreateUserInput.address.street', o: undefined },
+    { name: 'with version',        i: 'v1.0:User', o: undefined },
+    { name: 'multi version',       i: 'v1.0,2.0:User.posts', o: undefined },
+    { name: 'version range',       i: 'v1.0-3.0:Query.users', o: undefined },
+  ], ({ i }) => {
+    const parsed = GraphQLSchemaPath.parse(i)
     const printed = GraphQLSchemaPath.print(parsed)
     expect({
-      input,
+      input: i,
       parsed,
       printed,
-      roundTripSuccess: printed === input,
+      roundTripSuccess: printed === i,
     }).toMatchSnapshot()
   })
 })
@@ -153,39 +153,36 @@ describe('resolver: graphql-schema', () => {
   const getTypeOrThrow = (name: string) => Grafaid.Schema.Helpers.getTypeOrThrow(schema, name)
   const getFieldedTypeOrThrow = (name: string) => Grafaid.Schema.Helpers.getFieldedTypeOrThrow(schema, name)
 
-  Test.Table.suite<{
-    path: string
-    expected: { left?: RegExp } | { right?: Grafaid.Schema.TypesLike.Any }
-  }>(
+  Test.Table.suite<string, { left?: RegExp } | { right?: Grafaid.Schema.TypesLike.Any }>(
     'path resolution',
     // dprint-ignore
     [
-      { name: 'resolves type',                    path: 'User',                expected: { right: getTypeOrThrow('User') } },
-      { name: 'resolves field',                   path: 'User.name',           expected: { right: getFieldedTypeOrThrow('User').getFields()['name'] } },
-      { name: 'resolves field argument',          path: 'User.posts$first',    expected: { right: (getFieldedTypeOrThrow('User').getFields()['posts'] as any).args[0] } },
-      { name: 'resolves field resolved type',     path: 'User.posts#',         expected: { right: getTypeOrThrow('Post') } },
-      { name: 'resolves argument resolved type',  path: 'User.posts$first#',   expected: { right: getTypeOrThrow('Int') } },
-      { name: 'resolves nested field',            path: 'User.posts.title',    expected: { left: /KindMismatch/ } },
-      { name: 'resolves query field',             path: 'Query.user',          expected: { right: getFieldedTypeOrThrow('Query').getFields()['user'] } },
-      { name: 'resolves query field argument',    path: 'Query.user$id',       expected: { right: (getFieldedTypeOrThrow('Query').getFields()['user'] as any).args[0] } },
-      { name: 'fails on non-existent type',       path: 'NonExistent',         expected: { left: /NodeNotFound/ } },
-      { name: 'fails on non-existent field',      path: 'User.nonExistent',    expected: { left: /NodeNotFound/ } },
-      { name: 'fails on non-existent argument',   path: 'User.name$foo',       expected: { left: /NodeNotFound/ } },
+      { name: 'resolves type',                    i: 'User',                o: { right: getTypeOrThrow('User') } },
+      { name: 'resolves field',                   i: 'User.name',           o: { right: getFieldedTypeOrThrow('User').getFields()['name'] } },
+      { name: 'resolves field argument',          i: 'User.posts$first',    o: { right: (getFieldedTypeOrThrow('User').getFields()['posts'] as any).args[0] } },
+      { name: 'resolves field resolved type',     i: 'User.posts#',         o: { right: getTypeOrThrow('Post') } },
+      { name: 'resolves argument resolved type',  i: 'User.posts$first#',   o: { right: getTypeOrThrow('Int') } },
+      { name: 'resolves nested field',            i: 'User.posts.title',    o: { left: /KindMismatch/ } },
+      { name: 'resolves query field',             i: 'Query.user',          o: { right: getFieldedTypeOrThrow('Query').getFields()['user'] } },
+      { name: 'resolves query field argument',    i: 'Query.user$id',       o: { right: (getFieldedTypeOrThrow('Query').getFields()['user'] as any).args[0] } },
+      { name: 'fails on non-existent type',       i: 'NonExistent',         o: { left: /NodeNotFound/ } },
+      { name: 'fails on non-existent field',      i: 'User.nonExistent',    o: { left: /NodeNotFound/ } },
+      { name: 'fails on non-existent argument',   i: 'User.name$foo',       o: { left: /NodeNotFound/ } },
     ],
-    ({ path, expected }) => {
-      const ast = GraphQLSchemaPath.parse(path)
+    ({ i, o }) => {
+      const ast = GraphQLSchemaPath.parse(i)
       const result = resolver(ast)
 
-      if ('right' in expected) {
+      if ('right' in o) {
         expect(result._tag).toBe('Right')
         if (result._tag === 'Right') {
-          expect(result.right).toBe(expected.right)
+          expect(result.right).toBe(o.right)
         }
-      } else if ('left' in expected) {
+      } else if ('left' in o) {
         expect(result._tag).toBe('Left')
-        if (result._tag === 'Left' && expected.left) {
+        if (result._tag === 'Left' && o.left) {
           // TraversalError has a cause field with the actual StepFailure
-          expect(result.left.cause._tag).toMatch(expected.left)
+          expect(result.left.cause._tag).toMatch(o.left)
         }
       }
     },

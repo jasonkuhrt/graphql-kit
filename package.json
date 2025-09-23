@@ -49,9 +49,9 @@
   },
   "dependencies": {
     "@graphql-inspector/core": "^6.2.1",
-    "@wollybeard/kit": "^0.43.0",
+    "@wollybeard/kit": "^0.56.0",
     "graffle": "8.0.0-next.168",
-    "type-fest": "^5.0.0"
+    "type-fest": "^5.0.1"
   },
   "peerDependencies": {
     "@effect/platform": "^0.90.7",
@@ -60,15 +60,15 @@
     "graphql": "^16.0.0"
   },
   "devDependencies": {
-    "@effect/platform": "^0.90.10",
-    "@effect/platform-node": "^0.96.1",
+    "@effect/platform": "^0.91.0",
+    "@effect/platform-node": "^0.97.0",
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^24.5.1",
-    "@vltpkg/semver": "0.0.0-29",
+    "@types/node": "^24.5.2",
+    "@vltpkg/semver": "0.0.0-30",
     "dprint": "^0.50.2",
     "dripip": "^0.10.0",
-    "effect": "^3.17.13",
+    "effect": "^3.17.14",
     "fast-check": "^4.3.0",
     "graphql": "^16.11.0",
     "madge": "^8.0.0",
