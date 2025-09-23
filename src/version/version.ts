@@ -2,23 +2,23 @@ import { DateOnly } from '#date-only'
 import { S } from '#dep/effect'
 import { Semver as SemverLib } from '#semver'
 import { Equivalence, Order, ParseResult } from 'effect'
-import * as CustomVersion from './custom.js'
-import * as DateVersion from './date.js'
-import * as IntegerVersion from './integer.js'
-import * as SemverVersion from './semver.js'
+import { Custom } from './custom.js'
+import { Date } from './date.js'
+import { Integer } from './integer.js'
+import { Semver } from './semver.js'
 
-// Re-export member modules as namespaces
-export { CustomVersion, DateVersion, IntegerVersion, SemverVersion }
+// Re-export member modules
+export { Custom, Date, Integer, Semver }
 
 // ============================================================================
 // Schema
 // ============================================================================
 
 const VersionUnion = S.Union(
-  IntegerVersion.Integer,
-  SemverVersion.Semver,
-  DateVersion.Date,
-  CustomVersion.Custom,
+  Integer,
+  Semver,
+  Date,
+  Custom,
 )
 
 /**
@@ -40,14 +40,14 @@ export const Version = S.transformOrFail(
     decode: (input, _, ast) => {
       // Try parsing as integer first
       if (typeof input === 'number' && Number.isInteger(input)) {
-        return ParseResult.succeed(new IntegerVersion.Integer({ value: input }))
+        return ParseResult.succeed(new Integer({ value: input }))
       }
 
       // Try parsing string as integer
       if (typeof input === 'string') {
         const parsed = Number(input)
         if (Number.isInteger(parsed) && parsed.toString() === input) {
-          return ParseResult.succeed(new IntegerVersion.Integer({ value: parsed }))
+          return ParseResult.succeed(new Integer({ value: parsed }))
         }
       }
 
@@ -56,7 +56,7 @@ export const Version = S.transformOrFail(
         // Try parsing as semver
         try {
           SemverLib.decodeSync(input) // Validate it's a valid semver
-          return ParseResult.succeed(new SemverVersion.Semver({ value: input }))
+          return ParseResult.succeed(new Semver({ value: input }))
         } catch {
           // Not a semver, continue
         }
@@ -64,13 +64,13 @@ export const Version = S.transformOrFail(
         // Try parsing as ISO date
         try {
           const dateOnly = DateOnly.decodeSync(input)
-          return ParseResult.succeed(new DateVersion.Date({ value: dateOnly }))
+          return ParseResult.succeed(new Date({ value: dateOnly }))
         } catch {
           // Not an ISO date, continue
         }
 
         // Fall back to custom version
-        return ParseResult.succeed(new CustomVersion.Custom({ value: input }))
+        return ParseResult.succeed(new Custom({ value: input }))
       }
 
       return ParseResult.fail(new ParseResult.Type(ast, input))
@@ -117,16 +117,16 @@ export const order: Order.Order<Version> = Order.make((a, b) => {
   // Same type - use type-specific ordering
   switch (a._tag) {
     case 'VersionInteger':
-      return Order.number(a.value, (b as IntegerVersion.Integer).value)
+      return Order.number(a.value, (b as Integer).value)
     case 'VersionSemver': {
       const semverA = SemverLib.decodeSync(a.value)
-      const semverB = SemverLib.decodeSync((b as SemverVersion.Semver).value)
+      const semverB = SemverLib.decodeSync((b as Semver).value)
       return SemverLib.order(semverA, semverB)
     }
     case 'VersionDate':
-      return DateOnly.order(a.value, (b as DateVersion.Date).value)
+      return DateOnly.order(a.value, (b as Date).value)
     case 'VersionCustom':
-      return Order.string(a.value, (b as CustomVersion.Custom).value)
+      return Order.string(a.value, (b as Custom).value)
   }
 })
 
@@ -147,16 +147,16 @@ export const equivalence: Equivalence.Equivalence<Version> = Equivalence.make((a
 
   switch (a._tag) {
     case 'VersionInteger':
-      return a.value === (b as IntegerVersion.Integer).value
+      return a.value === (b as Integer).value
     case 'VersionSemver': {
       const semverA = SemverLib.decodeSync(a.value)
-      const semverB = SemverLib.decodeSync((b as SemverVersion.Semver).value)
+      const semverB = SemverLib.decodeSync((b as Semver).value)
       return SemverLib.equivalence(semverA, semverB)
     }
     case 'VersionDate':
-      return DateOnly.equivalence(a.value, (b as DateVersion.Date).value)
+      return DateOnly.equivalence(a.value, (b as Date).value)
     case 'VersionCustom':
-      return a.value === (b as CustomVersion.Custom).value
+      return a.value === (b as Custom).value
   }
 })
 
@@ -167,59 +167,42 @@ export const equivalence: Equivalence.Equivalence<Version> = Equivalence.make((a
 export const is = S.is(Version)
 
 // ============================================================================
-// Codec
+// Codecs
 // ============================================================================
 
 export const decode = S.decode(Version)
 export const decodeSync = S.decodeSync(Version)
 export const encode = S.encode(Version)
+export const encodeSync = S.encodeSync(Version)
 
 // ============================================================================
 // Importers
 // ============================================================================
 
-export const fromString = S.decodeSync(Version)
+export const fromString = decodeSync
 
 /**
  * Create a semver version
  */
 export const fromSemver = (semver: SemverLib.Semver): Version =>
-  S.decodeSync(SemverVersion.Semver)({ _tag: 'VersionSemver', value: semver.version.toString() })
+  S.decodeSync(Semver)({ _tag: 'VersionSemver', value: semver.version.toString() })
 
 /**
  * Create a date version
  */
 export const fromDateOnly = (date: DateOnly.DateOnly): Version =>
-  S.decodeSync(DateVersion.Date)({ _tag: 'VersionDate', value: date })
+  S.decodeSync(Date)({ _tag: 'VersionDate', value: date })
 
 /**
  * Create an integer version
  */
-export const fromInteger = (value: number): Version =>
-  S.decodeSync(IntegerVersion.Integer)({ _tag: 'VersionInteger', value })
+export const fromInteger = (value: number): Version => S.decodeSync(Integer)({ _tag: 'VersionInteger', value })
 
 /**
  * Create a custom version
  */
-export const fromCustom = (value: string): Version =>
-  S.decodeSync(CustomVersion.Custom)({ _tag: 'VersionCustom', value })
+export const fromCustom = (value: string): Version => S.decodeSync(Custom)({ _tag: 'VersionCustom', value })
 
 // ============================================================================
 // Domain Logic
 // ============================================================================
-
-/**
- * Synchronously encode a version to its string representation
- */
-export const encodeSync = (version: Version): string => {
-  switch (version._tag) {
-    case 'VersionInteger':
-      return version.value.toString()
-    case 'VersionSemver':
-      return version.value
-    case 'VersionDate':
-      return version.value
-    case 'VersionCustom':
-      return version.value
-  }
-}

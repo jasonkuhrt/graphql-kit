@@ -1,3 +1,4 @@
+import { Version } from '#version'
 import { Schema as S } from 'effect'
 
 // ============================================================================
@@ -26,7 +27,26 @@ export class TypeKindBreakdown extends S.Class<TypeKindBreakdown>('TypeKindBreak
   inputTypesPercentage: S.Number,
 }, {
   description: 'Breakdown of types by kind with percentages',
-}) {}
+}) {
+  static is = S.is(TypeKindBreakdown)
+
+  get totalTypes(): number {
+    return this.objectTypes + this.interfaceTypes + this.unionTypes
+      + this.enumTypes + this.scalarTypes + this.inputTypes
+  }
+
+  get dominantTypeKind(): string {
+    const types = [
+      { kind: 'object', count: this.objectTypes },
+      { kind: 'interface', count: this.interfaceTypes },
+      { kind: 'union', count: this.unionTypes },
+      { kind: 'enum', count: this.enumTypes },
+      { kind: 'scalar', count: this.scalarTypes },
+      { kind: 'input', count: this.inputTypes },
+    ]
+    return types.sort((a, b) => b.count - a.count)[0]!.kind
+  }
+}
 
 // ============================================================================
 // Schema - Description Coverage
@@ -54,7 +74,18 @@ export class DescriptionCoverage extends S.Class<DescriptionCoverage>('Descripti
   overall: S.Number,
 }, {
   description: 'Coverage statistics for descriptions',
-}) {}
+}) {
+  static is = S.is(DescriptionCoverage)
+
+  get lowestCoverage(): { area: string; percentage: number } {
+    const areas = [
+      { area: 'types', percentage: this.types },
+      { area: 'fields', percentage: this.fields },
+      { area: 'arguments', percentage: this.arguments },
+    ]
+    return areas.sort((a, b) => a.percentage - b.percentage)[0]!
+  }
+}
 
 // ============================================================================
 // Schema - Deprecation Metrics
@@ -82,7 +113,13 @@ export class DeprecationMetrics extends S.Class<DeprecationMetrics>('Deprecation
   surfaceAreaPercentage: S.Number,
 }, {
   description: 'Metrics about deprecated schema elements',
-}) {}
+}) {
+  static is = S.is(DeprecationMetrics)
+
+  get totalDeprecated(): number {
+    return this.fields + this.enumValues + this.arguments
+  }
+}
 
 // ============================================================================
 // Schema - Version Statistics
@@ -95,11 +132,7 @@ export class VersionStatistics extends S.Class<VersionStatistics>('VersionStatis
   /**
    * Version identifier.
    */
-  version: S.String,
-  /**
-   * Date of this version/revision.
-   */
-  date: S.optional(S.String),
+  version: S.optional(Version.Version),
   /**
    * Total number of types (excluding introspection types).
    */
@@ -138,7 +171,25 @@ export class VersionStatistics extends S.Class<VersionStatistics>('VersionStatis
   totalArguments: S.Number,
 }, {
   description: 'Statistics for a single schema version',
-}) {}
+}) {
+  static is = S.is(VersionStatistics)
+
+  get totalOperations(): number {
+    return this.queries + this.mutations + this.subscriptions
+  }
+
+  get schemaSize(): number {
+    return this.totalTypes + this.totalFields + this.totalArguments
+  }
+
+  get isMutationHeavy(): boolean {
+    return this.totalOperations > 0 && (this.mutations / this.totalOperations) > 0.5
+  }
+
+  get isQueryOnly(): boolean {
+    return this.mutations === 0 && this.subscriptions === 0
+  }
+}
 
 // ============================================================================
 // Schema - Stability Metrics
@@ -178,4 +229,20 @@ export class StabilityMetrics extends S.Class<StabilityMetrics>('StabilityMetric
   rating: S.optional(S.Union(S.Literal('high'), S.Literal('medium'), S.Literal('low'))),
 }, {
   description: 'Stability metrics calculated across schema history',
-}) {}
+}) {
+  static is = S.is(StabilityMetrics)
+
+  get isStable(): boolean {
+    return this.rating === 'high'
+  }
+
+  get isVolatile(): boolean {
+    return this.rating === 'low'
+  }
+
+  get averageRevisionIntervalDays(): number | undefined {
+    return this.averageRevisionInterval
+      ? this.averageRevisionInterval / (1000 * 60 * 60 * 24)
+      : undefined
+  }
+}

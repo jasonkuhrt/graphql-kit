@@ -4,7 +4,7 @@ import { Schema } from '../schema/$.js'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
 import { DocumentUnversioned } from './unversioned.js'
-import * as DocumentVersioned from './versioned.js'
+import { DocumentVersioned } from './versioned.js'
 
 // ============================================================================
 // Error Types
@@ -21,7 +21,7 @@ export class VersionCoverageMismatchError extends Data.TaggedError('VersionCover
  * Error thrown when a version is not found in the document
  */
 export class VersionNotFoundInDocumentError extends Data.TaggedError('VersionNotFoundInDocumentError')<{
-  readonly version: string
+  readonly version: Version.Version
   readonly reason: string
 }> {}
 
@@ -36,7 +36,7 @@ export class VersionNotFoundInDocumentError extends Data.TaggedError('VersionNot
  */
 export const Document = S.Union(
   DocumentUnversioned,
-  DocumentVersioned.DocumentVersioned,
+  DocumentVersioned,
 )
 
 // ============================================================================
@@ -90,7 +90,7 @@ export const resolveDocumentContent = (
 
   if (Option.isNone(contentOption)) {
     throw new VersionNotFoundInDocumentError({
-      version: Version.encodeSync(version),
+      version: version,
       reason: `Version ${Version.encodeSync(version)} not covered by document`,
     })
   }
@@ -142,9 +142,10 @@ export const resolveDocumentAndSchema = (
       return Either.left(error)
     }
     // This shouldn't happen but handle gracefully
+    const fallbackVersion = versionCoverage ? VersionCoverage.getLatest(versionCoverage) : Version.fromCustom('unknown')
     return Either.left(
       new VersionNotFoundInDocumentError({
-        version: String(versionCoverage),
+        version: fallbackVersion,
         reason: error instanceof Error ? error.message : String(error),
       }),
     )

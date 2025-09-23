@@ -12,7 +12,9 @@ export class Location extends S.Class<Location>('GraphQLLocation')({
   column: S.Number,
 }, {
   description: 'Source location in a GraphQL document',
-}) {}
+}) {
+  static is = S.is(Location)
+}
 
 /**
  * GraphQL error structure
@@ -22,7 +24,9 @@ export class GraphQLError extends S.Class<GraphQLError>('GraphQLError')({
   locations: S.optional(S.Array(Location)),
 }, {
   description: 'GraphQL validation or execution error',
-}) {}
+}) {
+  static is = S.is(GraphQLError)
+}
 
 /**
  * Example info for validation context
@@ -30,7 +34,9 @@ export class GraphQLError extends S.Class<GraphQLError>('GraphQLError')({
 class ValidationExample extends S.Class<ValidationExample>('ValidationExample')({
   id: S.String,
   path: S.String,
-}) {}
+}) {
+  static is = S.is(ValidationExample)
+}
 
 /**
  * Context for GraphQL validation errors
@@ -41,15 +47,13 @@ export class ValidationContext extends S.Class<ValidationContext>('GraphQLValida
   errors: S.Array(GraphQLError),
 }, {
   description: 'Context for GraphQL validation errors against a schema version',
-}) {}
+}) {
+  static is = S.is(ValidationContext)
+}
 
 // ============================================================================
 // Type guards
 // ============================================================================
-
-export const is = S.is(GraphQLError)
-export const isLocation = S.is(Location)
-export const isValidationContext = S.is(ValidationContext)
 
 // ============================================================================
 // Codecs

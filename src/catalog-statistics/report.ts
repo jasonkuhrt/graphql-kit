@@ -19,18 +19,6 @@ export class Report extends S.Class<Report>('StatisticsReport')({
   current: S.optional(VersionStatistics),
 }, {
   description: 'Complete statistics report for a GraphQL catalog',
-}) {}
-
-// ============================================================================
-// Type Guards
-// ============================================================================
-
-export const is = S.is(Report)
-
-// ============================================================================
-// Codec
-// ============================================================================
-
-export const decode = S.decode(Report)
-export const decodeSync = S.decodeSync(Report)
-export const encode = S.encode(Report)
+}) {
+  static is = S.is(Report)
+}

@@ -1,13 +1,12 @@
-import { S } from '#dep/effect'
 import { Schema } from '#schema'
 import { Version } from '#version'
 import { VersionCoverage } from '#version-coverage'
-import { Data, Either, HashMap, Match, Option } from 'effect'
-import * as Unversioned from './unversioned.js'
-import * as Versioned from './versioned.js'
+import { Data, Either, HashMap, Match, Option, Schema as S } from 'effect'
+import { Unversioned } from './unversioned.js'
+import { Versioned } from './versioned.js'
 
-export * as Unversioned from './unversioned.js'
-export * as Versioned from './versioned.js'
+export { Unversioned } from './unversioned.js'
+export { Versioned } from './versioned.js'
 
 // ============================================================================
 // Error Types
@@ -17,7 +16,7 @@ export * as Versioned from './versioned.js'
  * Error thrown when a version is not found in the catalog
  */
 export class VersionNotFoundInCatalogError extends Data.TaggedError('VersionNotFoundInCatalogError')<{
-  readonly version: string
+  readonly version: Version.Version
   readonly reason: string
 }> {}
 
@@ -32,7 +31,7 @@ export class EmptyCatalogError extends Data.TaggedError('EmptyCatalogError')<{
 // Schema
 // ============================================================================
 
-export const Catalog = S.Union(Versioned.Versioned, Unversioned.Unversioned).annotations({
+export const Catalog = S.Union(Versioned, Unversioned).annotations({
   identifier: 'Catalog',
   title: 'Schema Catalog',
   description: 'A catalog of GraphQL schemas and their revision history',
@@ -51,8 +50,8 @@ export const is = S.is(Catalog)
 // ============================================================================
 
 export const fold = <$A>(
-  onVersioned: (catalog: Versioned.Versioned) => $A,
-  onUnversioned: (catalog: Unversioned.Unversioned) => $A,
+  onVersioned: (catalog: Versioned) => $A,
+  onUnversioned: (catalog: Unversioned) => $A,
 ) =>
 (catalog: Catalog): $A => catalog._tag === 'CatalogVersioned' ? onVersioned(catalog) : onUnversioned(catalog)
 
@@ -92,7 +91,7 @@ export const getVersionCount = (catalog: Catalog): number =>
  */
 export const getSchemaVersionString = (schema: Schema.Schema): string => {
   const version = Schema.getVersion(schema)
-  return version ? Version.encodeSync(version) : '__UNVERSIONED__'
+  return version ? String(Version.encodeSync(version)) : '__UNVERSIONED__'
 }
 
 /**
@@ -153,7 +152,7 @@ export const resolveCatalogSchemaEither = (
   if (Option.isNone(schemaOption)) {
     return Either.left(
       new VersionNotFoundInCatalogError({
-        version: Version.encodeSync(version),
+        version: version,
         reason: `Version ${Version.encodeSync(version)} not found in catalog`,
       }),
     )

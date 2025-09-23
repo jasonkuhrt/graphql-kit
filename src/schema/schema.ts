@@ -1,20 +1,19 @@
-import { S } from '#dep/effect'
-import { Match } from 'effect'
-import * as Unversioned from './unversioned.js'
-import * as Versioned from './versioned.js'
+import { Match, Schema as S } from 'effect'
+import { Unversioned } from './unversioned.js'
+import { Versioned } from './versioned.js'
 
 // ============================================================================
 // Members
 // ============================================================================
 
-export * as Unversioned from './unversioned.js'
-export * as Versioned from './versioned.js'
+export { Unversioned } from './unversioned.js'
+export { Versioned } from './versioned.js'
 
 // ============================================================================
 // Schema
 // ============================================================================
 
-export const Schema = S.Union(Versioned.Versioned, Unversioned.Unversioned)
+export const Schema = S.Union(Versioned, Unversioned)
 
 export type Schema = typeof Schema.Type
 

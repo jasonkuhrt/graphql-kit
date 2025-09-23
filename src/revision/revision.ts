@@ -1,11 +1,6 @@
 import { Change } from '#change'
 import { DateOnly } from '#date-only'
-import { S } from '#dep/effect'
-import { Order } from 'effect'
-
-// ============================================================================
-// Schema
-// ============================================================================
+import { Order, Schema as S } from 'effect'
 
 export class Revision extends S.TaggedClass<Revision>('Revision')('Revision', {
   date: DateOnly.DateOnly,
@@ -14,49 +9,37 @@ export class Revision extends S.TaggedClass<Revision>('Revision')('Revision', {
   identifier: 'Revision',
   title: 'Revision',
   description: 'A revision in the schema history',
-}) {}
+}) {
+  static is = S.is(Revision)
 
-// ============================================================================
-// Constructors
-// ============================================================================
+  static order: Order.Order<Revision> = Order.reverse(Order.mapInput(DateOnly.order, (revision) => revision.date))
 
-/**
- * Create a Revision instance with validation
- */
-export const make = Revision.make.bind(Revision)
+  static min = Order.min(Revision.order)
 
-// ============================================================================
-// Type Guard
-// ============================================================================
+  static max = Order.max(Revision.order)
 
-export const is = S.is(Revision)
+  static lessThan = Order.lessThan(Revision.order)
 
-// ============================================================================
-// Ordering
-// ============================================================================
+  static greaterThan = Order.greaterThan(Revision.order)
 
-export const order: Order.Order<Revision> = Order.reverse(Order.mapInput(DateOnly.order, (revision) => revision.date))
+  // Instance methods for working with changes
+  get changesBreaking(): Change.Change[] {
+    return this.changes.filter(c => c.criticality.isBreaking)
+  }
 
-export const min = Order.min(order)
+  get changesDangerous(): Change.Change[] {
+    return this.changes.filter(c => c.criticality.isDangerous)
+  }
 
-export const max = Order.max(order)
+  get changesSafe(): Change.Change[] {
+    return this.changes.filter(c => c.criticality.isSafe)
+  }
 
-export const lessThan = Order.lessThan(order)
+  hasChangeType(changeType: string): boolean {
+    return this.changes.some(c => c._tag === changeType)
+  }
 
-export const greaterThan = Order.greaterThan(order)
-
-// ============================================================================
-// Codec
-// ============================================================================
-
-export const decode = S.decode(Revision)
-
-export const decodeSync = S.decodeSync(Revision)
-
-export const encode = S.encode(Revision)
-
-// ============================================================================
-// Equivalence
-// ============================================================================
-
-export const equivalence = S.equivalence(Revision)
+  get hasBreakingChanges(): boolean {
+    return this.changes.some(c => c.criticality.isBreaking)
+  }
+}

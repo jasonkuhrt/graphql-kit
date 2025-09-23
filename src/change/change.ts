@@ -1,5 +1,5 @@
 import { S } from '#dep/effect'
-import * as Criticality from './criticality.js'
+import { Criticality } from './criticality.js'
 
 // ============================================================================
 // Base Change Schema
@@ -8,7 +8,7 @@ import * as Criticality from './criticality.js'
 const changeBaseFields = {
   message: S.String,
   path: S.optional(S.String),
-  criticality: Criticality.Criticality,
+  criticality: Criticality,
 }
 
 // ============================================================================
@@ -638,11 +638,11 @@ export const isFieldAdded = S.is(FieldAdded)
 export const isFieldRemoved = S.is(FieldRemoved)
 
 // Criticality guards
-export const isBreaking = (change: Change): boolean => Criticality.isBreaking(change.criticality)
+export const isBreaking = (change: Change): boolean => change.criticality.isBreaking
 
-export const isDangerous = (change: Change): boolean => Criticality.isDangerous(change.criticality)
+export const isDangerous = (change: Change): boolean => change.criticality.isDangerous
 
-export const isSafe = (change: Change): boolean => Criticality.isSafe(change.criticality)
+export const isSafe = (change: Change): boolean => change.criticality.isSafe
 
 // ============================================================================
 // Codec

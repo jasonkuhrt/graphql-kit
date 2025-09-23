@@ -1,3 +1,3 @@
 export * from './document.js'
-export * as Unversioned from './unversioned.js'
-export * as Versioned from './versioned.js'
+export { DocumentUnversioned } from './unversioned.js'
+export { DocumentVersioned } from './versioned.js'

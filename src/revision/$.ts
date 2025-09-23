@@ -1,1 +1,1 @@
-export * as Revision from './revision.js'
+export { Revision } from './revision.js'

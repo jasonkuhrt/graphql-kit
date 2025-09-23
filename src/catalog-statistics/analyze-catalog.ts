@@ -1,8 +1,7 @@
 import { Catalog } from '../catalog/$.js'
-import { Version } from '../version/$.js'
 import type { AnalyzeOptions } from './analyze-options.js'
 import { analyzeSchema } from './analyze-schema.js'
-import type { StabilityMetrics, VersionStatistics } from './data.js'
+import { StabilityMetrics, type VersionStatistics } from './data.js'
 import type { Report } from './report.js'
 
 /**
@@ -17,11 +16,8 @@ export const analyzeCatalog = (catalog: Catalog.Catalog, options: AnalyzeOptions
     // Versioned catalog
     (versioned) => {
       for (const entry of Catalog.Versioned.getAll(versioned)) {
-        const versionId = Version.encodeSync(entry.version)
         // Analyze the schema definition for this version
-        // Use the first revision date if available
-        const firstRevisionDate = entry.revisions[0]?.date
-        const stats = analyzeSchema(entry.definition, versionId, firstRevisionDate, options)
+        const stats = analyzeSchema(entry.definition, entry.version, options)
         versions.push(stats)
 
         // Collect all revision dates for this version
@@ -35,8 +31,8 @@ export const analyzeCatalog = (catalog: Catalog.Catalog, options: AnalyzeOptions
       // For unversioned, we analyze the single schema definition
       // Using the latest revision date as the version identifier
       if (unversioned.schema.revisions && unversioned.schema.revisions.length > 0) {
-        const latestRevisionDate = unversioned.schema.revisions[unversioned.schema.revisions.length - 1]!.date
-        const stats = analyzeSchema(unversioned.schema.definition, latestRevisionDate, latestRevisionDate, options)
+        // For unversioned, we don't have a version
+        const stats = analyzeSchema(unversioned.schema.definition, undefined, options)
         versions.push(stats)
 
         // Collect all revision dates
@@ -45,7 +41,7 @@ export const analyzeCatalog = (catalog: Catalog.Catalog, options: AnalyzeOptions
         }
       } else {
         // Single schema without revisions
-        versions.push(analyzeSchema(unversioned.schema.definition, 'current', undefined, options))
+        versions.push(analyzeSchema(unversioned.schema.definition, undefined, options))
       }
     },
   )
@@ -75,7 +71,7 @@ const calculateStabilityMetrics = (
   const totalRevisions = versions.length
 
   if (totalRevisions === 0) {
-    return { totalRevisions: 0 }
+    return StabilityMetrics.make({ totalRevisions: 0 })
   }
 
   // Parse dates if available
@@ -146,7 +142,7 @@ const calculateStabilityMetrics = (
     }
   }
 
-  return {
+  return StabilityMetrics.make({
     totalRevisions,
     ...(firstRevisionDate ? { firstRevisionDate } : {}),
     ...(lastRevisionDate ? { lastRevisionDate } : {}),
@@ -154,5 +150,5 @@ const calculateStabilityMetrics = (
     ...(averageRevisionsPerDay !== undefined ? { averageRevisionsPerDay } : {}),
     ...(churnRate !== undefined ? { churnRate } : {}),
     ...(rating ? { rating } : {}),
-  }
+  })
 }

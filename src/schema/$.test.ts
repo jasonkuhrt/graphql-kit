@@ -1,3 +1,4 @@
+import { S } from '#dep/effect'
 import { describe, expect, test } from 'vitest'
 import * as SchemaDefinition from '../schema-definition/schema-definition.js'
 import { Version } from '../version/$.js'
@@ -11,8 +12,8 @@ describe('Schema', () => {
   `)
 
   test('creates versioned schema', () => {
-    const versionedSchema = new Schema.Versioned.Versioned({
-      version: Version.decodeSync('1.0.0'),
+    const versionedSchema = Schema.Versioned.make({
+      version: S.decodeSync(Version.Version)('1.0.0'),
       branchPoint: null,
       revisions: [],
       definition: mockGraphQLSchema as any,
@@ -23,7 +24,7 @@ describe('Schema', () => {
   })
 
   test('creates unversioned schema', () => {
-    const unversionedSchema = new Schema.Unversioned.Unversioned({
+    const unversionedSchema = Schema.Unversioned.make({
       revisions: [],
       definition: mockGraphQLSchema as any,
     })
@@ -32,14 +33,14 @@ describe('Schema', () => {
   })
 
   test('type guards work correctly for union', () => {
-    const versionedSchema = new Schema.Versioned.Versioned({
+    const versionedSchema = Schema.Versioned.make({
       version: Version.decodeSync('1.0.0'),
       branchPoint: null,
       revisions: [],
       definition: mockGraphQLSchema as any,
     })
 
-    const unversionedSchema = new Schema.Unversioned.Unversioned({
+    const unversionedSchema = Schema.Unversioned.make({
       revisions: [],
       definition: mockGraphQLSchema as any,
     })

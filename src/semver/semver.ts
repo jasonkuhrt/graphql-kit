@@ -1,17 +1,18 @@
-import { S } from '#dep/effect'
 import { Range as VltRange, Version as VltVersion } from '@vltpkg/semver'
-import { Equivalence, Order, ParseResult } from 'effect'
-import * as OfficialRelease from './official-release.js'
-import * as PreRelease from './pre-release.js'
+import { Equivalence, Order, ParseResult, Schema as S } from 'effect'
+import { OfficialRelease } from './official-release.js'
+import { PreRelease } from './pre-release.js'
 
-// Re-export member modules as namespaces
+// Re-export member modules
 export { OfficialRelease, PreRelease }
 
 // ============================================================================
 // Schema
 // ============================================================================
 
-const SemverUnion = S.Union(OfficialRelease.OfficialRelease, PreRelease.PreRelease).annotations({
+const Encoded = S.String
+
+const Decoded = S.Union(OfficialRelease, PreRelease).annotations({
   identifier: 'Semver',
   title: 'Semantic Version',
   description: 'A semantic version following SemVer specification',
@@ -21,8 +22,8 @@ const SemverUnion = S.Union(OfficialRelease.OfficialRelease, PreRelease.PreRelea
  * Schema for semantic version strings using @vltpkg/semver for validation
  */
 export const Semver = S.transformOrFail(
-  S.String,
-  SemverUnion,
+  Encoded,
+  Decoded,
   {
     strict: true,
     decode: (value, _, ast) => {
@@ -99,24 +100,19 @@ export const equivalence: Equivalence.Equivalence<Semver> = Equivalence.make((a,
 export const is = S.is(Semver)
 
 // ============================================================================
-// State Predicates
-// ============================================================================
-
-// Note: isPreRelease is now handled by checking the _tag or using PreRelease.is
-
-// ============================================================================
-// Codec
+// Codecs
 // ============================================================================
 
 export const decode = S.decode(Semver)
 export const decodeSync = S.decodeSync(Semver)
 export const encode = S.encode(Semver)
+export const encodeSync = S.encodeSync(Semver)
 
 // ============================================================================
 // Importers
 // ============================================================================
 
-export const fromString = S.decodeSync(Semver)
+export const fromString = decodeSync
 
 /**
  * Create semver from parts
@@ -194,7 +190,7 @@ export const satisfies = (version: Semver, range: string): boolean => {
  * Pattern match on Semver variants
  */
 export const match = <$A>(
-  onOfficialRelease: (release: OfficialRelease.OfficialRelease) => $A,
-  onPreRelease: (preRelease: PreRelease.PreRelease) => $A,
+  onOfficialRelease: (release: OfficialRelease) => $A,
+  onPreRelease: (preRelease: PreRelease) => $A,
 ) =>
 (semver: Semver): $A => semver._tag === 'SemverOfficialRelease' ? onOfficialRelease(semver) : onPreRelease(semver)

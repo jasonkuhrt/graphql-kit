@@ -16,7 +16,7 @@ export interface ChangeEntry {
   /** The change that occurred */
   change: Change.Change
   /** The revision containing this change */
-  revision: Revision.Revision
+  revision: Revision
   /** The schema this change belongs to */
   schema: Schema.Schema
 }
@@ -35,7 +35,7 @@ export type Lifecycles = Record<string, ChangeEntry[]>
  */
 export type Since =
   | { _tag: 'initial' }
-  | { _tag: 'added'; revision: Revision.Revision; change: Change.Change; schema: Schema.Schema }
+  | { _tag: 'added'; revision: Revision; change: Change.Change; schema: Schema.Schema }
 
 // ============================================================================
 // Domain Logic - Create Function

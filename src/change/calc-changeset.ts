@@ -2,7 +2,7 @@ import { Effect } from 'effect'
 import type { GraphQLSchema } from 'graphql'
 import { GraphqlInspector } from '../dep/graphql-inspector/index.js'
 import * as Change from './change.js'
-import * as Criticality from './criticality.js'
+import { Criticality } from './criticality.js'
 
 // ============================================================================
 // Field Path Parsing
@@ -35,11 +35,8 @@ const parsePath = (path: string | undefined): { typeName?: string; fieldName?: s
 /**
  * Map GraphQL Inspector criticality to lib format
  */
-const mapCriticality = (criticality: GraphqlInspector.Core.Criticality): Criticality.Criticality => {
-  return {
-    level: criticality.level as 'BREAKING' | 'DANGEROUS' | 'NON_BREAKING',
-    reason: criticality.reason,
-  }
+const mapCriticality = (criticality: GraphqlInspector.Core.Criticality): Criticality => {
+  return Criticality.make(criticality)
 }
 
 // ============================================================================

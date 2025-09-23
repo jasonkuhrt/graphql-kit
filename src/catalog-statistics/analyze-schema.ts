@@ -7,14 +7,9 @@ import {
   isScalarType,
   isUnionType,
 } from 'graphql'
+import { Version } from '../version/$.js'
 import type { AnalyzeOptions } from './analyze-options.js'
-import type {
-  DeprecationMetrics,
-  DescriptionCoverage,
-  StabilityMetrics,
-  TypeKindBreakdown,
-  VersionStatistics,
-} from './data.js'
+import { DeprecationMetrics, DescriptionCoverage, TypeKindBreakdown, VersionStatistics } from './data.js'
 
 const BUILT_IN_SCALARS = new Set(['String', 'Int', 'Float', 'Boolean', 'ID'])
 
@@ -23,8 +18,7 @@ const BUILT_IN_SCALARS = new Set(['String', 'Int', 'Float', 'Boolean', 'ID'])
  */
 export const analyzeSchema = (
   schema: GraphQLSchema,
-  version: string,
-  date?: string,
+  version?: Version.Version,
   options: AnalyzeOptions = {},
 ): VersionStatistics => {
   const ignoreDeprecated = options.ignoreDeprecated ?? false
@@ -166,7 +160,7 @@ export const analyzeSchema = (
   }
 
   // Calculate percentages for type breakdown
-  const typeBreakdown: TypeKindBreakdown = {
+  const typeBreakdown = TypeKindBreakdown.make({
     objectTypes,
     objectTypesPercentage: totalTypes > 0 ? (objectTypes / totalTypes) * 100 : 0,
     interfaceTypes,
@@ -179,27 +173,27 @@ export const analyzeSchema = (
     scalarTypesPercentage: totalTypes > 0 ? (scalarTypes / totalTypes) * 100 : 0,
     inputTypes,
     inputTypesPercentage: totalTypes > 0 ? (inputTypes / totalTypes) * 100 : 0,
-  }
+  })
 
   // Calculate description coverage
   const totalElements = totalTypes + totalFields + totalArguments
   const elementsWithDescriptions = typesWithDescriptions + fieldsWithDescriptions + argumentsWithDescriptions
-  const descriptionCoverage: DescriptionCoverage = {
+  const descriptionCoverage = DescriptionCoverage.make({
     types: totalTypes > 0 ? (typesWithDescriptions / totalTypes) * 100 : 0,
     fields: totalFields > 0 ? (fieldsWithDescriptions / totalFields) * 100 : 0,
     arguments: totalArguments > 0 ? (argumentsWithDescriptions / totalArguments) * 100 : 0,
     overall: totalElements > 0 ? (elementsWithDescriptions / totalElements) * 100 : 0,
-  }
+  })
 
   // Calculate deprecation metrics
   const totalDeprecatable = totalFields + totalArguments + deprecatedEnumValues
   const totalDeprecated = deprecatedFields + deprecatedArguments + deprecatedEnumValues
-  const deprecation: DeprecationMetrics = {
+  const deprecation = DeprecationMetrics.make({
     fields: deprecatedFields,
     enumValues: deprecatedEnumValues,
     arguments: deprecatedArguments,
     surfaceAreaPercentage: totalDeprecatable > 0 ? (totalDeprecated / totalDeprecatable) * 100 : 0,
-  }
+  })
 
   // Get operation counts
   const queryType = schema.getQueryType()
@@ -210,9 +204,8 @@ export const analyzeSchema = (
   const mutations = mutationType ? Object.keys(mutationType.getFields()).length : 0
   const subscriptions = subscriptionType ? Object.keys(subscriptionType.getFields()).length : 0
 
-  return {
-    version,
-    ...(date ? { date } : {}),
+  return VersionStatistics.make({
+    ...(version ? { version } : {}),
     totalTypes,
     typeBreakdown,
     queries,
@@ -222,5 +215,5 @@ export const analyzeSchema = (
     deprecation,
     totalFields,
     totalArguments,
-  }
+  })
 }
