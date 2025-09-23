@@ -6,20 +6,22 @@ import { Array, HashSet, pipe } from 'effect'
 // Schema
 // ============================================================================
 
-export class VersionCoverageUnversioned
-  extends S.TaggedClass<VersionCoverageUnversioned>()('VersionCoverageUnversioned', {})
-{}
-export const VersionCoverageOne = Version.Version
-export const VersionCoverageSet = S.HashSet(Version.Version)
+export class Unversioned extends S.TaggedClass<Unversioned>()('VersionCoverageUnversioned', {}) {
+  static is = S.is(Unversioned)
+}
+
+export const One = Version.Version
+
+export const Set = S.HashSet(Version.Version)
 
 /**
  * A selection of versions - either unversioned (applies to all), a single version, or a set of versions.
  * Used as keys in versioned documents to map version(s) to document content.
  */
 export const VersionCoverage = S.Union(
-  VersionCoverageUnversioned,
-  VersionCoverageOne,
-  VersionCoverageSet,
+  Unversioned,
+  One,
+  Set,
 ).annotations({
   identifier: 'VersionCoverage',
   description: 'Unversioned (all versions), a single version, or a set of versions',
@@ -29,26 +31,7 @@ export const VersionCoverage = S.Union(
 // Types
 // ============================================================================
 
-export type VersionCoverage = S.Schema.Type<typeof VersionCoverage>
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-/**
- * Create an unversioned coverage that applies to all versions
- */
-export const unversioned = (): VersionCoverage => new VersionCoverageUnversioned({})
-
-/**
- * Create a single version coverage
- */
-export const single = (version: Version.Version): VersionCoverage => version
-
-/**
- * Create a version set coverage
- */
-export const set = (versions: Version.Version[]): VersionCoverage => HashSet.fromIterable(versions)
+export type VersionCoverage = typeof VersionCoverage.Type
 
 // ============================================================================
 // Type Guards
@@ -56,22 +39,12 @@ export const set = (versions: Version.Version[]): VersionCoverage => HashSet.fro
 
 export const is = S.is(VersionCoverage)
 
-export const isUnversioned = (coverage: VersionCoverage): coverage is VersionCoverageUnversioned =>
-  coverage instanceof VersionCoverageUnversioned
+export const isUnversioned = (coverage: VersionCoverage): coverage is Unversioned => coverage instanceof Unversioned
 
 export const isSingle = (coverage: VersionCoverage): coverage is Version.Version => Version.is(coverage)
 
 export const isSet = (coverage: VersionCoverage): coverage is HashSet.HashSet<Version.Version> =>
   !isUnversioned(coverage) && !Version.is(coverage)
-
-// ============================================================================
-// Codec
-// ============================================================================
-
-export const decode = S.decode(VersionCoverage)
-export const decodeSync = S.decodeSync(VersionCoverage)
-export const encode = S.encode(VersionCoverage)
-export const encodeSync = S.encodeSync(VersionCoverage)
 
 // ============================================================================
 // Equivalence
@@ -106,7 +79,13 @@ export const toLabel = (versionCoverage: VersionCoverage): string => {
   if (isUnversioned(versionCoverage)) {
     return 'All Versions'
   }
-  return pipe(versionCoverage, encodeSync, Array.ensure, Array.map(_ => _.toString()), Array.join(', '))
+  return pipe(
+    versionCoverage,
+    S.encodeSync(VersionCoverage),
+    Array.ensure,
+    Array.map(_ => _.toString()),
+    Array.join(', '),
+  )
 }
 
 /**

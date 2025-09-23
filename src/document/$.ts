@@ -1,1 +1,1 @@
-export * as Document from './$$.js'
+export * as Document from './document.js'

@@ -3,8 +3,11 @@ import { Catalog } from '../catalog/$.js'
 import { Schema } from '../schema/$.js'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
-import { DocumentUnversioned } from './unversioned.js'
-import { DocumentVersioned } from './versioned.js'
+import { Unversioned } from './unversioned.js'
+import { Versioned } from './versioned.js'
+
+export { Unversioned } from './unversioned.js'
+export { Versioned } from './versioned.js'
 
 // ============================================================================
 // Error Types
@@ -35,8 +38,8 @@ export class VersionNotFoundInDocumentError extends Data.TaggedError('VersionNot
  * - Versioned: Multiple versions mapped by version selections (single versions or version sets)
  */
 export const Document = S.Union(
-  DocumentUnversioned,
-  DocumentVersioned,
+  Unversioned,
+  Versioned,
 )
 
 // ============================================================================
@@ -81,12 +84,12 @@ export const resolveDocumentContent = (
 
   // If no version coverage specified, use latest
   if (!versionCoverage) {
-    return DocumentVersioned.getContentForLatestVersionOrThrow(document)
+    return Versioned.getContentForLatestVersionOrThrow(document)
   }
 
   // Get the latest version from the coverage
   const version = VersionCoverage.getLatest(versionCoverage)
-  const contentOption = DocumentVersioned.getContentForVersion(document, version)
+  const contentOption = Versioned.getContentForVersion(document, version)
 
   if (Option.isNone(contentOption)) {
     throw new VersionNotFoundInDocumentError({

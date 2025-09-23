@@ -40,14 +40,14 @@ export const Version = S.transformOrFail(
     decode: (input, _, ast) => {
       // Try parsing as integer first
       if (typeof input === 'number' && Number.isInteger(input)) {
-        return ParseResult.succeed(new Integer({ value: input }))
+        return ParseResult.succeed(Integer.make({ value: input }))
       }
 
       // Try parsing string as integer
       if (typeof input === 'string') {
         const parsed = Number(input)
         if (Number.isInteger(parsed) && parsed.toString() === input) {
-          return ParseResult.succeed(new Integer({ value: parsed }))
+          return ParseResult.succeed(Integer.make({ value: parsed }))
         }
       }
 
@@ -56,7 +56,7 @@ export const Version = S.transformOrFail(
         // Try parsing as semver
         try {
           SemverLib.decodeSync(input) // Validate it's a valid semver
-          return ParseResult.succeed(new Semver({ value: input }))
+          return ParseResult.succeed(Semver.make({ value: input }))
         } catch {
           // Not a semver, continue
         }
@@ -70,7 +70,7 @@ export const Version = S.transformOrFail(
         }
 
         // Fall back to custom version
-        return ParseResult.succeed(new Custom({ value: input }))
+        return ParseResult.succeed(Custom.make({ value: input }))
       }
 
       return ParseResult.fail(new ParseResult.Type(ast, input))

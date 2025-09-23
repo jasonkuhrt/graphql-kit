@@ -2,7 +2,7 @@ import { HashMap, Option, Schema as S } from 'effect'
 import { VersionCoverage } from '../version-coverage/$.js'
 import { Version } from '../version/$.js'
 
-export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('DocumentVersioned')('DocumentVersioned', {
+export class Versioned extends S.TaggedClass<Versioned>('DocumentVersioned')('DocumentVersioned', {
   /**
    * Map from version selection (single or set) to document content.
    * Supports:
@@ -14,13 +14,13 @@ export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('Documen
     value: S.String,
   }),
 }) {
-  static is = S.is(DocumentVersioned)
+  static is = S.is(Versioned)
 
   /**
    * Get document for a specific version
    */
   static getContentForVersion = (
-    doc: DocumentVersioned,
+    doc: Versioned,
     version: Version.Version,
   ): Option.Option<string> => {
     // Try exact match first (single version key)
@@ -42,7 +42,7 @@ export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('Documen
   /**
    * Get all individual versions covered by this document
    */
-  static getAllVersions = (doc: DocumentVersioned): Version.Version[] => {
+  static getAllVersions = (doc: Versioned): Version.Version[] => {
     const versions = new Set<Version.Version>()
     for (const selection of HashMap.keys(doc.versionDocuments)) {
       for (const v of VersionCoverage.toVersions(selection)) {
@@ -55,8 +55,8 @@ export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('Documen
   /**
    * Get document content for the latest version available in the document
    */
-  static getContentForLatestVersionOrThrow = (doc: DocumentVersioned): string => {
-    const versions = DocumentVersioned.getAllVersions(doc)
+  static getContentForLatestVersionOrThrow = (doc: Versioned): string => {
+    const versions = Versioned.getAllVersions(doc)
 
     if (versions.length === 0) {
       throw new Error('No versions found in document')
@@ -65,7 +65,7 @@ export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('Documen
     // Use Version.max with reduce to find the latest version
     const latestVersion = versions.reduce(Version.max)
 
-    const contentOption = DocumentVersioned.getContentForVersion(doc, latestVersion)
+    const contentOption = Versioned.getContentForVersion(doc, latestVersion)
     if (Option.isNone(contentOption)) {
       throw new Error('Latest version not found in document')
     }
