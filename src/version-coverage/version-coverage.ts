@@ -1,18 +1,17 @@
 import { S } from '#dep/effect'
 import { Version } from '#version'
 import { Array, HashSet, pipe } from 'effect'
+import { One } from './one.js'
+import { Set } from './set.js'
+import { Unversioned } from './unversioned.js'
+
+export { One } from './one.js'
+export { Set } from './set.js'
+export { Unversioned } from './unversioned.js'
 
 // ============================================================================
 // Schema
 // ============================================================================
-
-export class Unversioned extends S.TaggedClass<Unversioned>()('VersionCoverageUnversioned', {}) {
-  static is = S.is(Unversioned)
-}
-
-export const One = Version.Version
-
-export const Set = S.HashSet(Version.Version)
 
 /**
  * A selection of versions - either unversioned (applies to all), a single version, or a set of versions.
@@ -39,12 +38,12 @@ export type VersionCoverage = typeof VersionCoverage.Type
 
 export const is = S.is(VersionCoverage)
 
-export const isUnversioned = (coverage: VersionCoverage): coverage is Unversioned => coverage instanceof Unversioned
+export const isUnversioned = (coverage: VersionCoverage): coverage is Unversioned =>
+  coverage._tag === 'VersionCoverageUnversioned'
 
-export const isSingle = (coverage: VersionCoverage): coverage is Version.Version => Version.is(coverage)
+export const isOne = (coverage: VersionCoverage): coverage is One => coverage._tag === 'VersionCoverageOne'
 
-export const isSet = (coverage: VersionCoverage): coverage is HashSet.HashSet<Version.Version> =>
-  !isUnversioned(coverage) && !Version.is(coverage)
+export const isSet = (coverage: VersionCoverage): coverage is Set => coverage._tag === 'VersionCoverageSet'
 
 // ============================================================================
 // Equivalence
@@ -66,10 +65,10 @@ export const contains = (
   if (isUnversioned(versionCoverage)) {
     return true // Unversioned applies to all versions
   }
-  if (Version.is(versionCoverage)) {
-    return Version.equivalence(versionCoverage, version)
+  if (isOne(versionCoverage)) {
+    return Version.equivalence(versionCoverage.version, version)
   }
-  return HashSet.has(versionCoverage, version)
+  return HashSet.has(versionCoverage.versions, version)
 }
 
 /**
@@ -79,10 +78,11 @@ export const toLabel = (versionCoverage: VersionCoverage): string => {
   if (isUnversioned(versionCoverage)) {
     return 'All Versions'
   }
+  if (isOne(versionCoverage)) {
+    return versionCoverage.version.toString()
+  }
   return pipe(
-    versionCoverage,
-    S.encodeSync(VersionCoverage),
-    Array.ensure,
+    Array.fromIterable(versionCoverage.versions),
     Array.map(_ => _.toString()),
     Array.join(', '),
   )
@@ -95,10 +95,10 @@ export const toVersions = (versionCoverage: VersionCoverage): Version.Version[] 
   if (isUnversioned(versionCoverage)) {
     return [] // Unversioned doesn't map to specific versions
   }
-  if (Version.is(versionCoverage)) {
-    return [versionCoverage]
+  if (isOne(versionCoverage)) {
+    return [versionCoverage.version]
   }
-  return HashSet.toValues(versionCoverage)
+  return Array.fromIterable(versionCoverage.versions)
 }
 
 /**
@@ -114,19 +114,19 @@ export const getLatest = (versionCoverage: VersionCoverage): Version.Version => 
   if (isUnversioned(versionCoverage)) {
     throw new Error('Cannot get latest version from unversioned coverage')
   }
-  if (Version.is(versionCoverage)) {
-    return versionCoverage
+  if (isOne(versionCoverage)) {
+    return versionCoverage.version
   }
 
   // For HashSet, convert to array and find max
-  const versions = HashSet.toValues(versionCoverage)
+  const versions = Array.fromIterable(versionCoverage.versions)
   if (versions.length === 0) {
     throw new Error('Cannot get latest version from empty version set')
   }
 
   // Use Version.max which takes exactly 2 arguments
   // Reduce the array to find the maximum
-  return versions.reduce((latest, current) => Version.max(latest, current))
+  return versions.reduce((latest: Version.Version, current: Version.Version) => Version.max(latest, current))
 }
 
 /**

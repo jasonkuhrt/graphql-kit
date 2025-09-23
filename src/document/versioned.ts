@@ -23,15 +23,9 @@ export class Versioned extends S.TaggedClass<Versioned>('DocumentVersioned')('Do
     doc: Versioned,
     version: Version.Version,
   ): Option.Option<string> => {
-    // Try exact match first (single version key)
-    const exactMatch = HashMap.get(doc.versionDocuments, version)
-    if (Option.isSome(exactMatch)) {
-      return Option.some(exactMatch.value)
-    }
-
-    // Check version sets
+    // Check all version coverages
     for (const [selection, content] of HashMap.entries(doc.versionDocuments)) {
-      if (VersionCoverage.isSet(selection) && VersionCoverage.contains(selection, version)) {
+      if (VersionCoverage.contains(selection, version)) {
         return Option.some(content)
       }
     }
