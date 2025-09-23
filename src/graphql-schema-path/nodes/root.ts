@@ -12,17 +12,17 @@ import * as Type from './type.js'
 // ============================================================================
 
 export interface Root {
-  _tag: 'GraphQLPathRoot'
-  version?: string | undefined
-  next?: RootNext | undefined
+  readonly _tag: 'GraphQLPathRoot'
+  readonly version?: string | undefined
+  readonly next?: RootNext | undefined
 }
 
 export type RootNext = Type.Type
 
 export interface RootEncoded {
-  _tag: 'GraphQLPathRoot'
-  version?: string | undefined
-  next?: RootNextEncoded | undefined
+  readonly _tag: 'GraphQLPathRoot'
+  readonly version?: string | undefined
+  readonly next?: RootNextEncoded | undefined
 }
 
 export type RootNextEncoded = Type.TypeEncoded
@@ -31,13 +31,15 @@ export type RootNextEncoded = Type.TypeEncoded
 // Schema
 // ============================================================================
 
-export const Schema = S.TaggedStruct('GraphQLPathRoot', {
+export class Root extends S.TaggedClass<Root>('GraphQLPathRoot')('GraphQLPathRoot', {
   version: S.optional(S.String),
   next: S.optional(S.suspend((): S.Schema<RootNext, RootNextEncoded> => Type.Schema)),
-})
+}) {}
+
+export const Schema = Root
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Schema.make
+export const make = Root.make.bind(Root)

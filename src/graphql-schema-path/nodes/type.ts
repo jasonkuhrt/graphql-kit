@@ -17,17 +17,17 @@ export const graphqlKinds = Grafaid.Schema.Kinds.Like.Named
 // ============================================================================
 
 export interface Type {
-  _tag: 'GraphQLPathSegmentType'
-  name: string
-  next?: TypeNext | undefined
+  readonly _tag: 'GraphQLPathSegmentType'
+  readonly name: string
+  readonly next?: TypeNext | undefined
 }
 
 export type TypeNext = Field.Field
 
 export interface TypeEncoded {
-  _tag: 'GraphQLPathSegmentType'
-  name: string
-  next?: TypeNextEncoded | undefined
+  readonly _tag: 'GraphQLPathSegmentType'
+  readonly name: string
+  readonly next?: TypeNextEncoded | undefined
 }
 
 export type TypeNextEncoded = Field.FieldEncoded
@@ -36,15 +36,15 @@ export type TypeNextEncoded = Field.FieldEncoded
 // Schema
 // ============================================================================
 
-export const Schema = S.TaggedStruct('GraphQLPathSegmentType', {
+export class Type extends S.TaggedClass<Type>('GraphQLPathSegmentType')('GraphQLPathSegmentType', {
   name: GraphQLName.GraphQLName,
   next: S.optional(S.suspend((): S.Schema<TypeNext, TypeNextEncoded> => Field.Schema)),
-})
+}) {}
 
-// Types are manually defined above
+export const Schema = Type
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Schema.make
+export const make = Type.make.bind(Type)

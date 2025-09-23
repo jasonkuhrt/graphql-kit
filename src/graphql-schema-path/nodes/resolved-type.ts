@@ -14,27 +14,29 @@ import { S } from '#dep/effect'
 // No graphqlKind export as this is a meta-operation
 
 export interface ResolvedType {
-  _tag: 'GraphQLPathSegmentResolvedType'
-  next?: undefined
+  readonly _tag: 'GraphQLPathSegmentResolvedType'
+  readonly next?: undefined
 }
 
 export interface ResolvedTypeEncoded {
-  _tag: 'GraphQLPathSegmentResolvedType'
-  next?: undefined
+  readonly _tag: 'GraphQLPathSegmentResolvedType'
+  readonly next?: undefined
 }
 
 // ============================================================================
 // Schema
 // ============================================================================
 
-export const Schema = S.TaggedStruct('GraphQLPathSegmentResolvedType', {
-  next: S.optional(S.Undefined),
-})
+export class ResolvedType
+  extends S.TaggedClass<ResolvedType>('GraphQLPathSegmentResolvedType')('GraphQLPathSegmentResolvedType', {
+    next: S.optional(S.Undefined),
+  })
+{}
 
-// Types are manually defined above
+export const Schema = ResolvedType
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Schema.make
+export const make = ResolvedType.make.bind(ResolvedType)

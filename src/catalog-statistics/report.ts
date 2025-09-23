@@ -4,7 +4,7 @@ import { StabilityMetrics, VersionStatistics } from './data.js'
 /**
  * Complete statistics report for a GraphQL catalog.
  */
-export const Report = S.Struct({
+export class Report extends S.Class<Report>('StatisticsReport')({
   /**
    * Global stability metrics across all versions.
    */
@@ -17,18 +17,9 @@ export const Report = S.Struct({
    * Current/latest version statistics (convenience).
    */
   current: S.optional(VersionStatistics),
-}).annotations({
-  identifier: 'StatisticsReport',
+}, {
   description: 'Complete statistics report for a GraphQL catalog',
-})
-
-export type Report = typeof Report.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = Report.make
+}) {}
 
 // ============================================================================
 // Type Guards

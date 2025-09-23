@@ -7,55 +7,41 @@ import { S } from '#dep/effect'
 /**
  * GraphQL source location information
  */
-export const Location = S.Struct({
+export class Location extends S.Class<Location>('GraphQLLocation')({
   line: S.Number,
   column: S.Number,
-}).annotations({
-  identifier: 'GraphQLLocation',
+}, {
   description: 'Source location in a GraphQL document',
-})
+}) {}
 
 /**
  * GraphQL error structure
  */
-export const GraphQLError = S.Struct({
+export class GraphQLError extends S.Class<GraphQLError>('GraphQLError')({
   message: S.String,
   locations: S.optional(S.Array(Location)),
-}).annotations({
-  identifier: 'GraphQLError',
+}, {
   description: 'GraphQL validation or execution error',
-})
+}) {}
+
+/**
+ * Example info for validation context
+ */
+class ValidationExample extends S.Class<ValidationExample>('ValidationExample')({
+  id: S.String,
+  path: S.String,
+}) {}
 
 /**
  * Context for GraphQL validation errors
  */
-export const ValidationContext = S.Struct({
-  example: S.Struct({
-    id: S.String,
-    path: S.String,
-  }),
+export class ValidationContext extends S.Class<ValidationContext>('GraphQLValidationContext')({
+  example: ValidationExample,
   version: S.String,
   errors: S.Array(GraphQLError),
-}).annotations({
-  identifier: 'GraphQLValidationContext',
+}, {
   description: 'Context for GraphQL validation errors against a schema version',
-})
-
-// ============================================================================
-// Type exports
-// ============================================================================
-
-export type Location = typeof Location.Type
-export type GraphQLError = typeof GraphQLError.Type
-export type ValidationContext = typeof ValidationContext.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = GraphQLError.make
-export const makeLocation = Location.make
-export const makeValidationContext = ValidationContext.make
+}) {}
 
 // ============================================================================
 // Type guards

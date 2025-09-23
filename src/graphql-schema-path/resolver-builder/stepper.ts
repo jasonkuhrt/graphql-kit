@@ -18,12 +18,12 @@ import type { TraversalLocation } from './traversal-location.js'
 /**
  * The requested node could not be found.
  */
-export const NodeNotFound = S.TaggedStruct('NodeNotFound', {})
+export class NodeNotFound extends S.TaggedClass<NodeNotFound>('NodeNotFound')('NodeNotFound', {}) {}
 
 /**
  * The target node's kind doesn't match what's required for this traversal.
  */
-export const KindMismatch = S.TaggedStruct('KindMismatch', {})
+export class KindMismatch extends S.TaggedClass<KindMismatch>('KindMismatch')('KindMismatch', {}) {}
 
 /**
  * Union of all step failures.
@@ -34,8 +34,6 @@ export const StepFailure = S.Union(NodeNotFound, KindMismatch)
 // Types
 // ============================================================================
 
-export type NodeNotFound = typeof NodeNotFound.Type
-export type KindMismatch = typeof KindMismatch.Type
 export type StepFailure = typeof StepFailure.Type
 
 // ============================================================================
@@ -51,8 +49,7 @@ export namespace StepFailures {
 // Guard Failure
 // ============================================================================
 
-export const GuardFailure = S.TaggedStruct('KindMismatch', {})
-export type GuardFailure = typeof GuardFailure.Type
+export class GuardFailure extends S.TaggedClass<GuardFailure>('GuardFailure')('KindMismatch', {}) {}
 
 // ============================================================================
 // Stepper Interface
@@ -128,7 +125,7 @@ export const runStepper = (
         new TraversalError.TraversalError({
           path: state.path,
           location,
-          cause: guardResult.left as StepFailure, // GuardFailure has same shape as KindMismatch
+          cause: guardResult.left, // GuardFailure uses KindMismatch tag
           // Could add nodeKind here if TraversalError supported it
         }),
       )

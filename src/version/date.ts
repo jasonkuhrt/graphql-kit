@@ -13,7 +13,7 @@ export class Date extends S.TaggedClass<Date>()('VersionDate', {
 // Constructors
 // ============================================================================
 
-export const make = Date.make
+export const make = Date.make.bind(Date)
 
 // ============================================================================
 // Type Guard

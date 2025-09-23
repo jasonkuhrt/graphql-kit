@@ -5,30 +5,24 @@ import { Version as VltVersion } from '@vltpkg/semver'
 // Schema
 // ============================================================================
 
-export const PreRelease = S.TaggedStruct('SemverPreRelease', {
+export class PreRelease extends S.TaggedClass<PreRelease>('SemverPreRelease')('SemverPreRelease', {
   major: S.Number,
   minor: S.Number,
   patch: S.Number,
   prerelease: S.NonEmptyArray(S.Union(S.String, S.Number)),
   build: S.optional(S.Array(S.String)),
   version: S.instanceOf(VltVersion),
-}).annotations({
+}, {
   identifier: 'PreRelease',
   title: 'Pre-Release',
   description: 'A semantic version with pre-release identifiers',
-})
-
-// ============================================================================
-// Type
-// ============================================================================
-
-export type PreRelease = typeof PreRelease.Type
+}) {}
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = PreRelease.make
+export const make = PreRelease.make.bind(PreRelease)
 
 // ============================================================================
 // Type Guard

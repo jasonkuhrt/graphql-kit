@@ -37,28 +37,29 @@ export interface VersionedEncoded extends
   }>
 {}
 
-export const Versioned = S.TaggedStruct('SchemaVersioned', {
+// Category class for better type safety
+class Category extends S.Class<Category>('SchemaCategory')({
+  name: S.String,
+  types: S.Array(S.String),
+}) {}
+
+// BranchPoint class
+class BranchPointSchema extends S.Class<BranchPointSchema>('BranchPoint')({
+  // The 'as any' is needed here due to circular type reference during class definition
+  schema: S.suspend((): S.Schema<Versioned, VersionedEncoded> => Versioned as any),
+  revision: Revision.Revision,
+}) {}
+
+export class Versioned extends S.TaggedClass<Versioned>('SchemaVersioned')('SchemaVersioned', {
   version: Version.Version,
-  branchPoint: S.NullOr(S.Struct({
-    schema: S.suspend((): S.Schema<Versioned, VersionedEncoded> => Versioned as any),
-    revision: Revision.Revision,
-  })),
+  branchPoint: S.NullOr(BranchPointSchema),
   revisions: S.Array(Revision.Revision),
   definition: SchemaDefinition.SchemaDefinition,
   categories: S.optionalWith(
-    S.Array(S.Struct({
-      name: S.String,
-      types: S.Array(S.String),
-    })),
+    S.Array(Category),
     { default: () => [] },
   ),
-})
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = Versioned.make
+}) {}
 
 // ============================================================================
 // Type Guard

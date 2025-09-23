@@ -5,23 +5,15 @@ import { Level } from './level.js'
 // Schema
 // ============================================================================
 
-export const Criticality = S.Struct({
+export class Criticality extends S.Class<Criticality>('Criticality')({
   level: Level,
   reason: S.optional(S.String),
-}).annotations({
-  identifier: 'Criticality',
+}, {
   title: 'Change Criticality',
   description: 'The criticality assessment of a GraphQL schema change',
-})
+}) {}
 
 export type Level = typeof Level.Type
-export type Criticality = typeof Criticality.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = Criticality.make
 
 // ============================================================================
 // Guards

@@ -211,7 +211,11 @@ export const define = <$TargetSpec extends TargetSpec>(
     //
 
     const nodeTags = Nodes.$Groups.All
-      .map(_ => Sch.Tagged.getTagOrThrow(_.Schema))
+      .map(_ => {
+        // Access the _tag static property on the Schema class
+        const schema = _.Schema as typeof _.Schema & { _tag: string }
+        return schema._tag
+      })
       .filter(_ => _ !== 'GraphQLPathRoot')
 
     for (const tag of nodeTags) {

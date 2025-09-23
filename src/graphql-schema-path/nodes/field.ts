@@ -11,10 +11,11 @@ import * as ResolvedType from './resolved-type.js'
 // This path node represents a GraphQL Field
 export const graphqlKind = Grafaid.Schema.Kinds.Kinds.Field
 
+// Forward declare the Field class for type references
 export interface Field {
-  _tag: 'GraphQLPathSegmentField'
-  name: string
-  next?: FieldNext | undefined
+  readonly _tag: 'GraphQLPathSegmentField'
+  readonly name: string
+  readonly next?: FieldNext | undefined
 }
 
 export type FieldNext =
@@ -23,9 +24,9 @@ export type FieldNext =
   | ResolvedType.ResolvedType
 
 export interface FieldEncoded {
-  _tag: 'GraphQLPathSegmentField'
-  name: string
-  next?: FieldNextEncoded | undefined
+  readonly _tag: 'GraphQLPathSegmentField'
+  readonly name: string
+  readonly next?: FieldNextEncoded | undefined
 }
 
 export type FieldNextEncoded =
@@ -37,19 +38,21 @@ export type FieldNextEncoded =
 // Schema
 // ============================================================================
 
-export const Schema = S.TaggedStruct('GraphQLPathSegmentField', {
+export class Field extends S.TaggedClass<Field>('GraphQLPathSegmentField')('GraphQLPathSegmentField', {
   name: GraphQLName.GraphQLName,
   next: S.optional(S.suspend((): S.Schema<FieldNext, FieldNextEncoded> =>
     S.Union(
-      Schema,
+      S.suspend((): S.Schema<Field, FieldEncoded> => Field as any),
       Argument.Schema,
       ResolvedType.Schema,
     )
   )),
-})
+}) {}
+
+export const Schema = Field
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Schema.make
+export const make = Field.make.bind(Field)

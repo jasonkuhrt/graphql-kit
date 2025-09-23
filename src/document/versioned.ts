@@ -6,7 +6,7 @@ import { Version } from '../version/$.js'
 // Schema
 // ============================================================================
 
-export const DocumentVersioned = S.TaggedStruct('DocumentVersioned', {
+export class DocumentVersioned extends S.TaggedClass<DocumentVersioned>('DocumentVersioned')('DocumentVersioned', {
   /**
    * Map from version selection (single or set) to document content.
    * Supports:
@@ -17,19 +17,7 @@ export const DocumentVersioned = S.TaggedStruct('DocumentVersioned', {
     key: VersionCoverage.VersionCoverage,
     value: S.String,
   }),
-})
-
-// ============================================================================
-// Types
-// ============================================================================
-
-export type DocumentVersioned = typeof DocumentVersioned.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = DocumentVersioned.make
+}) {}
 
 // ============================================================================
 // Type Guards

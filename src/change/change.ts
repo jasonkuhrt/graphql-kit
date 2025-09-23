@@ -5,417 +5,538 @@ import * as Criticality from './criticality.js'
 // Base Change Schema
 // ============================================================================
 
-const ChangeBase = S.Struct({
+const changeBaseFields = {
   message: S.String,
   path: S.optional(S.String),
   criticality: Criticality.Criticality,
-})
+}
 
 // ============================================================================
 // Type Changes
 // ============================================================================
 
-export const TypeAdded = S.TaggedStruct('TYPE_ADDED', {
-  ...ChangeBase.fields,
+export class TypeAdded extends S.TaggedClass<TypeAdded>('TypeAdded')('TYPE_ADDED', {
+  ...changeBaseFields,
   name: S.String,
-})
+}) {}
 
-export const TypeRemoved = S.TaggedStruct('TYPE_REMOVED', {
-  ...ChangeBase.fields,
+export class TypeRemoved extends S.TaggedClass<TypeRemoved>('TypeRemoved')('TYPE_REMOVED', {
+  ...changeBaseFields,
   name: S.String,
-})
+}) {}
 
-export const TypeKindChanged = S.TaggedStruct('TYPE_KIND_CHANGED', {
-  ...ChangeBase.fields,
+export class TypeKindChanged extends S.TaggedClass<TypeKindChanged>('TypeKindChanged')('TYPE_KIND_CHANGED', {
+  ...changeBaseFields,
   name: S.String,
   oldKind: S.String,
   newKind: S.String,
-})
+}) {}
 
-export const TypeDescriptionChanged = S.TaggedStruct('TYPE_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  name: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class TypeDescriptionChanged
+  extends S.TaggedClass<TypeDescriptionChanged>('TypeDescriptionChanged')('TYPE_DESCRIPTION_CHANGED', {
+    ...changeBaseFields,
+    name: S.String,
+    oldDescription: S.optional(S.String),
+    newDescription: S.optional(S.String),
+  })
+{}
 
-export const TypeDescriptionAdded = S.TaggedStruct('TYPE_DESCRIPTION_ADDED', {
-  ...ChangeBase.fields,
-  name: S.String,
-  description: S.String,
-})
+export class TypeDescriptionAdded
+  extends S.TaggedClass<TypeDescriptionAdded>('TypeDescriptionAdded')('TYPE_DESCRIPTION_ADDED', {
+    ...changeBaseFields,
+    name: S.String,
+    description: S.String,
+  })
+{}
 
-export const TypeDescriptionRemoved = S.TaggedStruct('TYPE_DESCRIPTION_REMOVED', {
-  ...ChangeBase.fields,
-  name: S.String,
-})
+export class TypeDescriptionRemoved
+  extends S.TaggedClass<TypeDescriptionRemoved>('TypeDescriptionRemoved')('TYPE_DESCRIPTION_REMOVED', {
+    ...changeBaseFields,
+    name: S.String,
+  })
+{}
 
 // ============================================================================
 // Field Changes
 // ============================================================================
 
-export const FieldAdded = S.TaggedStruct('FIELD_ADDED', {
-  ...ChangeBase.fields,
+export class FieldAdded extends S.TaggedClass<FieldAdded>('FieldAdded')('FIELD_ADDED', {
+  ...changeBaseFields,
   typeName: S.String,
   fieldName: S.String,
   isDeprecated: S.Boolean,
   isSafe: S.Boolean,
-})
+}) {}
 
-export const FieldRemoved = S.TaggedStruct('FIELD_REMOVED', {
-  ...ChangeBase.fields,
+export class FieldRemoved extends S.TaggedClass<FieldRemoved>('FieldRemoved')('FIELD_REMOVED', {
+  ...changeBaseFields,
   typeName: S.String,
   fieldName: S.String,
-})
+}) {}
 
-export const FieldTypeChanged = S.TaggedStruct('FIELD_TYPE_CHANGED', {
-  ...ChangeBase.fields,
+export class FieldTypeChanged extends S.TaggedClass<FieldTypeChanged>('FieldTypeChanged')('FIELD_TYPE_CHANGED', {
+  ...changeBaseFields,
   typeName: S.String,
   fieldName: S.String,
   oldType: S.String,
   newType: S.String,
   isSafe: S.Boolean,
-})
+}) {}
 
-export const FieldDeprecationAdded = S.TaggedStruct('FIELD_DEPRECATION_ADDED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  reason: S.optional(S.String),
-})
+export class FieldDeprecationAdded
+  extends S.TaggedClass<FieldDeprecationAdded>('FieldDeprecationAdded')('FIELD_DEPRECATION_ADDED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    reason: S.optional(S.String),
+  })
+{}
 
-export const FieldDeprecationRemoved = S.TaggedStruct('FIELD_DEPRECATION_REMOVED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-})
+export class FieldDeprecationRemoved
+  extends S.TaggedClass<FieldDeprecationRemoved>('FieldDeprecationRemoved')('FIELD_DEPRECATION_REMOVED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+  })
+{}
 
-export const FieldDeprecationReasonChanged = S.TaggedStruct('FIELD_DEPRECATION_REASON_CHANGED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  oldReason: S.optional(S.String),
-  newReason: S.optional(S.String),
-})
+export class FieldDeprecationReasonChanged
+  extends S.TaggedClass<FieldDeprecationReasonChanged>('FieldDeprecationReasonChanged')(
+    'FIELD_DEPRECATION_REASON_CHANGED',
+    {
+      ...changeBaseFields,
+      typeName: S.String,
+      fieldName: S.String,
+      oldReason: S.optional(S.String),
+      newReason: S.optional(S.String),
+    },
+  )
+{}
 
-export const FieldDeprecationReasonAdded = S.TaggedStruct('FIELD_DEPRECATION_REASON_ADDED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  reason: S.String,
-})
+export class FieldDeprecationReasonAdded
+  extends S.TaggedClass<FieldDeprecationReasonAdded>('FieldDeprecationReasonAdded')('FIELD_DEPRECATION_REASON_ADDED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    reason: S.String,
+  })
+{}
 
-export const FieldDeprecationReasonRemoved = S.TaggedStruct('FIELD_DEPRECATION_REASON_REMOVED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-})
+export class FieldDeprecationReasonRemoved
+  extends S.TaggedClass<FieldDeprecationReasonRemoved>('FieldDeprecationReasonRemoved')(
+    'FIELD_DEPRECATION_REASON_REMOVED',
+    {
+      ...changeBaseFields,
+      typeName: S.String,
+      fieldName: S.String,
+    },
+  )
+{}
 
-export const FieldDescriptionChanged = S.TaggedStruct('FIELD_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class FieldDescriptionChanged
+  extends S.TaggedClass<FieldDescriptionChanged>('FieldDescriptionChanged')('FIELD_DESCRIPTION_CHANGED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    oldDescription: S.optional(S.String),
+    newDescription: S.optional(S.String),
+  })
+{}
 
-export const FieldDescriptionAdded = S.TaggedStruct('FIELD_DESCRIPTION_ADDED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  description: S.String,
-})
+export class FieldDescriptionAdded
+  extends S.TaggedClass<FieldDescriptionAdded>('FieldDescriptionAdded')('FIELD_DESCRIPTION_ADDED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    description: S.String,
+  })
+{}
 
-export const FieldDescriptionRemoved = S.TaggedStruct('FIELD_DESCRIPTION_REMOVED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-})
+export class FieldDescriptionRemoved
+  extends S.TaggedClass<FieldDescriptionRemoved>('FieldDescriptionRemoved')('FIELD_DESCRIPTION_REMOVED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+  })
+{}
 
 // ============================================================================
 // Field Argument Changes
 // ============================================================================
 
-export const FieldArgumentAdded = S.TaggedStruct('FIELD_ARGUMENT_ADDED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  argumentName: S.String,
-  type: S.String,
-  defaultValue: S.optional(S.Unknown),
-})
+export class FieldArgumentAdded
+  extends S.TaggedClass<FieldArgumentAdded>('FieldArgumentAdded')('FIELD_ARGUMENT_ADDED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    argumentName: S.String,
+    type: S.String,
+    defaultValue: S.optional(S.Unknown),
+  })
+{}
 
-export const FieldArgumentRemoved = S.TaggedStruct('FIELD_ARGUMENT_REMOVED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  argumentName: S.String,
-})
+export class FieldArgumentRemoved
+  extends S.TaggedClass<FieldArgumentRemoved>('FieldArgumentRemoved')('FIELD_ARGUMENT_REMOVED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    argumentName: S.String,
+  })
+{}
 
-export const FieldArgumentTypeChanged = S.TaggedStruct('FIELD_ARGUMENT_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  argumentName: S.String,
-  oldType: S.String,
-  newType: S.String,
-})
+export class FieldArgumentTypeChanged
+  extends S.TaggedClass<FieldArgumentTypeChanged>('FieldArgumentTypeChanged')('FIELD_ARGUMENT_TYPE_CHANGED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    argumentName: S.String,
+    oldType: S.String,
+    newType: S.String,
+  })
+{}
 
-export const FieldArgumentDescriptionChanged = S.TaggedStruct('FIELD_ARGUMENT_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  argumentName: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class FieldArgumentDescriptionChanged
+  extends S.TaggedClass<FieldArgumentDescriptionChanged>('FieldArgumentDescriptionChanged')(
+    'FIELD_ARGUMENT_DESCRIPTION_CHANGED',
+    {
+      ...changeBaseFields,
+      typeName: S.String,
+      fieldName: S.String,
+      argumentName: S.String,
+      oldDescription: S.optional(S.String),
+      newDescription: S.optional(S.String),
+    },
+  )
+{}
 
-export const FieldArgumentDefaultChanged = S.TaggedStruct('FIELD_ARGUMENT_DEFAULT_CHANGED', {
-  ...ChangeBase.fields,
-  typeName: S.String,
-  fieldName: S.String,
-  argumentName: S.String,
-  oldDefault: S.optional(S.Unknown),
-  newDefault: S.optional(S.Unknown),
-})
+export class FieldArgumentDefaultChanged
+  extends S.TaggedClass<FieldArgumentDefaultChanged>('FieldArgumentDefaultChanged')('FIELD_ARGUMENT_DEFAULT_CHANGED', {
+    ...changeBaseFields,
+    typeName: S.String,
+    fieldName: S.String,
+    argumentName: S.String,
+    oldDefault: S.optional(S.Unknown),
+    newDefault: S.optional(S.Unknown),
+  })
+{}
 
 // ============================================================================
 // Enum Changes
 // ============================================================================
 
-export const EnumValueAdded = S.TaggedStruct('ENUM_VALUE_ADDED', {
-  ...ChangeBase.fields,
+export class EnumValueAdded extends S.TaggedClass<EnumValueAdded>('EnumValueAdded')('ENUM_VALUE_ADDED', {
+  ...changeBaseFields,
   enumName: S.String,
   value: S.String,
   isDeprecated: S.Boolean,
-})
+}) {}
 
-export const EnumValueRemoved = S.TaggedStruct('ENUM_VALUE_REMOVED', {
-  ...ChangeBase.fields,
+export class EnumValueRemoved extends S.TaggedClass<EnumValueRemoved>('EnumValueRemoved')('ENUM_VALUE_REMOVED', {
+  ...changeBaseFields,
   enumName: S.String,
   value: S.String,
-})
+}) {}
 
-export const EnumValueDescriptionChanged = S.TaggedStruct('ENUM_VALUE_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class EnumValueDescriptionChanged
+  extends S.TaggedClass<EnumValueDescriptionChanged>('EnumValueDescriptionChanged')('ENUM_VALUE_DESCRIPTION_CHANGED', {
+    ...changeBaseFields,
+    enumName: S.String,
+    value: S.String,
+    oldDescription: S.optional(S.String),
+    newDescription: S.optional(S.String),
+  })
+{}
 
-export const EnumValueDeprecationAdded = S.TaggedStruct('ENUM_VALUE_DEPRECATION_ADDED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-  reason: S.optional(S.String),
-})
+export class EnumValueDeprecationAdded
+  extends S.TaggedClass<EnumValueDeprecationAdded>('EnumValueDeprecationAdded')('ENUM_VALUE_DEPRECATION_ADDED', {
+    ...changeBaseFields,
+    enumName: S.String,
+    value: S.String,
+    reason: S.optional(S.String),
+  })
+{}
 
-export const EnumValueDeprecationRemoved = S.TaggedStruct('ENUM_VALUE_DEPRECATION_REMOVED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-})
+export class EnumValueDeprecationRemoved
+  extends S.TaggedClass<EnumValueDeprecationRemoved>('EnumValueDeprecationRemoved')('ENUM_VALUE_DEPRECATION_REMOVED', {
+    ...changeBaseFields,
+    enumName: S.String,
+    value: S.String,
+  })
+{}
 
-export const EnumValueDeprecationReasonChanged = S.TaggedStruct('ENUM_VALUE_DEPRECATION_REASON_CHANGED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-  oldReason: S.optional(S.String),
-  newReason: S.optional(S.String),
-})
+export class EnumValueDeprecationReasonChanged
+  extends S.TaggedClass<EnumValueDeprecationReasonChanged>('EnumValueDeprecationReasonChanged')(
+    'ENUM_VALUE_DEPRECATION_REASON_CHANGED',
+    {
+      ...changeBaseFields,
+      enumName: S.String,
+      value: S.String,
+      oldReason: S.optional(S.String),
+      newReason: S.optional(S.String),
+    },
+  )
+{}
 
-export const EnumValueDeprecationReasonAdded = S.TaggedStruct('ENUM_VALUE_DEPRECATION_REASON_ADDED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-  reason: S.String,
-})
+export class EnumValueDeprecationReasonAdded
+  extends S.TaggedClass<EnumValueDeprecationReasonAdded>('EnumValueDeprecationReasonAdded')(
+    'ENUM_VALUE_DEPRECATION_REASON_ADDED',
+    {
+      ...changeBaseFields,
+      enumName: S.String,
+      value: S.String,
+      reason: S.String,
+    },
+  )
+{}
 
-export const EnumValueDeprecationReasonRemoved = S.TaggedStruct('ENUM_VALUE_DEPRECATION_REASON_REMOVED', {
-  ...ChangeBase.fields,
-  enumName: S.String,
-  value: S.String,
-})
+export class EnumValueDeprecationReasonRemoved
+  extends S.TaggedClass<EnumValueDeprecationReasonRemoved>('EnumValueDeprecationReasonRemoved')(
+    'ENUM_VALUE_DEPRECATION_REASON_REMOVED',
+    {
+      ...changeBaseFields,
+      enumName: S.String,
+      value: S.String,
+    },
+  )
+{}
 
 // ============================================================================
 // Input Field Changes
 // ============================================================================
 
-export const InputFieldAdded = S.TaggedStruct('INPUT_FIELD_ADDED', {
-  ...ChangeBase.fields,
+export class InputFieldAdded extends S.TaggedClass<InputFieldAdded>('InputFieldAdded')('INPUT_FIELD_ADDED', {
+  ...changeBaseFields,
   inputName: S.String,
   fieldName: S.String,
   isNullable: S.Boolean,
-})
+}) {}
 
-export const InputFieldRemoved = S.TaggedStruct('INPUT_FIELD_REMOVED', {
-  ...ChangeBase.fields,
+export class InputFieldRemoved extends S.TaggedClass<InputFieldRemoved>('InputFieldRemoved')('INPUT_FIELD_REMOVED', {
+  ...changeBaseFields,
   inputName: S.String,
   fieldName: S.String,
-})
+}) {}
 
-export const InputFieldTypeChanged = S.TaggedStruct('INPUT_FIELD_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  inputName: S.String,
-  fieldName: S.String,
-  oldType: S.String,
-  newType: S.String,
-})
+export class InputFieldTypeChanged
+  extends S.TaggedClass<InputFieldTypeChanged>('InputFieldTypeChanged')('INPUT_FIELD_TYPE_CHANGED', {
+    ...changeBaseFields,
+    inputName: S.String,
+    fieldName: S.String,
+    oldType: S.String,
+    newType: S.String,
+  })
+{}
 
-export const InputFieldDescriptionAdded = S.TaggedStruct('INPUT_FIELD_DESCRIPTION_ADDED', {
-  ...ChangeBase.fields,
-  inputName: S.String,
-  fieldName: S.String,
-  description: S.String,
-})
+export class InputFieldDescriptionAdded
+  extends S.TaggedClass<InputFieldDescriptionAdded>('InputFieldDescriptionAdded')('INPUT_FIELD_DESCRIPTION_ADDED', {
+    ...changeBaseFields,
+    inputName: S.String,
+    fieldName: S.String,
+    description: S.String,
+  })
+{}
 
-export const InputFieldDescriptionRemoved = S.TaggedStruct('INPUT_FIELD_DESCRIPTION_REMOVED', {
-  ...ChangeBase.fields,
-  inputName: S.String,
-  fieldName: S.String,
-})
+export class InputFieldDescriptionRemoved
+  extends S.TaggedClass<InputFieldDescriptionRemoved>('InputFieldDescriptionRemoved')(
+    'INPUT_FIELD_DESCRIPTION_REMOVED',
+    {
+      ...changeBaseFields,
+      inputName: S.String,
+      fieldName: S.String,
+    },
+  )
+{}
 
-export const InputFieldDescriptionChanged = S.TaggedStruct('INPUT_FIELD_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  inputName: S.String,
-  fieldName: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class InputFieldDescriptionChanged
+  extends S.TaggedClass<InputFieldDescriptionChanged>('InputFieldDescriptionChanged')(
+    'INPUT_FIELD_DESCRIPTION_CHANGED',
+    {
+      ...changeBaseFields,
+      inputName: S.String,
+      fieldName: S.String,
+      oldDescription: S.optional(S.String),
+      newDescription: S.optional(S.String),
+    },
+  )
+{}
 
-export const InputFieldDefaultValueChanged = S.TaggedStruct('INPUT_FIELD_DEFAULT_VALUE_CHANGED', {
-  ...ChangeBase.fields,
-  inputName: S.String,
-  fieldName: S.String,
-  oldDefault: S.optional(S.Unknown),
-  newDefault: S.optional(S.Unknown),
-})
+export class InputFieldDefaultValueChanged
+  extends S.TaggedClass<InputFieldDefaultValueChanged>('InputFieldDefaultValueChanged')(
+    'INPUT_FIELD_DEFAULT_VALUE_CHANGED',
+    {
+      ...changeBaseFields,
+      inputName: S.String,
+      fieldName: S.String,
+      oldDefault: S.optional(S.Unknown),
+      newDefault: S.optional(S.Unknown),
+    },
+  )
+{}
 
 // ============================================================================
 // Union Changes
 // ============================================================================
 
-export const UnionMemberAdded = S.TaggedStruct('UNION_MEMBER_ADDED', {
-  ...ChangeBase.fields,
+export class UnionMemberAdded extends S.TaggedClass<UnionMemberAdded>('UnionMemberAdded')('UNION_MEMBER_ADDED', {
+  ...changeBaseFields,
   unionName: S.String,
   memberName: S.String,
-})
+}) {}
 
-export const UnionMemberRemoved = S.TaggedStruct('UNION_MEMBER_REMOVED', {
-  ...ChangeBase.fields,
-  unionName: S.String,
-  memberName: S.String,
-})
+export class UnionMemberRemoved
+  extends S.TaggedClass<UnionMemberRemoved>('UnionMemberRemoved')('UNION_MEMBER_REMOVED', {
+    ...changeBaseFields,
+    unionName: S.String,
+    memberName: S.String,
+  })
+{}
 
 // ============================================================================
 // Interface Changes
 // ============================================================================
 
-export const ObjectTypeInterfaceAdded = S.TaggedStruct('OBJECT_TYPE_INTERFACE_ADDED', {
-  ...ChangeBase.fields,
-  objectName: S.String,
-  interfaceName: S.String,
-})
+export class ObjectTypeInterfaceAdded
+  extends S.TaggedClass<ObjectTypeInterfaceAdded>('ObjectTypeInterfaceAdded')('OBJECT_TYPE_INTERFACE_ADDED', {
+    ...changeBaseFields,
+    objectName: S.String,
+    interfaceName: S.String,
+  })
+{}
 
-export const ObjectTypeInterfaceRemoved = S.TaggedStruct('OBJECT_TYPE_INTERFACE_REMOVED', {
-  ...ChangeBase.fields,
-  objectName: S.String,
-  interfaceName: S.String,
-})
+export class ObjectTypeInterfaceRemoved
+  extends S.TaggedClass<ObjectTypeInterfaceRemoved>('ObjectTypeInterfaceRemoved')('OBJECT_TYPE_INTERFACE_REMOVED', {
+    ...changeBaseFields,
+    objectName: S.String,
+    interfaceName: S.String,
+  })
+{}
 
 // ============================================================================
 // Directive Changes
 // ============================================================================
 
-export const DirectiveAdded = S.TaggedStruct('DIRECTIVE_ADDED', {
-  ...ChangeBase.fields,
+export class DirectiveAdded extends S.TaggedClass<DirectiveAdded>('DirectiveAdded')('DIRECTIVE_ADDED', {
+  ...changeBaseFields,
   name: S.String,
   locations: S.Array(S.String),
-})
+}) {}
 
-export const DirectiveRemoved = S.TaggedStruct('DIRECTIVE_REMOVED', {
-  ...ChangeBase.fields,
+export class DirectiveRemoved extends S.TaggedClass<DirectiveRemoved>('DirectiveRemoved')('DIRECTIVE_REMOVED', {
+  ...changeBaseFields,
   name: S.String,
-})
+}) {}
 
-export const DirectiveDescriptionChanged = S.TaggedStruct('DIRECTIVE_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  name: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class DirectiveDescriptionChanged
+  extends S.TaggedClass<DirectiveDescriptionChanged>('DirectiveDescriptionChanged')('DIRECTIVE_DESCRIPTION_CHANGED', {
+    ...changeBaseFields,
+    name: S.String,
+    oldDescription: S.optional(S.String),
+    newDescription: S.optional(S.String),
+  })
+{}
 
-export const DirectiveLocationAdded = S.TaggedStruct('DIRECTIVE_LOCATION_ADDED', {
-  ...ChangeBase.fields,
-  name: S.String,
-  location: S.String,
-})
+export class DirectiveLocationAdded
+  extends S.TaggedClass<DirectiveLocationAdded>('DirectiveLocationAdded')('DIRECTIVE_LOCATION_ADDED', {
+    ...changeBaseFields,
+    name: S.String,
+    location: S.String,
+  })
+{}
 
-export const DirectiveLocationRemoved = S.TaggedStruct('DIRECTIVE_LOCATION_REMOVED', {
-  ...ChangeBase.fields,
-  name: S.String,
-  location: S.String,
-})
+export class DirectiveLocationRemoved
+  extends S.TaggedClass<DirectiveLocationRemoved>('DirectiveLocationRemoved')('DIRECTIVE_LOCATION_REMOVED', {
+    ...changeBaseFields,
+    name: S.String,
+    location: S.String,
+  })
+{}
 
-export const DirectiveArgumentAdded = S.TaggedStruct('DIRECTIVE_ARGUMENT_ADDED', {
-  ...ChangeBase.fields,
-  directiveName: S.String,
-  argumentName: S.String,
-  type: S.String,
-})
+export class DirectiveArgumentAdded
+  extends S.TaggedClass<DirectiveArgumentAdded>('DirectiveArgumentAdded')('DIRECTIVE_ARGUMENT_ADDED', {
+    ...changeBaseFields,
+    directiveName: S.String,
+    argumentName: S.String,
+    type: S.String,
+  })
+{}
 
-export const DirectiveArgumentRemoved = S.TaggedStruct('DIRECTIVE_ARGUMENT_REMOVED', {
-  ...ChangeBase.fields,
-  directiveName: S.String,
-  argumentName: S.String,
-})
+export class DirectiveArgumentRemoved
+  extends S.TaggedClass<DirectiveArgumentRemoved>('DirectiveArgumentRemoved')('DIRECTIVE_ARGUMENT_REMOVED', {
+    ...changeBaseFields,
+    directiveName: S.String,
+    argumentName: S.String,
+  })
+{}
 
-export const DirectiveArgumentDescriptionChanged = S.TaggedStruct('DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED', {
-  ...ChangeBase.fields,
-  directiveName: S.String,
-  argumentName: S.String,
-  oldDescription: S.optional(S.String),
-  newDescription: S.optional(S.String),
-})
+export class DirectiveArgumentDescriptionChanged
+  extends S.TaggedClass<DirectiveArgumentDescriptionChanged>('DirectiveArgumentDescriptionChanged')(
+    'DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED',
+    {
+      ...changeBaseFields,
+      directiveName: S.String,
+      argumentName: S.String,
+      oldDescription: S.optional(S.String),
+      newDescription: S.optional(S.String),
+    },
+  )
+{}
 
-export const DirectiveArgumentDefaultValueChanged = S.TaggedStruct('DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED', {
-  ...ChangeBase.fields,
-  directiveName: S.String,
-  argumentName: S.String,
-  oldDefault: S.optional(S.Unknown),
-  newDefault: S.optional(S.Unknown),
-})
+export class DirectiveArgumentDefaultValueChanged
+  extends S.TaggedClass<DirectiveArgumentDefaultValueChanged>('DirectiveArgumentDefaultValueChanged')(
+    'DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED',
+    {
+      ...changeBaseFields,
+      directiveName: S.String,
+      argumentName: S.String,
+      oldDefault: S.optional(S.Unknown),
+      newDefault: S.optional(S.Unknown),
+    },
+  )
+{}
 
-export const DirectiveArgumentTypeChanged = S.TaggedStruct('DIRECTIVE_ARGUMENT_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  directiveName: S.String,
-  argumentName: S.String,
-  oldType: S.String,
-  newType: S.String,
-})
+export class DirectiveArgumentTypeChanged
+  extends S.TaggedClass<DirectiveArgumentTypeChanged>('DirectiveArgumentTypeChanged')(
+    'DIRECTIVE_ARGUMENT_TYPE_CHANGED',
+    {
+      ...changeBaseFields,
+      directiveName: S.String,
+      argumentName: S.String,
+      oldType: S.String,
+      newType: S.String,
+    },
+  )
+{}
 
 // ============================================================================
 // Schema Changes
 // ============================================================================
 
-export const SchemaQueryTypeChanged = S.TaggedStruct('SCHEMA_QUERY_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  oldType: S.optional(S.String),
-  newType: S.optional(S.String),
-})
+export class SchemaQueryTypeChanged
+  extends S.TaggedClass<SchemaQueryTypeChanged>('SchemaQueryTypeChanged')('SCHEMA_QUERY_TYPE_CHANGED', {
+    ...changeBaseFields,
+    oldType: S.optional(S.String),
+    newType: S.optional(S.String),
+  })
+{}
 
-export const SchemaMutationTypeChanged = S.TaggedStruct('SCHEMA_MUTATION_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  oldType: S.optional(S.String),
-  newType: S.optional(S.String),
-})
+export class SchemaMutationTypeChanged
+  extends S.TaggedClass<SchemaMutationTypeChanged>('SchemaMutationTypeChanged')('SCHEMA_MUTATION_TYPE_CHANGED', {
+    ...changeBaseFields,
+    oldType: S.optional(S.String),
+    newType: S.optional(S.String),
+  })
+{}
 
-export const SchemaSubscriptionTypeChanged = S.TaggedStruct('SCHEMA_SUBSCRIPTION_TYPE_CHANGED', {
-  ...ChangeBase.fields,
-  oldType: S.optional(S.String),
-  newType: S.optional(S.String),
-})
+export class SchemaSubscriptionTypeChanged
+  extends S.TaggedClass<SchemaSubscriptionTypeChanged>('SchemaSubscriptionTypeChanged')(
+    'SCHEMA_SUBSCRIPTION_TYPE_CHANGED',
+    {
+      ...changeBaseFields,
+      oldType: S.optional(S.String),
+      newType: S.optional(S.String),
+    },
+  )
+{}
 
 // ============================================================================
 // Schema
@@ -491,14 +612,18 @@ export const Change = S.Union(
   description: 'A change detected between two schemas',
 })
 
+// ============================================================================
+// Type
+// ============================================================================
+
 export type Change = typeof Change.Type
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-// Note: S.Union doesn't have a make property, so we don't export a generic make function
-// Use the specific constructors for each change type instead
+// Note: These schemas don't export make functions individually.
+// Use `new ClassName({...})` to create instances.
 
 // ============================================================================
 // Type Guard

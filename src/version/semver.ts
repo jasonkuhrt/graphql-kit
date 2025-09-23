@@ -12,7 +12,7 @@ export class Semver extends S.TaggedClass<Semver>()('VersionSemver', {
 // Constructors
 // ============================================================================
 
-export const make = Semver.make
+export const make = Semver.make.bind(Semver)
 
 // ============================================================================
 // Type Guard

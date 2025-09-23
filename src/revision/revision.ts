@@ -7,16 +7,14 @@ import { Order } from 'effect'
 // Schema
 // ============================================================================
 
-export const Revision = S.TaggedStruct('Revision', {
+export class Revision extends S.TaggedClass<Revision>('Revision')('Revision', {
   date: DateOnly.DateOnly,
   changes: S.Array(Change.Change),
-}).annotations({
+}, {
   identifier: 'Revision',
   title: 'Revision',
   description: 'A revision in the schema history',
-})
-
-export type Revision = typeof Revision.Type
+}) {}
 
 // ============================================================================
 // Constructors
@@ -25,7 +23,7 @@ export type Revision = typeof Revision.Type
 /**
  * Create a Revision instance with validation
  */
-export const make = Revision.make
+export const make = Revision.make.bind(Revision)
 
 // ============================================================================
 // Type Guard

@@ -12,7 +12,7 @@ export class Custom extends S.TaggedClass<Custom>()('VersionCustom', {
 // Constructors
 // ============================================================================
 
-export const make = Custom.make
+export const make = Custom.make.bind(Custom)
 
 // ============================================================================
 // Type Guard

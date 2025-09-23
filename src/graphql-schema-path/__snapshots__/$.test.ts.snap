@@ -45,9 +45,9 @@ exports[`.parse > invalid paths > 'trailing dot' 1`] = `
 exports[`.parse > valid paths > 'String scalar' 1`] = `
 {
   "input": "String",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "String",
       "next": undefined,
@@ -60,9 +60,9 @@ exports[`.parse > valid paths > 'String scalar' 1`] = `
 exports[`.parse > valid paths > 'User type' 1`] = `
 {
   "input": "User",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
       "next": undefined,
@@ -75,18 +75,18 @@ exports[`.parse > valid paths > 'User type' 1`] = `
 exports[`.parse > valid paths > 'arg resolved type' 1`] = `
 {
   "input": "User.posts$limit#",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Argument {
           "_tag": "GraphQLPathSegmentArgument",
           "name": "limit",
-          "next": {
+          "next": ResolvedType {
             "_tag": "GraphQLPathSegmentResolvedType",
           },
         },
@@ -100,15 +100,15 @@ exports[`.parse > valid paths > 'arg resolved type' 1`] = `
 exports[`.parse > valid paths > 'field argument' 1`] = `
 {
   "input": "User.posts$limit",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Argument {
           "_tag": "GraphQLPathSegmentArgument",
           "name": "limit",
           "next": undefined,
@@ -123,15 +123,15 @@ exports[`.parse > valid paths > 'field argument' 1`] = `
 exports[`.parse > valid paths > 'field resolved type' 1`] = `
 {
   "input": "User.posts#",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": ResolvedType {
           "_tag": "GraphQLPathSegmentResolvedType",
         },
       },
@@ -144,12 +144,12 @@ exports[`.parse > valid paths > 'field resolved type' 1`] = `
 exports[`.parse > valid paths > 'input field' 1`] = `
 {
   "input": "CreateUserInput.email",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "CreateUserInput",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "email",
         "next": undefined,
@@ -163,9 +163,9 @@ exports[`.parse > valid paths > 'input field' 1`] = `
 exports[`.parse > valid paths > 'input type' 1`] = `
 {
   "input": "CreateUserInput",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "CreateUserInput",
       "next": undefined,
@@ -178,12 +178,12 @@ exports[`.parse > valid paths > 'input type' 1`] = `
 exports[`.parse > valid paths > 'multi version' 1`] = `
 {
   "input": "v1.0,2.0:User.posts",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
         "next": undefined,
@@ -197,15 +197,15 @@ exports[`.parse > valid paths > 'multi version' 1`] = `
 exports[`.parse > valid paths > 'nested field' 1`] = `
 {
   "input": "User.posts.title",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Field {
           "_tag": "GraphQLPathSegmentField",
           "name": "title",
           "next": undefined,
@@ -220,15 +220,15 @@ exports[`.parse > valid paths > 'nested field' 1`] = `
 exports[`.parse > valid paths > 'nested input' 1`] = `
 {
   "input": "CreateUserInput.address.street",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "CreateUserInput",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "address",
-        "next": {
+        "next": Field {
           "_tag": "GraphQLPathSegmentField",
           "name": "street",
           "next": undefined,
@@ -243,12 +243,12 @@ exports[`.parse > valid paths > 'nested input' 1`] = `
 exports[`.parse > valid paths > 'simple field' 1`] = `
 {
   "input": "User.name",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "name",
         "next": undefined,
@@ -262,12 +262,12 @@ exports[`.parse > valid paths > 'simple field' 1`] = `
 exports[`.parse > valid paths > 'version range' 1`] = `
 {
   "input": "v1.0-3.0:Query.users",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "Query",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "users",
         "next": undefined,
@@ -281,9 +281,9 @@ exports[`.parse > valid paths > 'version range' 1`] = `
 exports[`.parse > valid paths > 'with version' 1`] = `
 {
   "input": "v1.0:User",
-  "result": {
+  "result": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
       "next": undefined,
@@ -296,18 +296,18 @@ exports[`.parse > valid paths > 'with version' 1`] = `
 exports[`.print > round-trip paths > 'arg resolved' 1`] = `
 {
   "input": "User.posts$limit#",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Argument {
           "_tag": "GraphQLPathSegmentArgument",
           "name": "limit",
-          "next": {
+          "next": ResolvedType {
             "_tag": "GraphQLPathSegmentResolvedType",
           },
         },
@@ -323,12 +323,12 @@ exports[`.print > round-trip paths > 'arg resolved' 1`] = `
 exports[`.print > round-trip paths > 'field access' 1`] = `
 {
   "input": "User.name",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "name",
         "next": undefined,
@@ -344,12 +344,12 @@ exports[`.print > round-trip paths > 'field access' 1`] = `
 exports[`.print > round-trip paths > 'input field' 1`] = `
 {
   "input": "CreateUserInput.email",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "CreateUserInput",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "email",
         "next": undefined,
@@ -365,12 +365,12 @@ exports[`.print > round-trip paths > 'input field' 1`] = `
 exports[`.print > round-trip paths > 'multi version' 1`] = `
 {
   "input": "v1.0,2.0:User.posts",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
         "next": undefined,
@@ -386,15 +386,15 @@ exports[`.print > round-trip paths > 'multi version' 1`] = `
 exports[`.print > round-trip paths > 'nested field' 1`] = `
 {
   "input": "User.posts.title",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Field {
           "_tag": "GraphQLPathSegmentField",
           "name": "title",
           "next": undefined,
@@ -411,15 +411,15 @@ exports[`.print > round-trip paths > 'nested field' 1`] = `
 exports[`.print > round-trip paths > 'nested input' 1`] = `
 {
   "input": "CreateUserInput.address.street",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "CreateUserInput",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "address",
-        "next": {
+        "next": Field {
           "_tag": "GraphQLPathSegmentField",
           "name": "street",
           "next": undefined,
@@ -436,15 +436,15 @@ exports[`.print > round-trip paths > 'nested input' 1`] = `
 exports[`.print > round-trip paths > 'resolved type' 1`] = `
 {
   "input": "User.posts#",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": ResolvedType {
           "_tag": "GraphQLPathSegmentResolvedType",
         },
       },
@@ -459,9 +459,9 @@ exports[`.print > round-trip paths > 'resolved type' 1`] = `
 exports[`.print > round-trip paths > 'simple type' 1`] = `
 {
   "input": "User",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
       "next": undefined,
@@ -476,12 +476,12 @@ exports[`.print > round-trip paths > 'simple type' 1`] = `
 exports[`.print > round-trip paths > 'version range' 1`] = `
 {
   "input": "v1.0-3.0:Query.users",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "Query",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "users",
         "next": undefined,
@@ -497,15 +497,15 @@ exports[`.print > round-trip paths > 'version range' 1`] = `
 exports[`.print > round-trip paths > 'with argument' 1`] = `
 {
   "input": "User.posts$limit",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
-      "next": {
+      "next": Field {
         "_tag": "GraphQLPathSegmentField",
         "name": "posts",
-        "next": {
+        "next": Argument {
           "_tag": "GraphQLPathSegmentArgument",
           "name": "limit",
           "next": undefined,
@@ -522,9 +522,9 @@ exports[`.print > round-trip paths > 'with argument' 1`] = `
 exports[`.print > round-trip paths > 'with version' 1`] = `
 {
   "input": "v1.0:User",
-  "parsed": {
+  "parsed": Root {
     "_tag": "GraphQLPathRoot",
-    "next": {
+    "next": Type {
       "_tag": "GraphQLPathSegmentType",
       "name": "User",
       "next": undefined,

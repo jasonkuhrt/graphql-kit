@@ -5,22 +5,20 @@ import { Schema } from '../schema/$.js'
 // Schema
 // ============================================================================
 
-export const Unversioned = S.TaggedStruct('CatalogUnversioned', {
+export class Unversioned extends S.TaggedClass<Unversioned>('CatalogUnversioned')('CatalogUnversioned', {
   schema: Schema.Unversioned.Unversioned,
-}).annotations({
+}, {
   identifier: 'CatalogUnversioned',
   title: 'Unversioned Catalog',
   description: 'A catalog of an unversioned GraphQL schema with its revision history',
   adt: { name: 'Catalog' },
-})
-
-export type Unversioned = typeof Unversioned.Type
+}) {}
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Unversioned.make
+export const make = Unversioned.make.bind(Unversioned)
 
 // ============================================================================
 // Guards

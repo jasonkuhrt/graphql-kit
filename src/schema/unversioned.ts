@@ -7,30 +7,24 @@ import { SchemaDefinition } from '../schema-definition/$.js'
 // Schema
 // ============================================================================
 
-export const Unversioned = S.TaggedStruct('SchemaUnversioned', {
+// Category class for better type safety
+class Category extends S.Class<Category>('SchemaCategory')({
+  name: S.String,
+  types: S.Array(S.String),
+}) {}
+
+export class Unversioned extends S.TaggedClass<Unversioned>('SchemaUnversioned')('SchemaUnversioned', {
   revisions: S.Array(Revision.Revision),
   definition: SchemaDefinition.SchemaDefinition,
   categories: S.optionalWith(
-    S.Array(S.Struct({
-      name: S.String,
-      types: S.Array(S.String),
-    })),
+    S.Array(Category),
     { default: () => [] },
   ),
-}).annotations({
-  identifier: 'SchemaUnversioned',
+}, {
   title: 'Unversioned Schema',
   description: 'A GraphQL schema without semantic versioning',
   adt: { name: 'Schema' },
-})
-
-export type Unversioned = typeof Unversioned.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = Unversioned.make
+}) {}
 
 // ============================================================================
 // Type Guard

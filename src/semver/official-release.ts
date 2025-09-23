@@ -5,29 +5,23 @@ import { Version as VltVersion } from '@vltpkg/semver'
 // Schema
 // ============================================================================
 
-export const OfficialRelease = S.TaggedStruct('SemverOfficialRelease', {
+export class OfficialRelease extends S.TaggedClass<OfficialRelease>('SemverOfficialRelease')('SemverOfficialRelease', {
   major: S.Number,
   minor: S.Number,
   patch: S.Number,
   build: S.optional(S.Array(S.String)),
   version: S.instanceOf(VltVersion),
-}).annotations({
+}, {
   identifier: 'OfficialRelease',
   title: 'Official Release',
   description: 'A semantic version that is an official release (no pre-release identifiers)',
-})
-
-// ============================================================================
-// Type
-// ============================================================================
-
-export type OfficialRelease = typeof OfficialRelease.Type
+}) {}
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = OfficialRelease.make
+export const make = OfficialRelease.make.bind(OfficialRelease)
 
 // ============================================================================
 // Type Guard

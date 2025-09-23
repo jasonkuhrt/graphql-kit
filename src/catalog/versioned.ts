@@ -8,25 +8,23 @@ import { EmptyCatalogError } from './catalog.js'
 // Schema
 // ============================================================================
 
-export const Versioned = S.TaggedStruct('CatalogVersioned', {
+export class Versioned extends S.TaggedClass<Versioned>('CatalogVersioned')('CatalogVersioned', {
   entries: S.HashMap({
     key: Version.Version,
     value: Schema.Versioned.Versioned,
   }),
-}).annotations({
+}, {
   identifier: 'CatalogVersioned',
   title: 'Versioned Catalog',
   description: 'A catalog of versioned GraphQL schemas with their revision history',
   adt: { name: 'Catalog' },
-})
-
-export type Versioned = typeof Versioned.Type
+}) {}
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Versioned.make
+export const make = Versioned.make.bind(Versioned)
 
 // ============================================================================
 // Guards

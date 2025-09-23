@@ -12,7 +12,7 @@ export class Integer extends S.TaggedClass<Integer>()('VersionInteger', {
 // Constructors
 // ============================================================================
 
-export const make = Integer.make
+export const make = Integer.make.bind(Integer)
 
 // ============================================================================
 // Type Guard

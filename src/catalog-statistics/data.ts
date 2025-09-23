@@ -11,7 +11,7 @@ import { Schema as S } from 'effect'
 /**
  * Breakdown of types by kind with percentages.
  */
-export const TypeKindBreakdown = S.Struct({
+export class TypeKindBreakdown extends S.Class<TypeKindBreakdown>('TypeKindBreakdown')({
   objectTypes: S.Number,
   objectTypesPercentage: S.Number,
   interfaceTypes: S.Number,
@@ -24,12 +24,9 @@ export const TypeKindBreakdown = S.Struct({
   scalarTypesPercentage: S.Number,
   inputTypes: S.Number,
   inputTypesPercentage: S.Number,
-}).annotations({
-  identifier: 'TypeKindBreakdown',
+}, {
   description: 'Breakdown of types by kind with percentages',
-})
-
-export type TypeKindBreakdown = typeof TypeKindBreakdown.Type
+}) {}
 
 // ============================================================================
 // Schema - Description Coverage
@@ -38,7 +35,7 @@ export type TypeKindBreakdown = typeof TypeKindBreakdown.Type
 /**
  * Coverage statistics for descriptions.
  */
-export const DescriptionCoverage = S.Struct({
+export class DescriptionCoverage extends S.Class<DescriptionCoverage>('DescriptionCoverage')({
   /**
    * Percentage of types with descriptions.
    */
@@ -55,12 +52,9 @@ export const DescriptionCoverage = S.Struct({
    * Overall description coverage percentage.
    */
   overall: S.Number,
-}).annotations({
-  identifier: 'DescriptionCoverage',
+}, {
   description: 'Coverage statistics for descriptions',
-})
-
-export type DescriptionCoverage = typeof DescriptionCoverage.Type
+}) {}
 
 // ============================================================================
 // Schema - Deprecation Metrics
@@ -69,7 +63,7 @@ export type DescriptionCoverage = typeof DescriptionCoverage.Type
 /**
  * Metrics about deprecated schema elements.
  */
-export const DeprecationMetrics = S.Struct({
+export class DeprecationMetrics extends S.Class<DeprecationMetrics>('DeprecationMetrics')({
   /**
    * Total number of deprecated fields.
    */
@@ -86,12 +80,9 @@ export const DeprecationMetrics = S.Struct({
    * Percentage of schema surface area that is deprecated.
    */
   surfaceAreaPercentage: S.Number,
-}).annotations({
-  identifier: 'DeprecationMetrics',
+}, {
   description: 'Metrics about deprecated schema elements',
-})
-
-export type DeprecationMetrics = typeof DeprecationMetrics.Type
+}) {}
 
 // ============================================================================
 // Schema - Version Statistics
@@ -100,7 +91,7 @@ export type DeprecationMetrics = typeof DeprecationMetrics.Type
 /**
  * Statistics for a single schema version.
  */
-export const VersionStatistics = S.Struct({
+export class VersionStatistics extends S.Class<VersionStatistics>('VersionStatistics')({
   /**
    * Version identifier.
    */
@@ -145,12 +136,9 @@ export const VersionStatistics = S.Struct({
    * Total number of arguments across all fields.
    */
   totalArguments: S.Number,
-}).annotations({
-  identifier: 'VersionStatistics',
+}, {
   description: 'Statistics for a single schema version',
-})
-
-export type VersionStatistics = typeof VersionStatistics.Type
+}) {}
 
 // ============================================================================
 // Schema - Stability Metrics
@@ -159,7 +147,7 @@ export type VersionStatistics = typeof VersionStatistics.Type
 /**
  * Stability metrics calculated across schema history.
  */
-export const StabilityMetrics = S.Struct({
+export class StabilityMetrics extends S.Class<StabilityMetrics>('StabilityMetrics')({
   /**
    * Churn rate - percentage of schema that changes between versions.
    */
@@ -188,9 +176,6 @@ export const StabilityMetrics = S.Struct({
    * Stability rating: 'high', 'medium', 'low' based on churn rate.
    */
   rating: S.optional(S.Union(S.Literal('high'), S.Literal('medium'), S.Literal('low'))),
-}).annotations({
-  identifier: 'StabilityMetrics',
+}, {
   description: 'Stability metrics calculated across schema history',
-})
-
-export type StabilityMetrics = typeof StabilityMetrics.Type
+}) {}

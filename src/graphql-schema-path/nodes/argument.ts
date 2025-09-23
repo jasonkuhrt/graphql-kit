@@ -12,9 +12,9 @@ import * as ResolvedType from './resolved-type.js'
 export const graphqlKind = Grafaid.Schema.Kinds.Kinds.Argument
 
 export interface Argument {
-  _tag: 'GraphQLPathSegmentArgument'
-  name: string
-  next?: ArgumentNext | undefined
+  readonly _tag: 'GraphQLPathSegmentArgument'
+  readonly name: string
+  readonly next?: ArgumentNext | undefined
 }
 
 export type ArgumentNext =
@@ -22,9 +22,9 @@ export type ArgumentNext =
   | ResolvedType.ResolvedType
 
 export interface ArgumentEncoded {
-  _tag: 'GraphQLPathSegmentArgument'
-  name: string
-  next?: ArgumentNextEncoded | undefined
+  readonly _tag: 'GraphQLPathSegmentArgument'
+  readonly name: string
+  readonly next?: ArgumentNextEncoded | undefined
 }
 
 export type ArgumentNextEncoded =
@@ -35,7 +35,7 @@ export type ArgumentNextEncoded =
 // Schema
 // ============================================================================
 
-export const Schema = S.TaggedStruct('GraphQLPathSegmentArgument', {
+export class Argument extends S.TaggedClass<Argument>('GraphQLPathSegmentArgument')('GraphQLPathSegmentArgument', {
   name: GraphQLName.GraphQLName,
   next: S.optional(S.suspend((): S.Schema<ArgumentNext, ArgumentNextEncoded> =>
     S.Union(
@@ -43,12 +43,12 @@ export const Schema = S.TaggedStruct('GraphQLPathSegmentArgument', {
       ResolvedType.Schema,
     )
   )),
-})
+}) {}
 
-// Types are manually defined above
+export const Schema = Argument
 
 // ============================================================================
 // Constructors
 // ============================================================================
 
-export const make = Schema.make
+export const make = Argument.make.bind(Argument)

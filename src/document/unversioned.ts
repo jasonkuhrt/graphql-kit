@@ -4,21 +4,11 @@ import { Schema as S } from 'effect'
 // Schema
 // ============================================================================
 
-export const DocumentUnversioned = S.TaggedStruct('DocumentUnversioned', {
-  document: S.String,
-})
-
-// ============================================================================
-// Types
-// ============================================================================
-
-export type DocumentUnversioned = typeof DocumentUnversioned.Type
-
-// ============================================================================
-// Constructors
-// ============================================================================
-
-export const make = DocumentUnversioned.make
+export class DocumentUnversioned
+  extends S.TaggedClass<DocumentUnversioned>('DocumentUnversioned')('DocumentUnversioned', {
+    document: S.String,
+  })
+{}
 
 // ============================================================================
 // Type Guards

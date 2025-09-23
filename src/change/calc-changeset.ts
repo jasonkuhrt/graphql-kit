@@ -59,22 +59,19 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
   switch (change.type) {
     // Type changes
     case 'TYPE_ADDED':
-      return Change.TypeAdded.make({
-        _tag: 'TYPE_ADDED',
+      return new Change.TypeAdded({
         ...base,
         name: change.path || '',
       })
 
     case 'TYPE_REMOVED':
-      return Change.TypeRemoved.make({
-        _tag: 'TYPE_REMOVED',
+      return new Change.TypeRemoved({
         ...base,
         name: change.path || '',
       })
 
     case 'TYPE_KIND_CHANGED': {
-      return Change.TypeKindChanged.make({
-        _tag: 'TYPE_KIND_CHANGED',
+      return new Change.TypeKindChanged({
         ...base,
         name: change.path || '',
         oldKind: change.meta.oldKind,
@@ -83,8 +80,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'TYPE_DESCRIPTION_CHANGED': {
-      return Change.TypeDescriptionChanged.make({
-        _tag: 'TYPE_DESCRIPTION_CHANGED',
+      return new Change.TypeDescriptionChanged({
         ...base,
         name: change.path || '',
         oldDescription: change.meta.oldTypeDescription ?? undefined,
@@ -93,8 +89,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'TYPE_DESCRIPTION_ADDED': {
-      return Change.TypeDescriptionAdded.make({
-        _tag: 'TYPE_DESCRIPTION_ADDED',
+      return new Change.TypeDescriptionAdded({
         ...base,
         name: change.path || '',
         description: change.meta.addedTypeDescription ?? '',
@@ -102,8 +97,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'TYPE_DESCRIPTION_REMOVED':
-      return Change.TypeDescriptionRemoved.make({
-        _tag: 'TYPE_DESCRIPTION_REMOVED',
+      return new Change.TypeDescriptionRemoved({
         ...base,
         name: change.path || '',
       })
@@ -111,8 +105,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Field changes
     case 'FIELD_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldAdded.make({
-        _tag: 'FIELD_ADDED',
+      return new Change.FieldAdded({
         ...base,
         typeName,
         fieldName,
@@ -123,8 +116,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldRemoved.make({
-        _tag: 'FIELD_REMOVED',
+      return new Change.FieldRemoved({
         ...base,
         typeName,
         fieldName,
@@ -133,8 +125,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_TYPE_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldTypeChanged.make({
-        _tag: 'FIELD_TYPE_CHANGED',
+      return new Change.FieldTypeChanged({
         ...base,
         typeName,
         fieldName,
@@ -146,8 +137,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DEPRECATION_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDeprecationAdded.make({
-        _tag: 'FIELD_DEPRECATION_ADDED',
+      return new Change.FieldDeprecationAdded({
         ...base,
         typeName,
         fieldName,
@@ -157,8 +147,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DEPRECATION_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDeprecationRemoved.make({
-        _tag: 'FIELD_DEPRECATION_REMOVED',
+      return new Change.FieldDeprecationRemoved({
         ...base,
         typeName,
         fieldName,
@@ -167,8 +156,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DEPRECATION_REASON_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDeprecationReasonChanged.make({
-        _tag: 'FIELD_DEPRECATION_REASON_CHANGED',
+      return new Change.FieldDeprecationReasonChanged({
         ...base,
         typeName,
         fieldName,
@@ -179,8 +167,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DEPRECATION_REASON_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDeprecationReasonAdded.make({
-        _tag: 'FIELD_DEPRECATION_REASON_ADDED',
+      return new Change.FieldDeprecationReasonAdded({
         ...base,
         typeName,
         fieldName,
@@ -190,8 +177,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DEPRECATION_REASON_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDeprecationReasonRemoved.make({
-        _tag: 'FIELD_DEPRECATION_REASON_REMOVED',
+      return new Change.FieldDeprecationReasonRemoved({
         ...base,
         typeName,
         fieldName,
@@ -200,8 +186,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DESCRIPTION_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDescriptionChanged.make({
-        _tag: 'FIELD_DESCRIPTION_CHANGED',
+      return new Change.FieldDescriptionChanged({
         ...base,
         typeName,
         fieldName,
@@ -212,8 +197,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DESCRIPTION_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDescriptionAdded.make({
-        _tag: 'FIELD_DESCRIPTION_ADDED',
+      return new Change.FieldDescriptionAdded({
         ...base,
         typeName,
         fieldName,
@@ -223,8 +207,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_DESCRIPTION_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.FieldDescriptionRemoved.make({
-        _tag: 'FIELD_DESCRIPTION_REMOVED',
+      return new Change.FieldDescriptionRemoved({
         ...base,
         typeName,
         fieldName,
@@ -234,8 +217,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Field argument changes
     case 'FIELD_ARGUMENT_ADDED': {
       const { typeName = '', fieldName = '', argumentName = '' } = parsePath(change.path)
-      return Change.FieldArgumentAdded.make({
-        _tag: 'FIELD_ARGUMENT_ADDED',
+      return new Change.FieldArgumentAdded({
         ...base,
         typeName,
         fieldName,
@@ -247,8 +229,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_ARGUMENT_REMOVED': {
       const { typeName = '', fieldName = '', argumentName = '' } = parsePath(change.path)
-      return Change.FieldArgumentRemoved.make({
-        _tag: 'FIELD_ARGUMENT_REMOVED',
+      return new Change.FieldArgumentRemoved({
         ...base,
         typeName,
         fieldName,
@@ -258,8 +239,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_ARGUMENT_TYPE_CHANGED': {
       const { typeName = '', fieldName = '', argumentName = '' } = parsePath(change.path)
-      return Change.FieldArgumentTypeChanged.make({
-        _tag: 'FIELD_ARGUMENT_TYPE_CHANGED',
+      return new Change.FieldArgumentTypeChanged({
         ...base,
         typeName,
         fieldName,
@@ -271,8 +251,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_ARGUMENT_DESCRIPTION_CHANGED': {
       const { typeName = '', fieldName = '', argumentName = '' } = parsePath(change.path)
-      return Change.FieldArgumentDescriptionChanged.make({
-        _tag: 'FIELD_ARGUMENT_DESCRIPTION_CHANGED',
+      return new Change.FieldArgumentDescriptionChanged({
         ...base,
         typeName,
         fieldName,
@@ -284,8 +263,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'FIELD_ARGUMENT_DEFAULT_CHANGED': {
       const { typeName = '', fieldName = '', argumentName = '' } = parsePath(change.path)
-      return Change.FieldArgumentDefaultChanged.make({
-        _tag: 'FIELD_ARGUMENT_DEFAULT_CHANGED',
+      return new Change.FieldArgumentDefaultChanged({
         ...base,
         typeName,
         fieldName,
@@ -298,8 +276,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Enum changes
     case 'ENUM_VALUE_ADDED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueAdded.make({
-        _tag: 'ENUM_VALUE_ADDED',
+      return new Change.EnumValueAdded({
         ...base,
         enumName: typeName,
         value: change.meta.addedEnumValueName ?? '',
@@ -309,8 +286,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'ENUM_VALUE_REMOVED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueRemoved.make({
-        _tag: 'ENUM_VALUE_REMOVED',
+      return new Change.EnumValueRemoved({
         ...base,
         enumName: typeName,
         value: change.meta.removedEnumValueName ?? '',
@@ -319,8 +295,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'ENUM_VALUE_DESCRIPTION_CHANGED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueDescriptionChanged.make({
-        _tag: 'ENUM_VALUE_DESCRIPTION_CHANGED',
+      return new Change.EnumValueDescriptionChanged({
         ...base,
         enumName: typeName,
         value: change.meta.enumValueName ?? '',
@@ -331,8 +306,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'ENUM_VALUE_DEPRECATION_REASON_ADDED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueDeprecationReasonAdded.make({
-        _tag: 'ENUM_VALUE_DEPRECATION_REASON_ADDED',
+      return new Change.EnumValueDeprecationReasonAdded({
         ...base,
         enumName: typeName,
         value: change.meta.enumValueName ?? '',
@@ -342,8 +316,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'ENUM_VALUE_DEPRECATION_REASON_CHANGED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueDeprecationReasonChanged.make({
-        _tag: 'ENUM_VALUE_DEPRECATION_REASON_CHANGED',
+      return new Change.EnumValueDeprecationReasonChanged({
         ...base,
         enumName: typeName,
         value: change.meta.enumValueName ?? '',
@@ -354,8 +327,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'ENUM_VALUE_DEPRECATION_REASON_REMOVED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.EnumValueDeprecationReasonRemoved.make({
-        _tag: 'ENUM_VALUE_DEPRECATION_REASON_REMOVED',
+      return new Change.EnumValueDeprecationReasonRemoved({
         ...base,
         enumName: typeName,
         value: change.meta.enumValueName ?? '',
@@ -365,8 +337,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Input field changes
     case 'INPUT_FIELD_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldAdded.make({
-        _tag: 'INPUT_FIELD_ADDED',
+      return new Change.InputFieldAdded({
         ...base,
         inputName: typeName,
         fieldName,
@@ -376,8 +347,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldRemoved.make({
-        _tag: 'INPUT_FIELD_REMOVED',
+      return new Change.InputFieldRemoved({
         ...base,
         inputName: typeName,
         fieldName,
@@ -386,8 +356,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_TYPE_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldTypeChanged.make({
-        _tag: 'INPUT_FIELD_TYPE_CHANGED',
+      return new Change.InputFieldTypeChanged({
         ...base,
         inputName: typeName,
         fieldName,
@@ -398,8 +367,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_DESCRIPTION_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldDescriptionAdded.make({
-        _tag: 'INPUT_FIELD_DESCRIPTION_ADDED',
+      return new Change.InputFieldDescriptionAdded({
         ...base,
         inputName: typeName,
         fieldName,
@@ -409,8 +377,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_DESCRIPTION_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldDescriptionRemoved.make({
-        _tag: 'INPUT_FIELD_DESCRIPTION_REMOVED',
+      return new Change.InputFieldDescriptionRemoved({
         ...base,
         inputName: typeName,
         fieldName,
@@ -419,8 +386,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_DESCRIPTION_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldDescriptionChanged.make({
-        _tag: 'INPUT_FIELD_DESCRIPTION_CHANGED',
+      return new Change.InputFieldDescriptionChanged({
         ...base,
         inputName: typeName,
         fieldName,
@@ -431,8 +397,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'INPUT_FIELD_DEFAULT_VALUE_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.InputFieldDefaultValueChanged.make({
-        _tag: 'INPUT_FIELD_DEFAULT_VALUE_CHANGED',
+      return new Change.InputFieldDefaultValueChanged({
         ...base,
         inputName: typeName,
         fieldName,
@@ -444,8 +409,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Union changes
     case 'UNION_MEMBER_ADDED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.UnionMemberAdded.make({
-        _tag: 'UNION_MEMBER_ADDED',
+      return new Change.UnionMemberAdded({
         ...base,
         unionName: typeName,
         memberName: change.meta.addedUnionMemberTypeName ?? '',
@@ -454,8 +418,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'UNION_MEMBER_REMOVED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.UnionMemberRemoved.make({
-        _tag: 'UNION_MEMBER_REMOVED',
+      return new Change.UnionMemberRemoved({
         ...base,
         unionName: typeName,
         memberName: change.meta.removedUnionMemberTypeName ?? '',
@@ -465,8 +428,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     // Interface changes
     case 'OBJECT_TYPE_INTERFACE_ADDED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.ObjectTypeInterfaceAdded.make({
-        _tag: 'OBJECT_TYPE_INTERFACE_ADDED',
+      return new Change.ObjectTypeInterfaceAdded({
         ...base,
         objectName: typeName,
         interfaceName: change.meta.addedInterfaceName ?? '',
@@ -475,8 +437,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'OBJECT_TYPE_INTERFACE_REMOVED': {
       const { typeName = '' } = parsePath(change.path)
-      return Change.ObjectTypeInterfaceRemoved.make({
-        _tag: 'OBJECT_TYPE_INTERFACE_REMOVED',
+      return new Change.ObjectTypeInterfaceRemoved({
         ...base,
         objectName: typeName,
         interfaceName: change.meta.removedInterfaceName ?? '',
@@ -485,8 +446,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     // Directive changes
     case 'DIRECTIVE_ADDED': {
-      return Change.DirectiveAdded.make({
-        _tag: 'DIRECTIVE_ADDED',
+      return new Change.DirectiveAdded({
         ...base,
         name: change.meta.addedDirectiveName ?? '',
         locations: [], // GraphQL Inspector doesn't provide locations in meta
@@ -494,16 +454,14 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'DIRECTIVE_REMOVED': {
-      return Change.DirectiveRemoved.make({
-        _tag: 'DIRECTIVE_REMOVED',
+      return new Change.DirectiveRemoved({
         ...base,
         name: change.meta.removedDirectiveName ?? '',
       })
     }
 
     case 'DIRECTIVE_DESCRIPTION_CHANGED': {
-      return Change.DirectiveDescriptionChanged.make({
-        _tag: 'DIRECTIVE_DESCRIPTION_CHANGED',
+      return new Change.DirectiveDescriptionChanged({
         ...base,
         name: change.meta.directiveName ?? '',
         oldDescription: change.meta.oldDirectiveDescription ?? undefined,
@@ -512,8 +470,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'DIRECTIVE_LOCATION_ADDED': {
-      return Change.DirectiveLocationAdded.make({
-        _tag: 'DIRECTIVE_LOCATION_ADDED',
+      return new Change.DirectiveLocationAdded({
         ...base,
         name: change.meta.directiveName ?? '',
         location: change.meta.addedDirectiveLocation ?? '',
@@ -521,8 +478,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'DIRECTIVE_LOCATION_REMOVED': {
-      return Change.DirectiveLocationRemoved.make({
-        _tag: 'DIRECTIVE_LOCATION_REMOVED',
+      return new Change.DirectiveLocationRemoved({
         ...base,
         name: change.meta.directiveName ?? '',
         location: change.meta.removedDirectiveLocation ?? '',
@@ -531,8 +487,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'DIRECTIVE_ARGUMENT_ADDED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.DirectiveArgumentAdded.make({
-        _tag: 'DIRECTIVE_ARGUMENT_ADDED',
+      return new Change.DirectiveArgumentAdded({
         ...base,
         directiveName: change.meta.directiveName ?? typeName,
         argumentName: change.meta.addedDirectiveArgumentName ?? fieldName,
@@ -542,8 +497,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'DIRECTIVE_ARGUMENT_REMOVED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.DirectiveArgumentRemoved.make({
-        _tag: 'DIRECTIVE_ARGUMENT_REMOVED',
+      return new Change.DirectiveArgumentRemoved({
         ...base,
         directiveName: change.meta.directiveName ?? typeName,
         argumentName: change.meta.removedDirectiveArgumentName ?? fieldName,
@@ -552,8 +506,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.DirectiveArgumentDescriptionChanged.make({
-        _tag: 'DIRECTIVE_ARGUMENT_DESCRIPTION_CHANGED',
+      return new Change.DirectiveArgumentDescriptionChanged({
         ...base,
         directiveName: change.meta.directiveName ?? typeName,
         argumentName: change.meta.directiveArgumentName ?? fieldName,
@@ -564,8 +517,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.DirectiveArgumentDefaultValueChanged.make({
-        _tag: 'DIRECTIVE_ARGUMENT_DEFAULT_VALUE_CHANGED',
+      return new Change.DirectiveArgumentDefaultValueChanged({
         ...base,
         directiveName: change.meta.directiveName ?? typeName,
         argumentName: change.meta.directiveArgumentName ?? fieldName,
@@ -576,8 +528,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     case 'DIRECTIVE_ARGUMENT_TYPE_CHANGED': {
       const { typeName = '', fieldName = '' } = parsePath(change.path)
-      return Change.DirectiveArgumentTypeChanged.make({
-        _tag: 'DIRECTIVE_ARGUMENT_TYPE_CHANGED',
+      return new Change.DirectiveArgumentTypeChanged({
         ...base,
         directiveName: change.meta.directiveName ?? typeName,
         argumentName: change.meta.directiveArgumentName ?? fieldName,
@@ -588,8 +539,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
 
     // Schema changes
     case 'SCHEMA_QUERY_TYPE_CHANGED': {
-      return Change.SchemaQueryTypeChanged.make({
-        _tag: 'SCHEMA_QUERY_TYPE_CHANGED',
+      return new Change.SchemaQueryTypeChanged({
         ...base,
         oldType: change.meta.oldQueryTypeName ?? undefined,
         newType: change.meta.newQueryTypeName ?? undefined,
@@ -597,8 +547,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'SCHEMA_MUTATION_TYPE_CHANGED': {
-      return Change.SchemaMutationTypeChanged.make({
-        _tag: 'SCHEMA_MUTATION_TYPE_CHANGED',
+      return new Change.SchemaMutationTypeChanged({
         ...base,
         oldType: change.meta.oldMutationTypeName ?? undefined,
         newType: change.meta.newMutationTypeName ?? undefined,
@@ -606,8 +555,7 @@ const mapChange = (change: GraphqlInspector.Core.Change): Change.Change | null =
     }
 
     case 'SCHEMA_SUBSCRIPTION_TYPE_CHANGED': {
-      return Change.SchemaSubscriptionTypeChanged.make({
-        _tag: 'SCHEMA_SUBSCRIPTION_TYPE_CHANGED',
+      return new Change.SchemaSubscriptionTypeChanged({
         ...base,
         oldType: change.meta.oldSubscriptionTypeName ?? undefined,
         newType: change.meta.newSubscriptionTypeName ?? undefined,
